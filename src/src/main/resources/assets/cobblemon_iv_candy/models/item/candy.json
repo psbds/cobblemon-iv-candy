@@ -1,0 +1,26 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "cobblemon_iv_candy:item/candies/candy_normal"
+  },
+  "overrides": [
+    { "predicate": { "custom_model_data": 100 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_fire" },
+    { "predicate": { "custom_model_data": 101 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_water" },
+    { "predicate": { "custom_model_data": 102 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_grass" },
+    { "predicate": { "custom_model_data": 103 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_electric" },
+    { "predicate": { "custom_model_data": 104 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_ice" },
+    { "predicate": { "custom_model_data": 105 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_rock" },
+    { "predicate": { "custom_model_data": 106 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_ground" },
+    { "predicate": { "custom_model_data": 107 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_flying" },
+    { "predicate": { "custom_model_data": 108 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_psychic" },
+    { "predicate": { "custom_model_data": 109 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_bug" },
+    { "predicate": { "custom_model_data": 110 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_poison" },
+    { "predicate": { "custom_model_data": 111 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_fighting" },
+    { "predicate": { "custom_model_data": 112 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_ghost" },
+    { "predicate": { "custom_model_data": 113 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_dragon" },
+    { "predicate": { "custom_model_data": 114 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_dark" },
+    { "predicate": { "custom_model_data": 115 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_steel" },
+    { "predicate": { "custom_model_data": 116 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_fairy" },
+    { "predicate": { "custom_model_data": 117 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_normal" }
+  ]
+}

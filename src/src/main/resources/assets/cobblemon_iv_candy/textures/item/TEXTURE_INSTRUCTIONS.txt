@@ -1,0 +1,20 @@
+TEXTURE INSTRUCTIONS:
+
+1. Create a 16x16 pixel PNG image for your IV Candy item
+2. Save it as "iv_candy.png" in this directory
+3. The image should be in PNG format
+4. Recommended size: 16x16 pixels (standard Minecraft item texture size)
+5. You can use any image editor like:
+   - GIMP (free)
+   - Paint.NET (free)
+   - Photoshop
+   - Aseprite (good for pixel art)
+   - Or even MS Paint for simple textures
+
+Example texture ideas for IV Candy:
+- A colorful candy/pill shape
+- A small cube with "IV" text
+- A gem-like appearance
+- A medicine bottle icon
+
+Once you create the PNG file, delete this instruction file and replace it with your iv_candy.png texture.
