@@ -1,0 +1,128 @@
+/* Custom styles for Cobblemon IV Candy Wiki */
+
+/* Navigation grid for homepage */
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.nav-item {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.nav-item h3 a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.nav-item h3 a:hover {
+  text-decoration: underline;
+}
+
+.nav-item p {
+  margin-bottom: 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+table th,
+table td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Code blocks */
+.highlight {
+  background: #f8f9fa;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+/* Recipe pattern styling */
+pre {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Status badges */
+.status-supported::before {
+  content: "✅ ";
+  color: #28a745;
+}
+
+.status-warning::before {
+  content: "⚠️ ";
+  color: #ffc107;
+}
+
+.status-unsupported::before {
+  content: "❌ ";
+  color: #dc3545;
+}
+
+.status-unknown::before {
+  content: "❓ ";
+  color: #6c757d;
+}
+
+/* Command examples */
+.language-bash {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  table {
+    font-size: 0.9rem;
+  }
+  
+  .nav-item {
+    padding: 1rem;
+  }
+}

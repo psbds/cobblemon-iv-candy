@@ -1,43 +1,112 @@
-# Cobblemon MDKs
+# Cobblemon IV Candy
 
-These are MDKs (Mod Development Kits) provided specifically to help you get started with writing a side-mod for
-cobblemon on whatever platform you prefer (or even multi-platform if you chose to do so).
+A Minecraft mod that extends the [Cobblemon](https://cobblemon.com/) mod by adding an Individual Values (IV) enhancement system through craftable candies and shards.
 
-## Get Started
+## 📖 Documentation
 
-To get started all you have to do is the following:
+**[📚 Visit the Complete Wiki](https://psbds.github.io/cobblemon-iv-candy/)**
 
-- Clone or download the repo (or the specific folder that contains the platform you like to use)
-- (Rename the folder to match what your mod is going to be called)
-- Inside the `settings.gradle` change the `rootProject.name` property to what you like, this also drives what the mod.jar is called in the end
-  - Exception is the `Multi-Platform` mdk which instead refers to the `gradle.properties` > `archives_base_name`
-- Inside your `build.gradle` update the `group` variable to something of your choice (example: `io.github.myname` refer to [this](#what-should-my-group-be) if you need help)
-  - While the `group` variable is mainly important if you plan to write libraries or push your artifacts to a maven repo, it's still good practice to do!
-  - This is also where you find the `version` variable which gets added to the mod.jar when you build (and inserted into the mod files that need it e.g. `fabric.mod.json`)
-  - If you are using the `Multi-Platform` mdk, you will find these variables instead in your `gradle.properties` being `maven_group` and `mod_version` respectively
-- Update folder structure for the code. This is determined by the `group` you have defined above
-  - For example, if you have set up the group to be `io.github.username` and your mod is called `flying`, then your folder structure for the code should start as follows:
-    - `<project-root>/src/main/java/io/github/username/flying/FlyingMod.java` - You'd then set up all your classes and more packages within the `flying` package
-    - If you are using an IDE such as IntelliJ you can also tell it to "refactor" or move the example.java class for you into place
-- Review the mod files and update their information to be accurate to the mod you are writing
-  - For Fabric, you will find the mod file here: `<project-root>/src/main/resources/fabric.mod.json`
-  - For NeoForge, you will find the mod file here: `<project-root>/src/main/resources/META-INF/neoforge.mods.toml`
-  - If you are using the `Multi-Platform` mdk you will have both in their respective subprojects
-    - In there you will find various fields like mod id, name, authors, license (not sure which one to use? [have a look at this](https://choosealicense.com/)) and also means of declaring dependencies. Refer to the documentation of your respective mod loader for further information on these files
-    - **IMPORTANT**: The mod id of the `neoforge.mods.toml` needs to MATCH the `@Mod` annotation of your main mod file (`ExampleNeoForgeMod` in our MDKs) otherwise you will crash
-    - **IMPORTANT**: The `fabric.mod.json` contains an `entrypoint` field which points to your mods main class, if you update the package or rename that class, you have to update the `entrypoint` in the `fabric.mod.json` too!
-- Start writing your own code!
+The full documentation includes:
+- **[Installation Guide](https://psbds.github.io/cobblemon-iv-candy/installation/)** - Step-by-step setup
+- **[Items Reference](https://psbds.github.io/cobblemon-iv-candy/items/)** - Complete item documentation
+- **[Crafting Recipes](https://psbds.github.io/cobblemon-iv-candy/recipes/)** - All crafting patterns
+- **[Commands](https://psbds.github.io/cobblemon-iv-candy/commands/)** - Administrative commands
+- **[Compatibility](https://psbds.github.io/cobblemon-iv-candy/compatibility/)** - Version compatibility info
+- **[Development Guide](https://psbds.github.io/cobblemon-iv-candy/development/)** - For contributors
 
-### What should my Group be?
+## ✨ Features
 
-In short, it can be whatever you want for the most part, but below are some conventions:
+### 🔮 IV Shards System
+- Collect shards from defeated Pokémon
+- Different shard types: Species, Elemental, Legendary, Mythical, Ultra Beast, and Paradox
+- Each shard type has unique crafting requirements
 
-- If you own a domain, you could use that here (for example com.cobblemon for cobblemon.com)
-- If you work in a group/organization and your mod is supposed to be part of that, you can tie it into the organization's domain
-- If your project is open source and on GitHub, using `io.github.username` is also an option
-- Finally, its also common practice to use your email address, if you have one specifically for development purposes (e.g. `com.gmail.username`)
+### 🍬 IV Candy Crafting
+- Craft targeted IV candies for specific stats (HP, Attack, Defense, etc.)
+- Create random IV candies for general stat improvements
+- Super candies for enhanced effects
 
-You can read more about these package names and conventions in [Oracle's documentation](https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html)
+### ⚡ Smart Stat Enhancement
+- Candies intelligently target stats that aren't maxed out
+- Species-specific candies ensure compatibility
+- Random candies provide flexible stat improvements
+
+## 🚀 Quick Start
+
+1. **Install Prerequisites:**
+   - Minecraft 1.21.1
+   - Fabric Loader 0.16.5+
+   - Fabric API 0.104.0+1.21.1
+   - Cobblemon 1.6.0+1.21.1-SNAPSHOT
+
+2. **Download and Install:**
+   - Download the latest release from [GitHub Releases](https://github.com/psbds/cobblemon-iv-candy/releases)
+   - Place the `.jar` file in your `mods` folder
+   - Start Minecraft with the Fabric profile
+
+3. **Start Playing:**
+   - Defeat Pokémon to collect IV Shards
+   - Craft IV Candies using the recipes
+   - Use candies on your Pokémon to enhance their IVs
+
+## 📋 Requirements
+
+| Component | Version | Status |
+|-----------|---------|--------|
+| **Minecraft** | 1.21.1 | Required |
+| **Fabric Loader** | 0.16.5+ | Required |
+| **Fabric API** | 0.104.0+1.21.1 | Required |
+| **Cobblemon** | 1.6.0+1.21.1-SNAPSHOT | Required |
+| **Fabric Language Kotlin** | 1.12.3+kotlin.2.0.21 | Recommended |
+
+## 🏗️ Building from Source
+
+```bash
+# Clone the repository
+git clone https://github.com/psbds/cobblemon-iv-candy.git
+cd cobblemon-iv-candy
+
+# Build the mod
+./gradlew build  # On Windows: .\gradlew.bat build
+
+# Find the built mod in src/build/libs/
+```
+
+For detailed development instructions, see the [Development Guide](https://psbds.github.io/cobblemon-iv-candy/development/).
+
+## 🤝 Contributing
+
+We welcome contributions! Please:
+
+1. Read the [Development Guide](https://psbds.github.io/cobblemon-iv-candy/development/)
+2. Fork the repository
+3. Create a feature branch
+4. Make your changes
+5. Test thoroughly
+6. Submit a pull request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🔗 Links
+
+- **[📚 Complete Wiki](https://psbds.github.io/cobblemon-iv-candy/)** - Full documentation
+- **[🐛 Report Issues](https://github.com/psbds/cobblemon-iv-candy/issues)** - Bug reports and feature requests
+- **[💬 Cobblemon Discord](https://discord.gg/cobblemon)** - Community support
+- **[🌐 Cobblemon Website](https://cobblemon.com/)** - Main Cobblemon mod
+
+## 📊 Project Status
+
+- **Current Version**: 1.0.0-SNAPSHOT
+- **Development Status**: Active
+- **Compatibility**: Minecraft 1.21.1 + Cobblemon 1.6.0+
+
+---
+
+### Original Cobblemon MDK Information
+
+This project was initially based on the Cobblemon MDK. Below is preserved information for reference:
 
 ### A cobblemon update released! What now?
 

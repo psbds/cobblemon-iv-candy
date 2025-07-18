@@ -1,0 +1,72 @@
+# GitHub Pages configuration for Cobblemon IV Candy Wiki
+title: "Cobblemon IV Candy Wiki"
+description: "A comprehensive guide to the Cobblemon IV Candy mod for Minecraft"
+baseurl: "/cobblemon-iv-candy"
+url: "https://psbds.github.io"
+
+# Use the Minimal theme for GitHub Pages
+theme: minima
+
+# Header pages
+header_pages:
+  - index.md
+  - installation.md
+  - items.md
+  - recipes.md
+  - commands.md
+  - compatibility.md
+  - development.md
+
+# Enable plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Collections for better organization
+collections:
+  items:
+    output: true
+    permalink: /:collection/:name/
+  recipes:
+    output: true
+    permalink: /:collection/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "items"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "recipes"
+    values:
+      layout: "page"
+
+# SEO settings
+author: "psbds"
+social:
+  name: "psbds"
+  links:
+    - "https://github.com/psbds"
+
+# GitHub repository info
+repository: "psbds/cobblemon-iv-candy"
+
+# Navigation structure
+nav_exclude_titles:
+  - "Navigation"
