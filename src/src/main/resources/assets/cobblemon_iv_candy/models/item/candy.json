@@ -21,6 +21,11 @@
     { "predicate": { "custom_model_data": 114 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_dark" },
     { "predicate": { "custom_model_data": 115 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_steel" },
     { "predicate": { "custom_model_data": 116 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_fairy" },
-    { "predicate": { "custom_model_data": 117 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_normal" }
+    { "predicate": { "custom_model_data": 117 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_normal" },
+
+    { "predicate": { "custom_model_data": 200 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_legendary" },
+    { "predicate": { "custom_model_data": 201 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_mythical" },
+    { "predicate": { "custom_model_data": 202 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_ultrabeast" },
+    { "predicate": { "custom_model_data": 203 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_paradox" }
   ]
 }

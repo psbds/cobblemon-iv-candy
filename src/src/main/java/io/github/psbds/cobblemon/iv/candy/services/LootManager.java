@@ -12,17 +12,19 @@ public class LootManager {
 
         var lootTable = LootTableManager.getLootTable(killedPokemon);
 
-        if (Math.random() * 100 < lootTable.randomSpeciesCandyChance()) {
-            for (int i = 0; i < 100; i++) {
-                killer.getInventory().add(Candy.create(killedPokemon.getSpecies(), null, null));
+        if (Math.random() * 100 < lootTable.speciesShardChance()) {
+            for (int i = 0; i < 64; i++) {
+                killer.getInventory().add(Shard.createForSpecies(killedPokemon.getSpecies()));
             }
         }
-        if (Math.random() * 100 < lootTable.randomTypeCandyChance()) {
-            killer.getInventory().add(Candy.create(null, null, killedPokemon.getSpecies().getPrimaryType()));
-        }
-        if (Math.random() * 100 < lootTable.shardChance()) {
-            for (int i = 0; i < 100; i++) {
-                killer.getInventory().add(Shard.create(killedPokemon.getSpecies()));
+        if (Math.random() * 100 < lootTable.elementalShardChance()) {
+            for (int i = 0; i < 64; i++) {
+                killer.getInventory().add(Shard.createForElement(killedPokemon.getSpecies().getPrimaryType()));
+            }
+            if (killedPokemon.getSpecies().getSecondaryType() != null) {
+                for (int i = 0; i < 64; i++) {
+                    killer.getInventory().add(Shard.createForElement(killedPokemon.getSpecies().getSecondaryType()));
+                }
             }
         }
     }

@@ -1,11 +1,13 @@
 package io.github.psbds.cobblemon.iv.candy.items.objects.shards;
 
+import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.pokemon.Species;
 
+import io.github.psbds.cobblemon.iv.candy.Boot;
+import io.github.psbds.cobblemon.iv.candy.constants.ShardType;
 import io.github.psbds.cobblemon.iv.candy.helpers.CobblemonSpeciesHelper;
 import io.github.psbds.cobblemon.iv.candy.items.ModItems;
-import io.github.psbds.cobblemon.iv.candy.items.components.DataPokedexNumber;
-import io.github.psbds.cobblemon.iv.candy.items.components.DataElementalType;
+import io.github.psbds.cobblemon.iv.candy.items.components.DataShard;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.CustomModelDataMap;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.ElementalTypeMap;
 import io.github.psbds.cobblemon.iv.candy.items.objects.BaseShard;
@@ -26,29 +28,66 @@ public class Shard extends BaseShard {
         super(properties);
     }
 
-    public static ItemStack create(Species pokemonSpecies) {
+    public static ItemStack createForSpecies(Species pokemonSpecies) {
         ItemStack itemStack = new ItemStack(ModItems.SHARD);
-        initialize(itemStack, pokemonSpecies);
+        Boot.LOGGER.info("Labels: " + pokemonSpecies.getLabels());
+        var shardType = ShardType.getShardType(pokemonSpecies);
+        if (shardType == ShardType.SPECIES) {
+            initialize(itemStack, ShardType.SPECIES, pokemonSpecies, null);
+        } else {
+            initialize(itemStack, shardType, null, null);
+        }
         return itemStack;
     }
 
-    public static void initialize(ItemStack itemStack, Species pokemonSpecies) {
-        // Set Species
-        var baseSpecies = CobblemonSpeciesHelper.getFirstEvolution(pokemonSpecies);
-        var candyBaseSpecies = DataPokedexNumber.of(baseSpecies.getNationalPokedexNumber());
-        itemStack.set(DataPokedexNumber.COMPONENT, candyBaseSpecies);
+    public static ItemStack createForElement(ElementalType elementalType) {
+        ItemStack itemStack = new ItemStack(ModItems.SHARD);
+        initialize(itemStack, ShardType.ELEMENTAL_TYPE, null, elementalType);
+        return itemStack;
+    }
 
-        // Set Primary Elemental Type
-        var elementalType = DataElementalType.of(ElementalTypeMap.getElementalTypeId(baseSpecies.getPrimaryType()));
-        itemStack.set(DataElementalType.COMPONENT, elementalType);
+    public static void initialize(ItemStack itemStack,
+            String shardType,
+            Species pokemonSpecies,
+            ElementalType elementalTypeOverride) {
 
-        // Set DisplayName
-        var itemName = String.format("%s IV Shard", baseSpecies.getName());
-        itemStack.set(DataComponents.CUSTOM_NAME, Component.literal(itemName));
+        // Initialize Model Data
+        var shardName = "IV Shard";
+        var shardDataType = shardType;
+        int shardDataPokedexNumber = 0;
+        int shardDataElementalType = -1;
+        int shardModelNumber = 0;
 
+        if (shardType.equals(ShardType.SPECIES)) {
+            var baseSpecies = CobblemonSpeciesHelper.getFirstEvolution(pokemonSpecies);
+            shardName = String.format("%s %s", baseSpecies.getName(), shardName);
+            shardDataPokedexNumber = baseSpecies.getNationalPokedexNumber();
+            shardModelNumber = CustomModelDataMap.getElementalTypeCustoModelData(ElementalTypeMap.getElementalTypeId(baseSpecies.getPrimaryType()));
+        }
+
+        if (shardType.equals(ShardType.ELEMENTAL_TYPE)) {
+            shardDataElementalType = ElementalTypeMap.getElementalTypeId(elementalTypeOverride);
+            shardName = String.format("%s [%s]", shardName, elementalTypeOverride.getName());
+            shardModelNumber = CustomModelDataMap.getElementalTypeCustoModelData(ElementalTypeMap.getElementalTypeId(elementalTypeOverride));
+        }
+
+        if (shardType.equals(ShardType.LEGENDARY)) {
+            shardName = String.format("%s Legendary", shardName, shardType);
+            shardModelNumber = CustomModelDataMap.getCustomModelForLegendary();
+        } else if (shardType.equals(ShardType.MYTHICAL)) {
+            shardName = String.format("%s Mythical", shardName, shardType);
+            shardModelNumber = CustomModelDataMap.getCustomModelForMythical();
+        } else if (shardType.equals(ShardType.ULTRA_BEAST)) {
+            shardName = String.format("%s Ultra Beast", shardName, shardType);
+            shardModelNumber = CustomModelDataMap.getCustomModelForUltraBeast();
+        } else if (shardType.equals(ShardType.PARADOX)) {
+            shardName = String.format("%s Paradox", shardName, shardType);
+            shardModelNumber = CustomModelDataMap.getCustomModelForParadox();
+        }
         // Set Custom Model Data
-        itemStack.set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(CustomModelDataMap
-                .getElementalTypeCustoModelData(ElementalTypeMap.getElementalTypeId(baseSpecies.getPrimaryType()))));
+        itemStack.set(DataShard.COMPONENT, DataShard.of(shardDataType, shardDataPokedexNumber, shardDataElementalType));
+        itemStack.set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(shardModelNumber));
+        itemStack.set(DataComponents.CUSTOM_NAME, Component.literal(shardName));
     }
 
     @Override

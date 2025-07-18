@@ -1,11 +1,9 @@
 package io.github.psbds.cobblemon.iv.candy.items;
 
-import com.cobblemon.mod.common.api.types.ElementalTypes;
 
 import io.github.psbds.cobblemon.iv.candy.Boot;
-import io.github.psbds.cobblemon.iv.candy.items.components.DataPokedexNumber;
-import io.github.psbds.cobblemon.iv.candy.items.components.DataElementalType;
-import io.github.psbds.cobblemon.iv.candy.items.components.DataIVStat;
+import io.github.psbds.cobblemon.iv.candy.items.components.DataShard;
+import io.github.psbds.cobblemon.iv.candy.items.components.DataCandy;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.Candy;
 import io.github.psbds.cobblemon.iv.candy.items.objects.shards.Shard;
 import net.minecraft.core.Registry;
@@ -24,8 +22,7 @@ public class ModItems {
 	}
 
 	public static void initialize() {
-		DataIVStat.initialize();
-		DataPokedexNumber.initialize();
-		DataElementalType.initialize();
+		DataCandy.initialize();
+		DataShard.initialize();
 	}
 }

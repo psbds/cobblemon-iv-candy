@@ -90,4 +90,47 @@ public class ElementalTypeMap {
 
         }
     }
+
+    public static String getElementalTypeId(int elementalTypeId) {
+        switch (elementalTypeId) {
+            case 0:
+                return "fire";
+            case 1:
+                return "water";
+            case 2:
+                return "grass";
+            case 3:
+                return "electric";
+            case 4:
+                return "ice";
+            case 5:
+                return "rock";
+            case 6:
+                return "ground";
+            case 7:
+                return "flying";
+            case 8:
+                return "psychic";
+            case 9:
+                return "bug";
+            case 10:
+                return "poison";
+            case 11:
+                return "fighting";
+            case 12:
+                return "ghost";
+            case 13:
+                return "dragon";
+            case 14:
+                return "dark";
+            case 15:
+                return "steel";
+            case 16:
+                return "fairy";
+            case 17:
+                return "normal";
+            default:
+                throw new IllegalArgumentException("Unknown elemental type ID: " + elementalTypeId);
+        }
+    }
 }
