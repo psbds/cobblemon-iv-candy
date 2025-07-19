@@ -9,7 +9,6 @@ import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.level.Level;
 
 import io.github.psbds.cobblemon.iv.candy.Boot;
-import io.github.psbds.cobblemon.iv.candy.items.ModItems;
 import io.github.psbds.cobblemon.iv.candy.items.components.DataShard;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.Candy;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyFactory;

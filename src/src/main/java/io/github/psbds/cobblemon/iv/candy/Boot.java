@@ -12,6 +12,7 @@ import io.github.psbds.cobblemon.iv.candy.config.ConfigManager;
 import io.github.psbds.cobblemon.iv.candy.items.ModItems;
 import io.github.psbds.cobblemon.iv.candy.items.ModCreativeTabs;
 import io.github.psbds.cobblemon.iv.candy.items.components.BootComponents;
+import io.github.psbds.cobblemon.iv.candy.listeners.BootListeners;
 import io.github.psbds.cobblemon.iv.candy.listeners.OnPokemonFainted;
 import io.github.psbds.cobblemon.iv.candy.recipes.ModRecipes;
 
@@ -36,7 +37,7 @@ public class Boot implements ModInitializer {
             ModCreativeTabs.registerCreativeTabs();
             ModRecipes.registerRecipes();
             CommandRouter.initialize();
-            OnPokemonFainted.initialize();
+            BootListeners.initialize();
         } catch (Exception e) {
             Boot.LOGGER.error("Error initializing Cobblemon IV Candy Mod", e);
             throw e;
