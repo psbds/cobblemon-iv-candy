@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/psbds/cobblemon-iv-candy/compare/v1.0.0...v1.1.0) (2025-07-19)
+
+
+### Features
+
+* add give commands ([597a05e](https://github.com/psbds/cobblemon-iv-candy/commit/597a05edc2693e449124024e60f8152d093622da))
+
 # 1.0.0 (2025-07-19)
 
 
