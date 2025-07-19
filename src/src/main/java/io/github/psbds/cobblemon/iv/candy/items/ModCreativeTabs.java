@@ -1,8 +1,8 @@
 package io.github.psbds.cobblemon.iv.candy.items;
 
 import io.github.psbds.cobblemon.iv.candy.Boot;
-import io.github.psbds.cobblemon.iv.candy.compat.jei.JEICandyCatalog;
-import io.github.psbds.cobblemon.iv.candy.compat.jei.JEIShardCatalog;
+import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyCatalog;
+import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardCatalog;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
@@ -14,11 +14,11 @@ public class ModCreativeTabs {
             .title(Component.translatable("itemGroup.cobblemon_iv_candy"))
             .icon(() -> new ItemStack(ModItems.CANDY))
             .displayItems((context, entries) -> {
-                for (var shard : JEIShardCatalog.getAllShards()) {
+                for (var shard : ShardCatalog.getCatalogShards()) {
                     entries.accept(shard);
                 }
 
-                for (var candy : JEICandyCatalog.getAllCandies()) {
+                for (var candy : CandyCatalog.getCatalogCandys()) {
                     entries.accept(candy);
                 }
             })

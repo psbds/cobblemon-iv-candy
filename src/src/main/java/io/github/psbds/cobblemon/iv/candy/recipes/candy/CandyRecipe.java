@@ -12,6 +12,7 @@ import io.github.psbds.cobblemon.iv.candy.Boot;
 import io.github.psbds.cobblemon.iv.candy.items.ModItems;
 import io.github.psbds.cobblemon.iv.candy.items.components.DataShard;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.Candy;
+import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyFactory;
 
 public class CandyRecipe implements CraftingRecipe {
 
@@ -31,13 +32,7 @@ public class CandyRecipe implements CraftingRecipe {
             return ItemStack.EMPTY;
         }
 
-        try {
-
-            return Candy.create(shard, null);
-        } catch (Exception e) {
-            Boot.LOGGER.error("Error creating Candy item: ", e);
-            return ItemStack.EMPTY;
-        }
+        return Candy.create(shard, null);
     }
 
     @Override
@@ -47,9 +42,7 @@ public class CandyRecipe implements CraftingRecipe {
 
     @Override
     public ItemStack getResultItem(Provider provider) {
-        // Return an empty ItemStack for the recipe book display
-        // The actual result is determined in the assemble method
-        return new ItemStack(ModItems.CANDY);
+        return CandyFactory.createForSpeciesSample(null);
     }
 
     @Override
@@ -69,5 +62,4 @@ public class CandyRecipe implements CraftingRecipe {
     public RecipeSerializer<?> getSerializer() {
         return CandyRecipeSerializer.INSTANCE;
     }
-
 }

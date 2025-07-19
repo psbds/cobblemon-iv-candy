@@ -5,8 +5,9 @@ import java.util.List;
 
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 
-import io.github.psbds.cobblemon.iv.candy.compat.jei.JEICandyCatalog;
-import io.github.psbds.cobblemon.iv.candy.compat.jei.JEIShardCatalog;
+import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyCatalog;
+import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyFactory;
+import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardFactory;
 import net.minecraft.world.item.ItemStack;
 
 /**
@@ -17,31 +18,30 @@ import net.minecraft.world.item.ItemStack;
 public record JEICandyRecipe(
         ItemStack inputShard,
         ItemStack outputCandy) {
-
     public static List<JEICandyRecipe> getRecipes() {
         var list = new ArrayList<JEICandyRecipe>();
         // Add legendary shard
-        list.add(new JEICandyRecipe(JEIShardCatalog.legendaryShardItemStack(),
-                JEICandyCatalog.legendaryCandyItemStack(null))); // Random IV
+        list.add(new JEICandyRecipe(ShardFactory.createLegendaryShard(),
+                CandyFactory.createLegendaryCandy(null))); // Random IV
         // Add mythical shard
-        list.add(
-                new JEICandyRecipe(JEIShardCatalog.mythicalShardItemStack(), JEICandyCatalog.mythicalCandyItemStack(null))); // Random IV
+        list.add(new JEICandyRecipe(ShardFactory.createMythicalShard(),
+                CandyFactory.createMythicalCandy(null))); // Random IV
         // Add ultra beast shard
-        list.add(new JEICandyRecipe(JEIShardCatalog.ultraBeastShardItemStack(),
-                JEICandyCatalog.ultraBeastCandyItemStack(null))); // Random IV
+        list.add(new JEICandyRecipe(ShardFactory.createUltraBeastShard(),
+                CandyFactory.createUltraBeastCandy(null))); // Random IV
         // Add paradox shard
-        list.add(new JEICandyRecipe(JEIShardCatalog.paradoxShardItemStack(), JEICandyCatalog.paradoxCandyItemStack(null))); // Random IV
+        list.add(new JEICandyRecipe(ShardFactory.createParadoxShard(),
+                CandyFactory.createParadoxCandy(null))); // Random IV
 
         // Add species shards
         list.add(new JEICandyRecipe(
-                JEIShardCatalog.speciesShardItemStack(),
-                JEICandyCatalog.speciesCandyItemStack(null))); // Random IV
+                ShardFactory.createForSpeciesSample(),
+                CandyFactory.createForSpeciesSample(null))); // Random IV
 
         for (var elementalType : ElementalTypes.INSTANCE.all()) {
-
             list.add(new JEICandyRecipe(
-                    JEIShardCatalog.elementalShardItemStack(elementalType),
-                    JEICandyCatalog.elementalCandyItemStack(elementalType, null))); // Random IV
+                    ShardFactory.createForElement(elementalType),
+                    CandyFactory.createForElement(elementalType, null))); // Random IV
         }
 
         return list;

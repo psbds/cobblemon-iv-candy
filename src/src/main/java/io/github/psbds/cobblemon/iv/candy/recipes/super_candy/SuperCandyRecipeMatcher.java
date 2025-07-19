@@ -6,9 +6,9 @@ import org.slf4j.LoggerFactory;
 import com.cobblemon.mod.common.CobblemonItems;
 
 import io.github.psbds.cobblemon.iv.candy.Boot;
-import io.github.psbds.cobblemon.iv.candy.constants.ShardType;
 import io.github.psbds.cobblemon.iv.candy.items.ModItems;
 import io.github.psbds.cobblemon.iv.candy.items.components.DataShard;
+import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.level.Level;

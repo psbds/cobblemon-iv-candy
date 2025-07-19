@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "cobblemon_iv_candy:item/candies/candy_steel",
+    "layer1": "cobblemon_iv_candy:item/stats/stat_attack"
+  }
+}

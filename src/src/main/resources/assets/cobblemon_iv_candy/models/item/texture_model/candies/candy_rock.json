@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "cobblemon_iv_candy:item/candies/candy_rock"
-  }
-}

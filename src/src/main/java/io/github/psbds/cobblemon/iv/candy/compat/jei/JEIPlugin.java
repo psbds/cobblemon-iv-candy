@@ -6,6 +6,7 @@ import io.github.psbds.cobblemon.iv.candy.compat.jei.items.candy.JEICandyRecipeC
 import io.github.psbds.cobblemon.iv.candy.compat.jei.items.super_candy.JEISuperCandyRecipe;
 import io.github.psbds.cobblemon.iv.candy.compat.jei.items.super_candy.JEISuperCandyRecipeCategory;
 import io.github.psbds.cobblemon.iv.candy.items.ModItems;
+import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardCatalog;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
@@ -64,8 +65,9 @@ public class JEIPlugin implements IModPlugin {
         registration.addRecipes(JEISuperCandyRecipeCategory.RECIPE_TYPE, JEISuperCandyRecipe.getRecipes());
 
         // Add Ingredients
-        for (var shard : JEIShardCatalog.getAllShards()) {
-            registration.addIngredientInfo(shard, VanillaTypes.ITEM_STACK);
+        for (var shard : ShardCatalog.getCatalogShards()) {
+            registration.addIngredientInfo(shard, VanillaTypes.ITEM_STACK,
+                    Component.translatable("jei.cobblemon_iv_candy.shard.description"));
         }
 
         Boot.LOGGER.info("Successfully registered JEI recipes and ingredients");

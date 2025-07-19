@@ -7,8 +7,8 @@ import com.cobblemon.mod.common.CobblemonItems;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 
-import io.github.psbds.cobblemon.iv.candy.compat.jei.JEICandyCatalog;
-import io.github.psbds.cobblemon.iv.candy.compat.jei.JEIShardCatalog;
+import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyFactory;
+import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardFactory;
 import net.minecraft.world.item.ItemStack;
 
 /**
@@ -33,36 +33,37 @@ public record JEISuperCandyRecipe(
 
 		return list;
 	}
+
 	public static List<JEISuperCandyRecipe> getRecipes(ItemStack apricornItem, Stats targetIVStat) {
 		var list = new ArrayList<JEISuperCandyRecipe>();
 		// Add legendary shard
-		list.add(new JEISuperCandyRecipe(JEIShardCatalog.legendaryShardItemStack(),
+		list.add(new JEISuperCandyRecipe(ShardFactory.createLegendaryShard(),
 				apricornItem,
-				JEICandyCatalog.legendaryCandyItemStack(targetIVStat)));
+				CandyFactory.createLegendaryCandy(targetIVStat)));
 		// Add mythical shard
-		list.add(new JEISuperCandyRecipe(JEIShardCatalog.mythicalShardItemStack(),
+		list.add(new JEISuperCandyRecipe(ShardFactory.createMythicalShard(),
 				apricornItem,
-				JEICandyCatalog.mythicalCandyItemStack(targetIVStat)));
+				CandyFactory.createMythicalCandy(targetIVStat)));
 		// Add ultra beast shard
-		list.add(new JEISuperCandyRecipe(JEIShardCatalog.ultraBeastShardItemStack(),
+		list.add(new JEISuperCandyRecipe(ShardFactory.createUltraBeastShard(),
 				apricornItem,
-				JEICandyCatalog.ultraBeastCandyItemStack(targetIVStat)));
+				CandyFactory.createUltraBeastCandy(targetIVStat)));
 		// Add paradox shard
-		list.add(new JEISuperCandyRecipe(JEIShardCatalog.paradoxShardItemStack(),
+		list.add(new JEISuperCandyRecipe(ShardFactory.createParadoxShard(),
 				apricornItem,
-				JEICandyCatalog.paradoxCandyItemStack(targetIVStat)));
+				CandyFactory.createParadoxCandy(targetIVStat)));
 
 		// Add species shards
 		list.add(new JEISuperCandyRecipe(
-				JEIShardCatalog.speciesShardItemStack(),
+				ShardFactory.createForSpeciesSample(),
 				apricornItem,
-				JEICandyCatalog.speciesCandyItemStack(targetIVStat)));
+				CandyFactory.createForSpeciesSample(targetIVStat)));
 
 		for (var elementalType : ElementalTypes.INSTANCE.all()) {
 			list.add(new JEISuperCandyRecipe(
-					JEIShardCatalog.elementalShardItemStack(elementalType),
+					ShardFactory.createForElement(elementalType),
 					apricornItem,
-					JEICandyCatalog.elementalCandyItemStack(elementalType, targetIVStat)));
+					CandyFactory.createForElement(elementalType, targetIVStat)));
 		}
 
 		return list;

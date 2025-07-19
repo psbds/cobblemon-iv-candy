@@ -1,31 +1,932 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "cobblemon_iv_candy:item/candies/candy_normal"
+    "layer0": "cobblemon_iv_candy:item/candies/candy_normal_random"
   },
   "overrides": [
-    { "predicate": { "custom_model_data": 100 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_fire" },
-    { "predicate": { "custom_model_data": 101 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_water" },
-    { "predicate": { "custom_model_data": 102 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_grass" },
-    { "predicate": { "custom_model_data": 103 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_electric" },
-    { "predicate": { "custom_model_data": 104 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_ice" },
-    { "predicate": { "custom_model_data": 105 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_rock" },
-    { "predicate": { "custom_model_data": 106 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_ground" },
-    { "predicate": { "custom_model_data": 107 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_flying" },
-    { "predicate": { "custom_model_data": 108 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_psychic" },
-    { "predicate": { "custom_model_data": 109 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_bug" },
-    { "predicate": { "custom_model_data": 110 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_poison" },
-    { "predicate": { "custom_model_data": 111 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_fighting" },
-    { "predicate": { "custom_model_data": 112 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_ghost" },
-    { "predicate": { "custom_model_data": 113 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_dragon" },
-    { "predicate": { "custom_model_data": 114 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_dark" },
-    { "predicate": { "custom_model_data": 115 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_steel" },
-    { "predicate": { "custom_model_data": 116 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_fairy" },
-    { "predicate": { "custom_model_data": 117 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_normal" },
-
-    { "predicate": { "custom_model_data": 200 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_legendary" },
-    { "predicate": { "custom_model_data": 201 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_mythical" },
-    { "predicate": { "custom_model_data": 202 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_ultrabeast" },
-    { "predicate": { "custom_model_data": 203 }, "model": "cobblemon_iv_candy:item/texture_model/candies/candy_paradox" }
+    {
+      "predicate": {
+        "custom_model_data": 1000
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fire_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1001
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fire_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1002
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fire_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1003
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fire_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1004
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fire_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1005
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fire_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1006
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fire_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1010
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/water_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1011
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/water_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1012
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/water_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1013
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/water_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1014
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/water_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1015
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/water_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1016
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/water_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1020
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/grass_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1021
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/grass_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1022
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/grass_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1023
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/grass_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1024
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/grass_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1025
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/grass_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1026
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/grass_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1030
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/electric_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1031
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/electric_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1032
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/electric_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1033
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/electric_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1034
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/electric_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1035
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/electric_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1036
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/electric_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1040
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ice_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1041
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ice_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1042
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ice_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1043
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ice_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1044
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ice_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1045
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ice_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1046
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ice_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1050
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/rock_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1051
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/rock_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1052
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/rock_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1053
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/rock_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1054
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/rock_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1055
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/rock_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1056
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/rock_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1060
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ground_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1061
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ground_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1062
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ground_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1063
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ground_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1064
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ground_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1065
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ground_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1066
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ground_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1070
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/flying_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1071
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/flying_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1072
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/flying_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1073
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/flying_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1074
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/flying_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1075
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/flying_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1076
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/flying_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1080
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/psychic_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1081
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/psychic_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1082
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/psychic_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1083
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/psychic_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1084
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/psychic_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1085
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/psychic_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1086
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/psychic_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1090
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/bug_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1091
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/bug_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1092
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/bug_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1093
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/bug_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1094
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/bug_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1095
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/bug_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1096
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/bug_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1100
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/poison_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1101
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/poison_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1102
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/poison_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1103
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/poison_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1104
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/poison_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1105
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/poison_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1106
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/poison_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1110
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fighting_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1111
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fighting_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1112
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fighting_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1113
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fighting_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1114
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fighting_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1115
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fighting_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1116
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fighting_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1120
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ghost_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1121
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ghost_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1122
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ghost_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1123
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ghost_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1124
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ghost_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1125
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ghost_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1126
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ghost_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1130
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dragon_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1131
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dragon_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1132
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dragon_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1133
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dragon_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1134
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dragon_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1135
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dragon_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1136
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dragon_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1140
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dark_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1141
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dark_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1142
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dark_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1143
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dark_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1144
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dark_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1145
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dark_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1146
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/dark_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1150
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/steel_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1151
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/steel_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1152
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/steel_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1153
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/steel_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1154
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/steel_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1155
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/steel_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1156
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/steel_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1160
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fairy_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1161
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fairy_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1162
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fairy_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1163
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fairy_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1164
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fairy_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1165
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fairy_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1166
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/fairy_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1170
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/normal_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1171
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/normal_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1172
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/normal_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1173
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/normal_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1174
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/normal_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1175
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/normal_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 1176
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/normal_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2000
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/legendary_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2001
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/legendary_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2002
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/legendary_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2003
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/legendary_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2004
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/legendary_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2005
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/legendary_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 2006
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/legendary_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3000
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/mythical_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3001
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/mythical_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3002
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/mythical_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3003
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/mythical_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3004
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/mythical_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3005
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/mythical_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 3006
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/mythical_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4000
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ultrabeast_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4001
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ultrabeast_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4002
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ultrabeast_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4003
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ultrabeast_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4004
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ultrabeast_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4005
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ultrabeast_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 4006
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/ultrabeast_speed"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 5000
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/paradox_random"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 5001
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/paradox_hp"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 5002
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/paradox_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 5003
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/paradox_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 5004
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/paradox_special_attack"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 5005
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/paradox_special_defense"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 5006
+      },
+      "model": "cobblemon_iv_candy:item/texture_model/candies/paradox_speed"
+    }
   ]
 }

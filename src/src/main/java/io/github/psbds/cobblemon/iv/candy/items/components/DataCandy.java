@@ -19,12 +19,9 @@ public record DataCandy(
 
         public static final String NAME = "candy_type";
 
-        public static DataCandy of(String shardType, int baseSpeciesPokedexNumber, int elementalType,
+        public static DataCandy of(String candyType, int baseSpeciesPokedexNumber, int elementalType,
                         String targetIVStat) {
-                if (targetIVStat == null || targetIVStat.isEmpty()) {
-                        targetIVStat = "RANDOM"; // Default to RANDOM if not provided
-                }
-                return new DataCandy(shardType, baseSpeciesPokedexNumber, elementalType, targetIVStat);
+                return new DataCandy(candyType, baseSpeciesPokedexNumber, elementalType, targetIVStat);
         }
 
         public static final DataComponentType<DataCandy> COMPONENT = DataComponentType.<DataCandy>builder()
