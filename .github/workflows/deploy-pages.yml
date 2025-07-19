@@ -32,12 +32,14 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3'
-          bundler-cache: true
-          cache-version: 0
+          bundler-cache: false
           working-directory: '${{ github.workspace }}/docs'
           
       - name: Add Linux platform to bundle
         run: bundle lock --add-platform x86_64-linux
+        
+      - name: Install dependencies
+        run: bundle install
         
       - name: Setup Pages
         id: pages
