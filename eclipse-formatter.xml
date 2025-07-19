@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profiles>
+    <profile kind="CodeFormatterProfile" name="CustomFormatter">
+        <setting id="org.eclipse.jdt.core.formatter.lineSplit" value="180"/>
+        <setting id="org.eclipse.jdt.core.formatter.comment.line_length" value="180"/>
+    </profile>
+</profiles>

@@ -15,17 +15,17 @@ public class CandyType {
     public static String getCandyType(ItemStack shard) {
         var shardData = shard.get(DataShard.COMPONENT);
         var shardType = shardData.shardType();
-        if (shardType.equals(ShardType.SPECIES)) {
+        if (shardType.equals(CandyType.SPECIES)) {
             return SPECIES;
-        } else if (shardType.equals(ShardType.ELEMENTAL_TYPE)) {
+        } else if (shardType.equals(CandyType.ELEMENTAL_TYPE)) {
             return ELEMENTAL_TYPE;
-        } else if (shardType.equals(ShardType.LEGENDARY)) {
+        } else if (shardType.equals(CandyType.LEGENDARY)) {
             return LEGENDARY;
-        } else if (shardType.equals(ShardType.MYTHICAL)) {
+        } else if (shardType.equals(CandyType.MYTHICAL)) {
             return MYTHICAL;
-        } else if (shardType.equals(ShardType.ULTRA_BEAST)) {
+        } else if (shardType.equals(CandyType.ULTRA_BEAST)) {
             return ULTRA_BEAST;
-        } else if (shardType.equals(ShardType.PARADOX)) {
+        } else if (shardType.equals(CandyType.PARADOX)) {
             return PARADOX;
         }
         return SPECIES;

@@ -36,4 +36,20 @@ public class CobblemonSpeciesHelper {
             throw e;
         }
     }
+
+    public static Boolean isLegendary(Species species) {
+        return species.getLabels().contains("legendary");
+    }
+
+    public static Boolean isMythical(Species species) {
+        return species.getLabels().contains("mythical");
+    }
+
+    public static Boolean isUltraBeast(Species species) {
+        return species.getLabels().contains("ultra_beast");
+    }
+
+    public static Boolean isParadox(Species species) {
+        return species.getLabels().contains("paradox");
+    }
 }

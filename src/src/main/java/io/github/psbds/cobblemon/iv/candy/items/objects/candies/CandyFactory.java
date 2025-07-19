@@ -9,7 +9,6 @@ import io.github.psbds.cobblemon.iv.candy.items.ModItems;
 import io.github.psbds.cobblemon.iv.candy.items.components.DataCandy;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.ElementalTypeMap;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.IVStatMap;
-import io.github.psbds.cobblemon.iv.candy.items.model.CustomModelDataMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
@@ -21,7 +20,7 @@ public class CandyFactory {
     /// Create species Sample Candy
     public static ItemStack createForSpeciesSample(Stats targetIVStat) {
         ItemStack itemStack = new ItemStack(ModItems.CANDY);
-        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : "Random IV";
+        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : Candy.IDENTIFIER_RANDOM_IV;
 
         var shardName = String.format("<Base Species> %s [%s]", BASE_CANDY_NAME, statName);
         var shardModelNumber = CandyModel.getElemental(
@@ -38,11 +37,10 @@ public class CandyFactory {
     public static ItemStack createForSpecies(Species pokemonSpecies, Stats targetIVStat) {
         ItemStack itemStack = new ItemStack(ModItems.CANDY);
 
-        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : "Random IV";
+        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : Candy.IDENTIFIER_RANDOM_IV;
 
         var shardName = String.format("%s %s [%s]", pokemonSpecies.getName(), BASE_CANDY_NAME, statName);
-        var shardModelNumber = CandyModel.getElemental(
-                ElementalTypeMap.getElementalTypeId(ElementalTypes.INSTANCE.getNORMAL()), targetIVStat);
+        var shardModelNumber = CandyModel.getElemental(ElementalTypeMap.getElementalTypeId(pokemonSpecies.getPrimaryType()), targetIVStat);
 
         itemStack.set(DataCandy.COMPONENT,
                 DataCandy.of(CandyType.SPECIES, pokemonSpecies.getNationalPokedexNumber(), -1, statName));
@@ -56,7 +54,7 @@ public class CandyFactory {
     public static ItemStack createLegendaryCandy(Stats targetIVStat) {
         ItemStack itemStack = new ItemStack(ModItems.CANDY);
 
-        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : "Random IV";
+        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : Candy.IDENTIFIER_RANDOM_IV;
         var shardName = String.format("Legendary %s [%s]", BASE_CANDY_NAME, statName);
         var shardModelNumber = CandyModel.getLegendary(targetIVStat);
 
@@ -71,7 +69,7 @@ public class CandyFactory {
     public static ItemStack createMythicalCandy(Stats targetIVStat) {
         ItemStack itemStack = new ItemStack(ModItems.CANDY);
 
-        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : "Random IV";
+        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : Candy.IDENTIFIER_RANDOM_IV;
         var shardName = String.format("Mythical %s [%s]", BASE_CANDY_NAME, statName);
         var shardModelNumber = CandyModel.getMythical(targetIVStat);
 
@@ -86,7 +84,7 @@ public class CandyFactory {
     public static ItemStack createUltraBeastCandy(Stats targetIVStat) {
         ItemStack itemStack = new ItemStack(ModItems.CANDY);
 
-        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : "Random IV";
+        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : Candy.IDENTIFIER_RANDOM_IV;
         var shardName = String.format("Ultra Beast %s [%s]", BASE_CANDY_NAME, statName);
         var shardModelNumber = CandyModel.getUltraBeast(targetIVStat);
 
@@ -101,7 +99,7 @@ public class CandyFactory {
     public static ItemStack createParadoxCandy(Stats targetIVStat) {
         ItemStack itemStack = new ItemStack(ModItems.CANDY);
 
-        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : "Random IV";
+        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : Candy.IDENTIFIER_RANDOM_IV;
         var shardName = String.format("Paradox %s [%s]", BASE_CANDY_NAME, statName);
         var shardModelNumber = CandyModel.getParadox(targetIVStat);
 
@@ -116,7 +114,7 @@ public class CandyFactory {
     public static ItemStack createForElement(ElementalType elementalType, Stats targetIVStat) {
         ItemStack itemStack = new ItemStack(ModItems.CANDY);
         var shardDataElementalType = ElementalTypeMap.getElementalTypeId(elementalType);
-        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : "Random IV";
+        var statName = targetIVStat != null ? IVStatMap.getIVStat(targetIVStat) : Candy.IDENTIFIER_RANDOM_IV;
         var shardName = String.format("%s %s [%s]", elementalType.getName(), BASE_CANDY_NAME, statName);
         var shardModelNumber = CandyModel.getElemental(shardDataElementalType, targetIVStat);
 

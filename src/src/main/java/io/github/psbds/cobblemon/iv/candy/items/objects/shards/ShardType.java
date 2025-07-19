@@ -23,4 +23,5 @@ public class ShardType {
         }
         return SPECIES;
     }
+
 }
