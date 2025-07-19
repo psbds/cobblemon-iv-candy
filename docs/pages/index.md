@@ -8,6 +8,8 @@ permalink: /
 
 # Cobblemon IV Candy Wiki
 
+![Cobblemon IV Candy Banner](assets/images/banner.png)
+
 Welcome to the comprehensive guide for the **Cobblemon IV Candy** mod for Minecraft! This mod extends the popular [Cobblemon](https://cobblemon.com/) mod by adding a sophisticated IV (Individual Values) enhancement system through craftable candies and shards.
 
 ## What is Cobblemon IV Candy?
@@ -132,7 +134,7 @@ Check  **[Crafting Recipes](https://psbds.github.io/cobblemon-iv-candy/recipes/)
   </div>
 </div>
 
-## Quick Facts
+## Dependencies
 
 | **Minecraft Version** | 1.21.1 |
 | **Mod Loader** | Fabric |
