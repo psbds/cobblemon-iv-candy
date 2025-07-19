@@ -1,0 +1,93 @@
+{
+  "branches": [
+    "main",
+    "master"
+  ],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "angular",
+        "releaseRules": [
+          {
+            "type": "docs",
+            "scope": "README",
+            "release": "patch"
+          },
+          {
+            "type": "refactor",
+            "release": "patch"
+          },
+          {
+            "type": "style",
+            "release": "patch"
+          }
+        ],
+        "parserOpts": {
+          "noteKeywords": [
+            "BREAKING CHANGE",
+            "BREAKING CHANGES"
+          ]
+        }
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "angular",
+        "parserOpts": {
+          "noteKeywords": [
+            "BREAKING CHANGE",
+            "BREAKING CHANGES"
+          ]
+        },
+        "writerOpts": {
+          "commitsSort": [
+            "subject",
+            "scope"
+          ]
+        }
+      }
+    ],
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "echo \"Updating version to ${nextRelease.version}\" && sed -i 's/version = System.getenv(\"RELEASE_VERSION\") ?: \".*\"/version = System.getenv(\"RELEASE_VERSION\") ?: \"${nextRelease.version}\"/' src/build.gradle.kts"
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "publishCmd": "cd src && ./gradlew build publishToSonatype closeAndReleaseSonatypeStagingRepository"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "src/build/libs/*-${nextRelease.version}.jar",
+            "label": "Mod JAR (${nextRelease.version})"
+          }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "src/build.gradle.kts",
+          "CHANGELOG.md",
+          "package.json"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}

@@ -1,6 +1,43 @@
 # Cobblemon IV Candy
 
-A Minecraft mod that extends the [Cobblemon](https://cobblemon.com/) mod by adding an Individual Values (IV) enhancement system through craftable candies and shards.
+A Minecraft mod that extends the [Cobblemon](https://cobblemon.com/) mod by adding an Individual Values (IV) enhance## 🤝 Contributing
+
+We welcome contributions! This project uses [semantic-release](https://github.com/semantic-release/semantic-release) for automated versioning and publishing.
+
+### Quick Start
+
+1. Read the [Development Guide](https://psbds.github.io/cobblemon-iv-candy/development/)
+2. Read [SEMANTIC_RELEASE.md](SEMANTIC_RELEASE.md) for commit message guidelines
+3. Fork the repository
+4. Create a feature branch
+5. Make your changes using conventional commit messages
+6. Test thoroughly
+7. Submit a pull request
+
+### Commit Message Format
+
+This project follows [Angular commit message guidelines](https://github.com/angular/angular/blob/main/contributing-docs/commit-message-guidelines.md):
+
+```bash
+feat: add new IV candy type
+fix: resolve crafting recipe conflict
+docs: update installation guide
+```
+
+See [SEMANTIC_RELEASE.md](SEMANTIC_RELEASE.md) for complete details.
+
+[![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🔗 Links
+
+- **[📚 Complete Wiki](https://psbds.github.io/cobblemon-iv-candy/)** - Full documentation
+- **[🐛 Report Issues](https://github.com/psbds/cobblemon-iv-candy/issues)** - Bug reports and feature requests
+- **[📋 Releases](https://github.com/psbds/cobblemon-iv-candy/releases)** - Automated releases with semantic versioning
+- **[🌐 Cobblemon Website](https://cobblemon.com/)** - Main Cobblemon modh craftable candies and shards.
 
 ## 📖 Documentation
 

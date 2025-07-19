@@ -1,0 +1,41 @@
+{
+  "name": "cobblemon-iv-candy",
+  "version": "0.0.0-development",
+  "description": "A Minecraft mod that extends the Cobblemon mod by adding an Individual Values (IV) enhancement system through craftable candies and shards.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "semantic-release": "semantic-release",
+    "prepare": "husky install",
+    "commitlint": "commitlint --edit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psbds/cobblemon-iv-candy.git"
+  },
+  "keywords": [
+    "minecraft",
+    "mod",
+    "cobblemon",
+    "pokemon",
+    "fabric"
+  ],
+  "author": "psbds",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/psbds/cobblemon-iv-candy/issues"
+  },
+  "homepage": "https://github.com/psbds/cobblemon-iv-candy#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.0",
+    "@semantic-release/release-notes-generator": "^14.0.1",
+    "husky": "^9.0.0",
+    "semantic-release": "^24.0.0"
+  }
+}
