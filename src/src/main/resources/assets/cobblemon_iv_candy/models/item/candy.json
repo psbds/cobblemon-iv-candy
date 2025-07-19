@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "cobblemon_iv_candy:item/candies/candy_normal_random"
+    "layer0": "cobblemon_iv_candy:item/texture_model/candies/normal_random"
   },
   "overrides": [
     {

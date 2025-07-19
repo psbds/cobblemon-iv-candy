@@ -41,28 +41,22 @@ The three shards must match exactly:
 ### Examples
 
 #### Species Candy Crafting
-```
-[Pikachu Shard] [Pikachu Shard] [Pikachu Shard]
-[    Empty    ] [    Empty    ] [    Empty    ]
-[    Empty    ] [    Empty    ] [    Empty    ]
-```
-**Result**: Pikachu IV Candy [Random IV]
+![Ultra Beast Random IV Candy Recipe](assets/images/recipes/recipe_random_candy_ultrabeast.png)
 
 #### Elemental Type Candy Crafting
-```
-[Fire Shard] [Fire Shard] [Fire Shard]
-[   Empty  ] [   Empty  ] [   Empty  ]
-[   Empty  ] [   Empty  ] [   Empty  ]
-```
-**Result**: Fire IV Candy [Random IV]
+![Ultra Beast Random IV Candy Recipe](assets/images/recipes/recipe_random_candy_ultrabeast.png)
 
-#### Legendary Candy Crafting
-```
-[Legendary Shard] [Legendary Shard] [Legendary Shard]
-[     Empty     ] [     Empty     ] [     Empty     ]
-[     Empty     ] [     Empty     ] [     Empty     ]
-```
-**Result**: Legendary IV Candy [Random IV]
+#### Legendary Random Candy Crafting
+![Ultra Beast Random IV Candy Recipe](assets/images/recipes/recipe_random_candy_ultrabeast.png)
+
+#### Mythical Random Candy Crafting
+![Ultra Beast Random IV Candy Recipe](assets/images/recipes/recipe_random_candy_ultrabeast.png)
+
+#### Ultra Beast Random Candy Crafting
+![Ultra Beast Random IV Candy Recipe](assets/images/recipes/recipe_random_candy_ultrabeast.png)
+
+#### Paradox Candy Crafting
+![Ultra Beast Random IV Candy Recipe](assets/images/recipes/recipe_random_candy_ultrabeast.png)
 
 ## Super Candy Recipe
 
@@ -86,19 +80,19 @@ These items determine which IV stat the resulting candy will enhance:
 
 | Item | Target IV Stat | Description |
 |------|----------------|-------------|
-| ![Apple](https://minecraft.wiki/images/thumb/5/59/Apple_JE3_BE3.png/32px-Apple_JE3_BE3.png) **Apple** | HP | Health Points |
-| ![Iron Sword](https://minecraft.wiki/images/thumb/8/8e/Iron_Sword_JE2_BE2.png/32px-Iron_Sword_JE2_BE2.png) **Iron Sword** | Attack | Physical Attack Power |
-| ![Iron Chestplate](https://minecraft.wiki/images/thumb/3/31/Iron_Chestplate_JE2_BE2.png/32px-Iron_Chestplate_JE2_BE2.png) **Iron Chestplate** | Defense | Physical Defense |
-| ![Book](https://minecraft.wiki/images/thumb/7/73/Book_JE2_BE2.png/32px-Book_JE2_BE2.png) **Book** | Special Attack | Special Attack Power |
-| ![Shield](https://minecraft.wiki/images/thumb/c/c6/Shield_JE2_BE1.png/32px-Shield_JE2_BE1.png) **Shield** | Special Defense | Special Defense |
-| ![Sugar](https://minecraft.wiki/images/thumb/9/94/Sugar_JE2_BE2.png/32px-Sugar_JE2_BE2.png) **Sugar** | Speed | Speed/Agility |
+| ![HP Stat Icon](assets/images/stats/stat_hp.png) **Red Apricorn** | HP | Health Points |
+| ![Attack Stat Icon](assets/images/stats/stat_attack.png) **Yellow Apricorn** | Attack | Physical Attack Power |
+| ![Defense Stat Icon](assets/images/stats/stat_defense.png) **Green Apricorn** | Defense | Physical Defense |
+| ![Special Attack Stat Icon](assets/images/stats/stat_special_attack.png) **Black Apricorn** | Special Attack | Special Attack Power |
+| ![Special Defense Stat Icon](assets/images/stats/stat_special_defense.png) **Blue Apricorn** | Special Defense | Special Defense |
+| ![Speed Stat Icon](assets/images/stats/stat_speed.png) **White Apricorn** | Speed | Speed/Agility |
 
 ### Examples
 
 #### HP Enhancement Candy
 ```
 [Pikachu Shard] [Pikachu Shard] [Pikachu Shard]
-[Pikachu Shard] [   Apple    ] [Pikachu Shard]
+[Pikachu Shard] [Red Apricorn] [Pikachu Shard]
 [Pikachu Shard] [Pikachu Shard] [Pikachu Shard]
 ```
 **Result**: Pikachu IV Candy [HP]
@@ -106,7 +100,7 @@ These items determine which IV stat the resulting candy will enhance:
 #### Attack Enhancement Candy
 ```
 [Fire Shard] [Fire Shard] [Fire Shard]
-[Fire Shard] [Iron Sword] [Fire Shard]
+[Fire Shard] [Yellow Apricorn] [Fire Shard]
 [Fire Shard] [Fire Shard] [Fire Shard]
 ```
 **Result**: Fire IV Candy [Attack]
@@ -114,7 +108,7 @@ These items determine which IV stat the resulting candy will enhance:
 #### Speed Enhancement Candy
 ```
 [Legendary Shard] [Legendary Shard] [Legendary Shard]
-[Legendary Shard] [    Sugar     ] [Legendary Shard]
+[Legendary Shard] [White Apricorn] [Legendary Shard]
 [Legendary Shard] [Legendary Shard] [Legendary Shard]
 ```
 **Result**: Legendary IV Candy [Speed]

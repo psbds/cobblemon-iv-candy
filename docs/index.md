@@ -19,27 +19,82 @@ The Cobblemon IV Candy mod introduces a new mechanic that allows players to impr
 3. **[Recipes](recipes.html)** - Discover how to craft IV candies
 4. **[Commands](commands.html)** - Useful in-game commands
 
-## Key Features
+## ✨ Features
 
-### 🔮 **IV Shards System**
-- Collect shards from defeated Pokémon
-- Different shard types: Species, Elemental, Legendary, Mythical, Ultra Beast, and Paradox
-- Each shard type has unique crafting requirements
+### 🔮 IV Shards System
+- Collect shards from defeated Pokémon, which you can use to make IV Candies
+   - ![Species IV Shard](assets/images/items/shards/shard_normal.png) 
+      **Species IV Shard**: Dropped by any non legendary, mythical, ultrabeast or paradox Pokémon
+   - **Elemental IV Shards**:
+      - ![Fire IV Shard](assets/images/items/shards/shard_fire.png) **Fire**: Dropped by Fire-type Pokémon
+      - ![Water IV Shard](assets/images/items/shards/shard_water.png) **Water**: Dropped by Water-type Pokémon
+      - ![Grass IV Shard](assets/images/items/shards/shard_grass.png) **Grass**: Dropped by Grass-type Pokémon
+      - ![Electric IV Shard](assets/images/items/shards/shard_electric.png) **Electric**: Dropped by Electric-type Pokémon
+      - ![Ice IV Shard](assets/images/items/shards/shard_ice.png) **Ice**: Dropped by Ice-type Pokémon
+      - ![Rock IV Shard](assets/images/items/shards/shard_rock.png) **Rock**: Dropped by Rock-type Pokémon
+      - ![Ground IV Shard](assets/images/items/shards/shard_ground.png) **Ground**: Dropped by Ground-type Pokémon
+      - ![Flying IV Shard](assets/images/items/shards/shard_flying.png) **Flying**: Dropped by Flying-type Pokémon
+      - ![Psychic IV Shard](assets/images/items/shards/shard_psychic.png) **Psychic**: Dropped by Psychic-type Pokémon
+      - ![Bug IV Shard](assets/images/items/shards/shard_bug.png) **Bug**: Dropped by Bug-type Pokémon
+      - ![Poison IV Shard](assets/images/items/shards/shard_poison.png) **Poison**: Dropped by Poison-type Pokémon
+      - ![Fighting IV Shard](assets/images/items/shards/shard_fighting.png) **Fighting**: Dropped by Fighting-type Pokémon
+      - ![Ghost IV Shard](assets/images/items/shards/shard_ghost.png) **Ghost**: Dropped by Ghost-type Pokémon
+      - ![Dragon IV Shard](assets/images/items/shards/shard_dragon.png) **Dragon**: Dropped by Dragon-type Pokémon
+      - ![Dark IV Shard](assets/images/items/shards/shard_dark.png) **Dark**: Dropped by Dark-type Pokémon
+      - ![Steel IV Shard](assets/images/items/shards/shard_steel.png) **Steel**: Dropped by Steel-type Pokémon
+      - ![Fairy IV Shard](assets/images/items/shards/shard_fairy.png) **Fairy**: Dropped by Fairy-type Pokémon
+      - ![Normal IV Shard](assets/images/items/shards/shard_normal.png) **Normal**: Dropped by Normal-type Pokémon
+   
+   - **Special IV Shards**:
+      - ![Legendary IV Shard](assets/images/items/shards/shard_legendary.png) **Legendary** - Dropped by Legendary Pokémon
+      - ![Mythical IV Shard](assets/images/items/shards/shard_mythical.png) **Mythical** - Dropped by Mythical Pokémon
+      - ![Ultra Beast IV Shard](assets/images/items/shards/shard_ultrabeast.png) **Ultra Beast** - Dropped by Ultra Beast Pokémon
+      - ![Paradox IV Shard](assets/images/items/shards/shard_paradox.png) **Paradox** - Dropped by Paradox Pokémon
 
-### 🍬 **IV Candy Crafting**
-- Craft targeted IV candies for specific stats (HP, Attack, Defense, etc.)
-- Create random IV candies for general stat improvements
-- Super candies for enhanced effects
 
-### ⚡ **Smart Stat Enhancement**
-- Candies intelligently target stats that aren't maxed out
-- Species-specific candies ensure compatibility
-- Random candies provide flexible stat improvements
+### 🍬 IV Candy System
+- Craft targeted IV candies for specific stats (HP, Attack, Defense, etc.) or Random IV candies for general improvements
 
-### 🎯 **Multiple Candy Types**
-- **Species Candies**: Work only on specific Pokémon species
-- **Elemental Candies**: Work on Pokémon of specific types
-- **Legendary/Mythical/Ultra Beast/Paradox Candies**: For special Pokémon categories
+   - ![Species IV Candy](assets/images/items/candies/candy_normal.png) 
+      **Species IV Candy**: Crafted by using ![Species IV Shard](assets/images/items/shards/shard_normal.png) Species IV Shards
+   - **Elemental IV Candys**:
+      - ![Fire IV Candy](assets/images/items/candies/candy_fire.png) **Fire**: Crafted using ![Fire IV Shard](assets/images/items/shards/shard_fire.png) Fire IV Shards
+      - ![Water IV Candy](assets/images/items/candies/candy_water.png) **Water**: Crafted using ![Water IV Shard](assets/images/items/shards/shard_water.png) Water IV Shards
+      - ![Grass IV Candy](assets/images/items/candies/candy_grass.png) **Grass**: Crafted using ![Grass IV Shard](assets/images/items/shards/shard_grass.png) Grass IV Shards
+      - ![Electric IV Candy](assets/images/items/candies/candy_electric.png) **Electric**: Crafted using ![Electric IV Shard](assets/images/items/shards/shard_electric.png) Electric IV Shards
+      - ![Ice IV Candy](assets/images/items/candies/candy_ice.png) **Ice**: Crafted using ![Ice IV Shard](assets/images/items/shards/shard_ice.png) Ice IV Shards
+      - ![Rock IV Candy](assets/images/items/candies/candy_rock.png) **Rock**: Crafted using ![Rock IV Shard](assets/images/items/shards/shard_rock.png) Rock IV Shards
+      - ![Ground IV Candy](assets/images/items/candies/candy_ground.png) **Ground**: Crafted using ![Ground IV Shard](assets/images/items/shards/shard_ground.png) Ground IV Shards
+      - ![Flying IV Candy](assets/images/items/candies/candy_flying.png) **Flying**: Crafted using ![Flying IV Shard](assets/images/items/shards/shard_flying.png) Flying IV Shards
+      - ![Psychic IV Candy](assets/images/items/candies/candy_psychic.png) **Psychic**: Crafted using ![Psychic IV Shard](assets/images/items/shards/shard_psychic.png) Psychic IV Shards
+      - ![Bug IV Candy](assets/images/items/candies/candy_bug.png) **Bug**: Crafted using ![Bug IV Shard](assets/images/items/shards/shard_bug.png) Bug IV Shards
+      - ![Poison IV Candy](assets/images/items/candies/candy_poison.png) **Poison**: Crafted using ![Poison IV Shard](assets/images/items/shards/shard_poison.png) Poison IV Shards
+      - ![Fighting IV Candy](assets/images/items/candies/candy_fighting.png) **Fighting**: Crafted using ![Fighting IV Shard](assets/images/items/shards/shard_fighting.png) Fighting IV Shards
+      - ![Ghost IV Candy](assets/images/items/candies/candy_ghost.png) **Ghost**: Crafted using ![Ghost IV Shard](assets/images/items/shards/shard_ghost.png) Ghost IV Shards
+      - ![Dragon IV Candy](assets/images/items/candies/candy_dragon.png) **Dragon**: Crafted using ![Dragon IV Shard](assets/images/items/shards/shard_dragon.png) Dragon IV Shards
+      - ![Dark IV Candy](assets/images/items/candies/candy_dark.png) **Dark**: Crafted using ![Dark IV Shard](assets/images/items/shards/shard_dark.png) Dark IV Shards
+      - ![Steel IV Candy](assets/images/items/candies/candy_steel.png) **Steel**: Crafted using ![Steel IV Shard](assets/images/items/shards/shard_steel.png) Steel IV Shards
+      - ![Fairy IV Candy](assets/images/items/candies/candy_fairy.png) **Fairy**: Crafted using ![Fairy IV Shard](assets/images/items/shards/shard_fairy.png) Fairy IV Shards
+      - ![Normal IV Candy](assets/images/items/candies/candy_normal.png) **Normal**: Crafted using ![Normal IV Shard](assets/images/items/shards/shard_normal.png) Normal IV Shards
+   
+   - **Special IV Candys**:
+      - ![Legendary IV Candy](assets/images/items/candies/candy_legendary.png) **Legendary** - Crafted using ![Legendary IV Shard](assets/images/items/shards/shard_legendary.png) Legendary IV Shards
+      - ![Mythical IV Candy](assets/images/items/candies/candy_mythical.png) **Mythical** - Crafted using ![Mythical IV Shard](assets/images/items/shards/shard_mythical.png) Mythical IV Shards
+      - ![Ultra Beast IV Candy](assets/images/items/candies/candy_ultrabeast.png) **Ultra Beast** - Crafted using ![Ultra Beast IV Shard](assets/images/items/shards/shard_ultrabeast.png) Ultra Beast IV Shards
+      - ![Paradox IV Candy](assets/images/items/candies/candy_paradox.png) **Paradox** - Crafted using ![Paradox IV Shard](assets/images/items/shards/shard_paradox.png) Paradox IV Shards
+
+### ⚡ Smart Stat Enhancement
+- When crafting your IV Candies, you can choose between spending less shards to get a random IV or use more to set the IV of your choice
+
+#### Random IV Crafting
+   ![Ultra Beast Random IV Candy Recipe](assets/images/recipes/recipe_random_candy_ultrabeast.png)
+
+#### Target IV Crafting
+   ![Ultra Beast Attack IV Candy Recipe](assets/images/recipes/recipe_atk_candy_ultrabeast.png)
+
+   ![Ultra Beast HP IV Candy Recipe](assets/images/recipes/recipe_hp_candy_ultrabeast.png)
+
+Check  **[Crafting Recipes](https://psbds.github.io/cobblemon-iv-candy/recipes/)** for all crafting patterns
 
 ## Navigation
 
@@ -86,7 +141,6 @@ The Cobblemon IV Candy mod introduces a new mechanic that allows players to impr
 ## Getting Help
 
 - **Issues**: Report bugs on our [GitHub Issues](https://github.com/psbds/cobblemon-iv-candy/issues) page
-- **Discussions**: Join discussions on [Cobblemon Discord](https://discord.gg/cobblemon)
 - **Wiki**: Browse this comprehensive wiki for detailed information
 
 ## Recent Updates
