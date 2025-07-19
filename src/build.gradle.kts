@@ -52,6 +52,9 @@ dependencies {
     modImplementation("net.fabricmc:fabric-language-kotlin:1.12.3+kotlin.2.0.21")
     modImplementation("com.cobblemon:fabric:1.6.0+1.21.1-SNAPSHOT")
 
+    // JSON configuration support
+    implementation("com.google.code.gson:gson:2.10.1")
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
     val mc_version = "1.21.1"

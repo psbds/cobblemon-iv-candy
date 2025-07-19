@@ -1,6 +1,8 @@
 package io.github.psbds.cobblemon.iv.candy.services;
 
 public record LootTable(
-        Double speciesShardChance,
-        Double elementalShardChance) {
+                Double speciesShardChance,
+                Double speciesShardAmount,
+                Double elementalShardChance,
+                Double elementalShardAmount) {
 }

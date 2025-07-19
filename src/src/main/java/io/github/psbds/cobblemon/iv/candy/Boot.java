@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import io.github.psbds.cobblemon.iv.candy.commands.CandyCommand;
+import io.github.psbds.cobblemon.iv.candy.commands.ConfigCommand;
+import io.github.psbds.cobblemon.iv.candy.config.ConfigManager;
 import io.github.psbds.cobblemon.iv.candy.items.ModItems;
 import io.github.psbds.cobblemon.iv.candy.items.ModCreativeTabs;
 import io.github.psbds.cobblemon.iv.candy.items.components.BootComponents;
@@ -23,6 +25,10 @@ public class Boot implements ModInitializer {
     public void onInitialize() {
         Boot.LOGGER.info("Booting Cobblemon IV Candy Mod");
         try {
+            // Load configuration first
+            ConfigManager.getConfig();
+            Boot.LOGGER.info("Configuration loaded successfully");
+
             ServerLifecycleEvents.SERVER_STARTING.register(minecraftServer -> {
                 Boot.MinecraftServer = minecraftServer;
             });
@@ -31,6 +37,7 @@ public class Boot implements ModInitializer {
             ModCreativeTabs.registerCreativeTabs();
             ModRecipes.registerRecipes();
             CandyCommand.initialize();
+            ConfigCommand.initialize();
             OnPokemonFainted.initialize();
         } catch (Exception e) {
             Boot.LOGGER.error("Error initializing Cobblemon IV Candy Mod", e);

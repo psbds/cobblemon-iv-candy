@@ -1,5 +1,8 @@
 package io.github.psbds.cobblemon.iv.candy.items.objects.candies;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.pokemon.Pokemon;
@@ -22,6 +25,7 @@ import net.minecraft.world.item.ItemStack;
 
 public class Candy extends BaseCandy {
 
+    public static final Logger LOGGER = LoggerFactory.getLogger(Candy.class);
     public static final String NAME = "candy";
     public static final String IDENTIFIER_RANDOM_IV = "Random IV";
 
@@ -61,7 +65,7 @@ public class Candy extends BaseCandy {
 
     public static void Print(ItemStack stack, Player player) {
         for (var comp : stack.getComponents()) {
-            player.sendSystemMessage(Component.literal(String.format("%s = %s", comp.type(), comp.value())));
+            LOGGER.debug(String.format("%s = %s", comp.type(), comp.value()));
         }
     }
 }
