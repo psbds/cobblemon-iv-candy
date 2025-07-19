@@ -1,3 +1,17 @@
+# 1.0.0 (2025-07-19)
+
+
+### Features
+
+* mod development ([897a6bd](https://github.com/psbds/cobblemon-iv-candy/commit/897a6bd1d73512ee58375fddaee7e8154720d5a2))
+* mod development ([67aa2b1](https://github.com/psbds/cobblemon-iv-candy/commit/67aa2b181a757a57058c1a4b7e9183c44ed72294))
+* mod development ([6de334e](https://github.com/psbds/cobblemon-iv-candy/commit/6de334e1419e7fc535552392c66078cd7f3e5d37))
+* mod development ([697ccfd](https://github.com/psbds/cobblemon-iv-candy/commit/697ccfd7921dddff78f743bc7eab5f16f1d7c440))
+* mod development ([736ceb0](https://github.com/psbds/cobblemon-iv-candy/commit/736ceb09b588484ab3acaf06503835f77746f639))
+* mod development ([2378d8c](https://github.com/psbds/cobblemon-iv-candy/commit/2378d8c3380d3172ffc18cc25f01e8bf857b3d38))
+* mod development ([b7d239d](https://github.com/psbds/cobblemon-iv-candy/commit/b7d239dc8cf3441fa08e00f115df5c14c54758e6))
+* mod development ([5f7fcb1](https://github.com/psbds/cobblemon-iv-candy/commit/5f7fcb1e30b53e36ddeff531c35d8e8e69087456))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
