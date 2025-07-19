@@ -2,6 +2,7 @@ package io.github.psbds.cobblemon.iv.candy.compat.jei.items.candy;
 
 import io.github.psbds.cobblemon.iv.candy.Boot;
 import io.github.psbds.cobblemon.iv.candy.items.ModItems;
+import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyFactory;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
@@ -27,7 +28,7 @@ public class JEICandyRecipeCategory implements IRecipeCategory<JEICandyRecipe> {
                 ResourceLocation.fromNamespaceAndPath("minecraft", "textures/gui/container/crafting_table.png"),
                 29, 16, 108, 18);
 
-        this.icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModItems.CANDY));
+        this.icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, CandyFactory.createForSpeciesSample(null));
         this.title = Component.translatable("jei.cobblemon_iv_candy.candy_recipe");
     }
 
