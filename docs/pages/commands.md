@@ -18,7 +18,7 @@ Administrative commands for giving IV candies and shards to players.
 
 #### Candy Commands
 
-Give IV candies with specific stat targeting to players.
+Give IV candies with specific or random stat targeting to players.
 
 ##### Syntax
 ```
