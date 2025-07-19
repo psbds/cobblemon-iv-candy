@@ -4,19 +4,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
-import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
-import com.cobblemon.mod.common.pokemon.Pokemon;
 
-import io.github.psbds.cobblemon.iv.candy.Boot;
 import io.github.psbds.cobblemon.iv.candy.helpers.CobblemonSpeciesHelper;
 import io.github.psbds.cobblemon.iv.candy.items.ModItems;
 import io.github.psbds.cobblemon.iv.candy.items.components.DataShard;
-import io.github.psbds.cobblemon.iv.candy.items.components.DataCandy;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.ElementalTypeMap;
 import io.github.psbds.cobblemon.iv.candy.items.objects.BaseCandy;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.actions.CandyInteractLivingEntity;
 import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardType;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;

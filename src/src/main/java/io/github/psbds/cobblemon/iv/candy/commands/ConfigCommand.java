@@ -2,9 +2,10 @@ package io.github.psbds.cobblemon.iv.candy.commands;
 
 import static net.minecraft.commands.Commands.literal;
 
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+
 import io.github.psbds.cobblemon.iv.candy.config.ConfigManager;
 import io.github.psbds.cobblemon.iv.candy.config.ModConfig;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.network.chat.Component;
 import net.minecraft.ChatFormatting;
@@ -14,16 +15,12 @@ import net.minecraft.ChatFormatting;
  */
 public class ConfigCommand {
 
-    public static void initialize() {
-        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-            dispatcher.register(literal("ivcandy")
-                    .then(literal("config")
-                            .requires(source -> source.hasPermission(2)) // Requires operator level
-                            .then(literal("reload")
-                                    .executes(context -> reloadConfig(context.getSource())))
-                            .then(literal("info")
-                                    .executes(context -> showConfigInfo(context.getSource())))));
-        });
+    public static LiteralArgumentBuilder<CommandSourceStack> initialize() {
+        return literal("config")
+                .then(literal("reload")
+                        .executes(context -> reloadConfig(context.getSource())))
+                .then(literal("info")
+                        .executes(context -> showConfigInfo(context.getSource())));
     }
 
     /**

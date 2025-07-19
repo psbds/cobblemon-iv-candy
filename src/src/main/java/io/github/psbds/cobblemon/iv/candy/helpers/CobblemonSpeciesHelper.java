@@ -37,6 +37,20 @@ public class CobblemonSpeciesHelper {
         }
     }
 
+    public static Species getSpeciesByName(String pokemonName) {
+        try {
+            for (Species species : PokemonSpecies.INSTANCE.getSpecies()) {
+                if (species.getName().equalsIgnoreCase(pokemonName)) {
+                    return species;
+                }
+            }
+            return null;
+        } catch (Exception e) {
+            Boot.LOGGER.error("Error getting species by name {}: {}", pokemonName, e.getMessage());
+            throw e;
+        }
+    }
+
     public static Boolean isLegendary(Species species) {
         return species.getLabels().contains("legendary");
     }
