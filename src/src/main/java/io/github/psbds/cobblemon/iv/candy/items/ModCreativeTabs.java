@@ -2,17 +2,17 @@ package io.github.psbds.cobblemon.iv.candy.items;
 
 import io.github.psbds.cobblemon.iv.candy.Boot;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyCatalog;
+import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyFactory;
 import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardCatalog;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 
 public class ModCreativeTabs {
 
     public static final CreativeModeTab COBBLEMON_IV_CANDY_TAB = CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
             .title(Component.translatable("itemGroup.cobblemon_iv_candy"))
-            .icon(() -> new ItemStack(ModItems.CANDY))
+            .icon(() -> CandyFactory.createForSpeciesSample(null))
             .displayItems((context, entries) -> {
                 for (var shard : ShardCatalog.getCatalogShards()) {
                     entries.accept(shard);
