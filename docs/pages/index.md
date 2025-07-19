@@ -1,6 +1,8 @@
 ---
-layout: default
-title: "Cobblemon IV Candy Wiki"
+layout: home
+title: Home
+nav_order: 1
+description: "A comprehensive guide to the Cobblemon IV Candy mod for Minecraft"
 permalink: /
 ---
 

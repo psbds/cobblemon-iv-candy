@@ -1,8 +1,9 @@
 ---
-layout: page
-title: "Items Reference"
+layout: default
+title: Items Reference
+nav_order: 3
+description: "Learn about IV shards and candies"
 permalink: /items/
-nav_order: 2
 ---
 
 # Items Reference

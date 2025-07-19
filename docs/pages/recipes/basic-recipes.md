@@ -1,0 +1,135 @@
+---
+layout: default
+title: Basic Candy Recipes
+parent: Recipes
+nav_order: 1
+description: "Learn how to craft Basic IV candies for random stat enhancement"
+permalink: /basic-recipes/
+---
+
+# Basic Candy Recipes
+
+Basic IV Candies provide random enhancement to your Pokémon's IV stats. These candies are easier to craft and perfect for general stat improvement.
+
+## Recipe Overview
+
+| Recipe Type | Grid Size | Result | Purpose |
+|-------------|-----------|--------|---------|
+| Basic Candy | 3x3 | Random IV Candy | Enhances a random non-maxed IV stat |
+
+## Basic Candy Recipe
+
+Creates an IV Candy that randomly enhances one of the Pokémon's non-maxed IV stats.
+
+### Pattern
+```
+[S] [S] [S]
+[ ] [ ] [ ]
+[ ] [ ] [ ]
+```
+
+### Requirements
+- **3 Identical IV Shards**: Must be the same type and species/elemental type
+- **Positions**: Top row (slots 0, 1, 2) of a 3x3 crafting grid
+- **Empty Slots**: All other positions must be empty
+
+### Shard Compatibility
+The three shards must match exactly:
+- **Species Shards**: Same Pokémon species
+- **Elemental Shards**: Same elemental type
+- **Category Shards**: Same category (Legendary, Mythical, etc.)
+
+### Examples
+
+#### Species Candy Crafting
+![Ultra Beast Random IV Candy Recipe](../assets/images/recipes/recipe_random_candy_ultrabeast.png)
+
+#### Elemental Type Candy Crafting
+![Ultra Beast Random IV Candy Recipe](../assets/images/recipes/recipe_random_candy_ultrabeast.png)
+
+#### Legendary Random Candy Crafting
+![Ultra Beast Random IV Candy Recipe](../assets/images/recipes/recipe_random_candy_ultrabeast.png)
+
+#### Mythical Random Candy Crafting
+![Ultra Beast Random IV Candy Recipe](../assets/images/recipes/recipe_random_candy_ultrabeast.png)
+
+#### Ultra Beast Random Candy Crafting
+![Ultra Beast Random IV Candy Recipe](../assets/images/recipes/recipe_random_candy_ultrabeast.png)
+
+#### Paradox Candy Crafting
+![Ultra Beast Random IV Candy Recipe](../assets/images/recipes/recipe_random_candy_ultrabeast.png)
+
+## Recipe Mechanics
+
+### Validation Rules
+
+#### Basic Candy Recipe Validation
+1. **Exact Pattern**: Only the first three slots (top row) should contain shards
+2. **Shard Matching**: All three shards must be identical
+3. **Empty Slots**: Remaining slots must be completely empty
+4. **Valid Shards**: Only mod-specific IV Shards are accepted
+
+### Crafting Behavior
+
+#### Result Generation
+- **Shard Data Transfer**: The resulting candy inherits data from the input shards
+- **Random Enhancement**: Candy will enhance a random non-maxed IV stat
+- **Naming**: Candy names reflect their source
+- **Model Data**: Visual appearance matches the shard type
+
+#### Error Handling
+- **Invalid Patterns**: Recipes fail silently if pattern requirements aren't met
+- **Mixed Shards**: Different shard types cannot be mixed in the same recipe
+
+## Crafting Tips
+
+### Shard Collection Strategy
+1. **Focus on Common Species**: Collect shards from frequently encountered Pokémon
+2. **Type Diversity**: Gather elemental shards for versatility
+3. **Rare Categories**: Save Legendary/Mythical shards for important Pokémon
+
+### Recipe Planning
+1. **General Improvement**: Use basic candies for overall stat enhancement
+2. **Candy Type Selection**: Choose between species-specific and type-specific candies
+3. **Resource Efficiency**: Basic candies require fewer resources than super candies
+
+### Bulk Crafting
+1. **Shard Organization**: Sort shards by type before crafting sessions
+2. **Crafting Table Setup**: Use a dedicated crafting area for efficiency
+3. **Batch Processing**: Craft multiple candies at once for efficiency
+
+## Integration
+
+### Crafting Book
+- **Category**: Recipes appear in the "Miscellaneous" category
+- **Discovery**: Recipes are automatically unlocked when you obtain the required items
+- **Preview**: Recipe book shows the general pattern and requirements
+
+### Mod Compatibility
+- **JEI/REI Support**: Recipes are compatible with recipe viewing mods
+- **Custom Recipe Type**: Uses mod-specific recipe serializers
+- **Server Sync**: Recipes work correctly in multiplayer environments
+
+## Troubleshooting
+
+### Common Crafting Issues
+
+**"Recipe not working"**
+- Verify shard types match exactly
+- Check that pattern is correct
+- Ensure no extra items are in the grid
+
+**"No result in crafting grid"**
+- Make sure you're using IV Shards from this mod
+- Check that shards aren't damaged or modified
+- Verify all required positions are filled correctly
+
+### Debug Information
+Use the debug interaction (right-click with items) to verify:
+- Shard data components are correct
+- Items have proper mod identifiers
+- Data values match expected patterns
+
+---
+
+**Next**: Learn about [Super Candy Recipes](super-recipes.md) for targeted stat enhancement.

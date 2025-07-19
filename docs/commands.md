@@ -1,8 +1,9 @@
 ---
-layout: page
-title: "Commands Reference"
+layout: default
+title: Commands Reference
+nav_order: 5
+description: "Administrative commands for the mod"
 permalink: /commands/
-nav_order: 4
 ---
 
 # Commands Reference

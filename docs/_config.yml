@@ -4,24 +4,14 @@ description: "A comprehensive guide to the Cobblemon IV Candy mod for Minecraft"
 baseurl: "/cobblemon-iv-candy"
 url: "https://psbds.github.io"
 
-# Use the Minimal theme for GitHub Pages
-theme: minima
-
-# Header pages
-header_pages:
-  - index.md
-  - installation.md
-  - items.md
-  - recipes.md
-  - commands.md
-  - compatibility.md
-  - development.md
+# Use the Just the Docs theme
+theme: just-the-docs
 
 # Enable plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-seo-tag
+  # jekyll-seo-tag is automatically included by just-the-docs theme
 
 # Markdown settings
 markdown: kramdown
@@ -67,6 +57,19 @@ social:
 # GitHub repository info
 repository: "psbds/cobblemon-iv-candy"
 
-# Navigation structure
-nav_exclude_titles:
-  - "Navigation"
+# Just the Docs navigation configuration
+nav_external_links:
+  - title: GitHub Repository
+    url: https://github.com/psbds/cobblemon-iv-candy
+
+# Enable search
+search_enabled: true
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Footer content
+footer_content: "Copyright &copy; 2025 psbds. Distributed under the <a href=\"https://github.com/psbds/cobblemon-iv-candy/blob/master/LICENSE\">MIT License</a>."
+
+# Navigation structure - remove nav_exclude_titles as it's not used in just-the-docs

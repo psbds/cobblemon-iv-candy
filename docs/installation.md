@@ -1,8 +1,9 @@
 ---
-layout: page
-title: "Installation Guide"
+layout: default
+title: Installation Guide
+nav_order: 2
+description: "Learn how to install the Cobblemon IV Candy mod"
 permalink: /installation/
-nav_order: 1
 ---
 
 # Installation Guide

@@ -1,8 +1,9 @@
 ---
-layout: page
-title: "Compatibility"
+layout: default
+title: Compatibility
+nav_order: 6
+description: "Compatibility information and supported versions"
 permalink: /compatibility/
-nav_order: 5
 ---
 
 # Compatibility Information
