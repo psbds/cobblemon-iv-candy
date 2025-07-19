@@ -52,23 +52,23 @@ public class Candy extends BaseCandy {
         // Type = Species
         if (candyDataType.equals(ShardType.SPECIES)) {
             var species = CobblemonSpeciesHelper.getSpeciesByPokedexNumber(candyDataPokedexNumber);
-            candyName = String.format("%s %s", species.getName(), candyName, targetIVStat);
+            candyName = String.format("%s %s", species.getName(), candyName);
         }
         // Type = Elemental Type
         if (candyDataType.equals(ShardType.ELEMENTAL_TYPE)) {
             var elementalType = ElementalTypeMap.getElementalTypeId(candyDataElementalType);
-            candyName = String.format("%s [%s]", elementalType, candyName);
+            candyName = String.format("%s %s", elementalType, candyName);
         }
 
         // Type = Legendary, Mythical, Ultra Beast, Paradox
         if (candyDataType.equals(ShardType.LEGENDARY)) {
-            candyName = String.format("%s Legendary", candyName, targetIVStat);
+            candyName = String.format("Legendary %s ", candyName);
         } else if (candyDataType.equals(ShardType.MYTHICAL)) {
-            candyName = String.format("%s Mythical", candyName, targetIVStat);
+            candyName = String.format("Mythical %s", candyName);
         } else if (candyDataType.equals(ShardType.ULTRA_BEAST)) {
-            candyName = String.format("%s Ultra Beast", candyName, targetIVStat);
+            candyName = String.format("Ultra Beast %s", candyName);
         } else if (candyDataType.equals(ShardType.PARADOX)) {
-            candyName = String.format("%s Paradox", candyName, targetIVStat);
+            candyName = String.format("Paradox %s", candyName);
         }
 
         // TargetIV

@@ -1,22 +1,27 @@
 {
   "schemaVersion": 1,
-  "id": "cobblemon_fabric_mdk",
+  "id": "cobblemon_iv_candy",
   "version": "${version}",
-  "name": "Cobblemon Fabric MDK",
-  "description": "A MDK useful for Fabric Development",
+  "name": "Cobblemon IV Candy",
+  "description": "A mod that adds IV candies for Cobblemon",
   "authors": [
-    "The Cobblemon Team"
+    "psbds"
   ],
   "license": "MIT License",
-  "icon": "assets/example/icon.png",
+  "icon": "assets/cobblemon_iv_candy/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
       "io.github.psbds.cobblemon.iv.candy.Boot"
+    ],
+    "jei_mod_plugin": [
+      "io.github.psbds.cobblemon.iv.candy.compat.jei.JEIPlugin"
     ]
   },
   "depends": {
     "minecraft": "1.21.1",
-    "cobblemon": ">=1.6.0"
+    "cobblemon": ">=1.6.0",
+    "fabric-api": ">=0.104.0",
+    "jei": ">=19.22.0"
   }
 }

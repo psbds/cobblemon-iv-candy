@@ -62,13 +62,13 @@ public class Shard extends BaseShard {
             var baseSpecies = CobblemonSpeciesHelper.getFirstEvolution(pokemonSpecies);
             shardName = String.format("%s %s", baseSpecies.getName(), shardName);
             shardDataPokedexNumber = baseSpecies.getNationalPokedexNumber();
-            shardModelNumber = CustomModelDataMap.getElementalTypeCustoModelData(ElementalTypeMap.getElementalTypeId(baseSpecies.getPrimaryType()));
+            shardModelNumber = CustomModelDataMap.getElementalTypeCustomModelData(ElementalTypeMap.getElementalTypeId(baseSpecies.getPrimaryType()));
         }
 
         if (shardType.equals(ShardType.ELEMENTAL_TYPE)) {
             shardDataElementalType = ElementalTypeMap.getElementalTypeId(elementalTypeOverride);
             shardName = String.format("%s [%s]", shardName, elementalTypeOverride.getName());
-            shardModelNumber = CustomModelDataMap.getElementalTypeCustoModelData(ElementalTypeMap.getElementalTypeId(elementalTypeOverride));
+            shardModelNumber = CustomModelDataMap.getElementalTypeCustomModelData(ElementalTypeMap.getElementalTypeId(elementalTypeOverride));
         }
 
         if (shardType.equals(ShardType.LEGENDARY)) {

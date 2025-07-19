@@ -1,8 +1,15 @@
 package io.github.psbds.cobblemon.iv.candy.items.mappers;
 
+import com.cobblemon.mod.common.api.types.ElementalType;
+
 public class CustomModelDataMap {
 
-    public static int getElementalTypeCustoModelData(int elementalTypeId) {
+    public static int getElementalTypeCustomModelData(int elementalTypeId) {
+        return 100 + elementalTypeId; // Custom model data starts at 100
+    }
+
+    public static int getElementalTypeCustomModelData(ElementalType elementalType) {
+        int elementalTypeId = ElementalTypeMap.getElementalTypeId(elementalType);
         return 100 + elementalTypeId; // Custom model data starts at 100
     }
 

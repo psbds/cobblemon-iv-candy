@@ -1,4 +1,13 @@
 {
   "item.cobblemon_iv_candy.iv_candy": "IV Candy",
-  "item.cobblemon_iv_candy.iv_candy_species_random": "IV Candy (Random Species)"
+  "item.cobblemon_iv_candy.iv_candy_species_random": "IV Candy (Random Species)",
+  "item.cobblemon_iv_candy.candy": "IV Candy",
+  "item.cobblemon_iv_candy.shard": "IV Shard",
+  "itemGroup.cobblemon_iv_candy": "Cobblemon IV Candy",
+  "jei.cobblemon_iv_candy.candy_recipe": "Random IV Candy Recipe",
+  "jei.cobblemon_iv_candy.super_candy_recipe": "Targeted IV Candy Recipe",
+  "jei.cobblemon_iv_candy.candy_recipe.description": "Combine 3 identical IV Shards to create a random IV Candy",
+  "jei.cobblemon_iv_candy.super_candy_recipe.description": "Surround a stat item with 8 identical IV Shards to create a targeted IV Candy",
+  "jei.cobblemon_iv_candy.shard.description": "Raw material obtained from defeated Pokémon. Used to craft IV Candies. Can be species-specific, elemental type-based, or from special categories like Legendary, Mythical, Ultra Beast, or Paradox Pokémon.",
+  "jei.cobblemon_iv_candy.candy.description": "Consumable item that increases a Pokémon's Individual Values (IVs). Can target specific stats or provide random improvements. Use on Pokémon to enhance their stats permanently."
 }

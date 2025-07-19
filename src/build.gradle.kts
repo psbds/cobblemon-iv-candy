@@ -26,6 +26,18 @@ repositories {
     maven(url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
     maven("https://maven.impactdev.net/repository/development/")
     maven("https://oss.sonatype.org/content/repositories/snapshots")
+    maven {
+        name = "Progwml6's maven"
+        url = uri("https://dvs1.progwml6.com/files/maven/")
+    }
+    maven {
+        name = "Jared's maven"
+        url = uri("https://maven.blamejared.com/")
+    }
+    maven {
+        name = "ModMaven"
+        url = uri("https://modmaven.dev")
+    }
 }
 
 dependencies {
@@ -42,6 +54,12 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
+    val mc_version = "1.21.1"
+    val jei_version = "19.22.0.315"
+
+    modCompileOnlyApi("mezz.jei:jei-$mc_version-fabric-api:$jei_version")
+    // at runtime, use the full JEI jar for Fabric
+    modRuntimeOnly("mezz.jei:jei-$mc_version-fabric:$jei_version")
 }
 
 tasks.getByName<Test>("test") {

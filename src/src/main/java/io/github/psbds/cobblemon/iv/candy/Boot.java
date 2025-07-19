@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import io.github.psbds.cobblemon.iv.candy.commands.CandyCommand;
 import io.github.psbds.cobblemon.iv.candy.items.ModItems;
+import io.github.psbds.cobblemon.iv.candy.items.ModCreativeTabs;
 import io.github.psbds.cobblemon.iv.candy.items.components.BootComponents;
 import io.github.psbds.cobblemon.iv.candy.listeners.OnPokemonFainted;
 import io.github.psbds.cobblemon.iv.candy.recipes.ModRecipes;
@@ -27,6 +28,7 @@ public class Boot implements ModInitializer {
             });
             BootComponents.initialize();
             ModItems.initialize();
+            ModCreativeTabs.registerCreativeTabs();
             ModRecipes.registerRecipes();
             CandyCommand.initialize();
             OnPokemonFainted.initialize();
