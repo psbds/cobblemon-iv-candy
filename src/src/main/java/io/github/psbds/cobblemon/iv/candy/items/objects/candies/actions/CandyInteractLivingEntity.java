@@ -7,7 +7,6 @@ import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cobblemon.mod.common.api.pokemon.stats.Stat;
 import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.pokemon.Pokemon;
@@ -63,8 +62,6 @@ public class CandyInteractLivingEntity {
             return InteractionResult.FAIL;
         }
 
-        Boot.LOGGER.info("Candy used on Pokémon: 5");
-
         if (dataCandy.targetIVStat() == Candy.IDENTIFIER_RANDOM_IV
                 && !handleRandomIV(pokemonEntity.getPokemon(), dataCandy, player)) {
             return InteractionResult.FAIL;
@@ -76,8 +73,7 @@ public class CandyInteractLivingEntity {
         if (!player.getAbilities().instabuild) {
             stack.shrink(1);
         }
-        player.sendSystemMessage(Component.literal("You used " + stack.getDisplayName().getString() + " on "
-                + pokemonEntity.getPokemon().getSpecies().getName() + "."));
+
         return InteractionResult.SUCCESS;
 
     }
@@ -187,6 +183,8 @@ public class CandyInteractLivingEntity {
         }
         pokemon.getIvs().set(targetIvStat, pokemon.getIvs().get(targetIvStat) + 1);
 
+        player.sendSystemMessage(Component.literal("Increased " + IVStatMap.getIVStat(targetIvStat) + " on "
+                + pokemon.getSpecies().getName() + "."));
         return true;
     }
 }
