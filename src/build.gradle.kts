@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "io.github.psbds.cobblemon.iv.candy"
-version = System.getenv("RELEASE_VERSION") ?: "1.1.0"
+version = System.getenv("RELEASE_VERSION") ?: "1.2.0"
 
 architectury {
     platformSetupLoomIde()

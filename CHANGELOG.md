@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/psbds/cobblemon-iv-candy/compare/v1.1.0...v1.2.0) (2025-07-19)
+
+
+### Bug Fixes
+
+* fix pages CI ([67b3642](https://github.com/psbds/cobblemon-iv-candy/commit/67b36425b24cea933a347528f3e34286610176bf))
+
+
+### Features
+
+* change candy give confirmation message ([62f5dc1](https://github.com/psbds/cobblemon-iv-candy/commit/62f5dc1b8d321458033a1b3f85b8bdebfef00205))
+
 # [1.1.0](https://github.com/psbds/cobblemon-iv-candy/compare/v1.0.0...v1.1.0) (2025-07-19)
 
 
