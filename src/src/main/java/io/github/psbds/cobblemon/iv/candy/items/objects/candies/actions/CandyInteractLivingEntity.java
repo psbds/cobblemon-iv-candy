@@ -33,27 +33,22 @@ public class CandyInteractLivingEntity {
     public static InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity,
             InteractionHand hand) {
 
-        Boot.LOGGER.info("Candy used on Pokémon: 1");
-
         // 1. Check if it's running on the Client side
         if (player.level().isClientSide) {
             return InteractionResult.SUCCESS;
         }
-        Boot.LOGGER.info("Candy used on Pokémon:2");
 
         // 2. Check if the entity is a PokemonEntity
         if (!(entity instanceof PokemonEntity pokemonEntity)) {
             LOGGER.warn("Tried to use Candy on a non-PokemonEntity: " + entity.getType().getDescriptionId());
             return InteractionResult.FAIL;
         }
-        Boot.LOGGER.info("Candy used on Pokémon: 3");
 
         // 3. Check if the player owns the PokemonEntity
         if (!pokemonEntity.isOwnedBy(player)) {
             player.sendSystemMessage(Component.literal("You do not own this Pokémon."));
             return InteractionResult.FAIL;
         }
-        Boot.LOGGER.info("Candy used on Pokémon: 4");
 
         // 4. Check if the stack has the DataCandy component
         var dataCandy = stack.get(DataCandy.COMPONENT);
@@ -163,11 +158,11 @@ public class CandyInteractLivingEntity {
     }
 
     private static Boolean handleRandomIV(Pokemon pokemon, DataCandy candyData, Player player) {
-        Stat[] stats = { Stats.HP, Stats.ATTACK, Stats.DEFENCE, Stats.SPECIAL_ATTACK, Stats.SPECIAL_DEFENCE,
+        Stats[] stats = { Stats.HP, Stats.ATTACK, Stats.DEFENCE, Stats.SPECIAL_ATTACK, Stats.SPECIAL_DEFENCE,
                 Stats.SPEED };
         // Collect stats that are not maxed out
-        List<Stat> availableStats = new ArrayList<>();
-        for (Stat stat : stats) {
+        List<Stats> availableStats = new ArrayList<>();
+        for (Stats stat : stats) {
             if (pokemon.getIvs().get(stat) < 31) {
                 availableStats.add(stat);
             }
@@ -184,10 +179,10 @@ public class CandyInteractLivingEntity {
         return handleTargetIv(pokemon, candyData, player, targetIVStat);
     }
 
-    private static Boolean handleTargetIv(Pokemon pokemon, DataCandy candyData, Player player, Stat targetIvStat) {
+    private static Boolean handleTargetIv(Pokemon pokemon, DataCandy candyData, Player player, Stats targetIvStat) {
         int currentIV = pokemon.getIvs().get(targetIvStat);
         if (currentIV >= 31) {
-            player.sendSystemMessage(Component.literal("The IV for " + targetIvStat.getDisplayName() + " is already maxed out for " + pokemon.getSpecies().getName() + "."));
+            player.sendSystemMessage(Component.literal("The IV for " + IVStatMap.getIVStat(targetIvStat) + " is already maxed out for " + pokemon.getSpecies().getName() + "."));
             return false;
         }
         pokemon.getIvs().set(targetIvStat, pokemon.getIvs().get(targetIvStat) + 1);
