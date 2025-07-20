@@ -75,10 +75,10 @@ jobs:
             exit 0
           fi
           
-          # Reset to keep the merge state but don't commit
-          git reset --soft HEAD
+          # Complete the merge by committing it (we're on a temporary branch anyway)
+          git commit -m "temp: merge develop for version analysis"
           
-          # Now run semantic-release from this simulated merged state
+          # Now run semantic-release from this merged state
           npx semantic-release --dry-run --no-ci 2>&1 | tee semantic-release-output.txt || true
           
           # Clean up temporary branch
