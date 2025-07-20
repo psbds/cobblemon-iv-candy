@@ -1,3 +1,17 @@
+# [1.3.0](https://github.com/psbds/cobblemon-iv-candy/compare/v1.2.0...v1.3.0) (2025-07-20)
+
+
+### Bug Fixes
+
+* fix default shard and candy for creative tab and /give commands ([499b660](https://github.com/psbds/cobblemon-iv-candy/commit/499b660325fb5efaa923562d5e028e2a5963ffe0))
+* fix JEI recipe category icon ([4457fdf](https://github.com/psbds/cobblemon-iv-candy/commit/4457fdfae9abc36c1d3bda531b3e92392e9fe1d1))
+* fix JEI recipe category icon ([30281f1](https://github.com/psbds/cobblemon-iv-candy/commit/30281f165cfca9bbe4fa0e17fc528f7e02969198))
+
+
+### Features
+
+* enable shard drop through capturing ([73909f3](https://github.com/psbds/cobblemon-iv-candy/commit/73909f3e28d3f5e208baf1391882411969236c2a))
+
 # [1.2.0](https://github.com/psbds/cobblemon-iv-candy/compare/v1.1.0...v1.2.0) (2025-07-19)
 
 
