@@ -23,15 +23,15 @@ public class Shard extends BaseShard {
     public static ItemStack createForSpecies(Species pokemonSpecies) {
         Boot.LOGGER.info("Labels: " + pokemonSpecies.getLabels());
         var shardType = ShardType.getShardType(pokemonSpecies);
-        if (shardType == ShardType.SPECIES) {
+        if (shardType.equals(ShardType.SPECIES)) {
             return ShardFactory.createForSpecies(pokemonSpecies);
-        } else if (shardType == ShardType.LEGENDARY) {
+        } else if (shardType.equals(ShardType.LEGENDARY)) {
             return ShardFactory.createLegendaryShard();
-        } else if (shardType == ShardType.MYTHICAL) {
+        } else if (shardType.equals(ShardType.MYTHICAL)) {
             return ShardFactory.createMythicalShard();
-        } else if (shardType == ShardType.ULTRA_BEAST) {
+        } else if (shardType.equals(ShardType.ULTRA_BEAST)) {
             return ShardFactory.createUltraBeastShard();
-        } else if (shardType == ShardType.PARADOX) {
+        } else if (shardType.equals(ShardType.PARADOX)) {
             return ShardFactory.createParadoxShard();
         }
 

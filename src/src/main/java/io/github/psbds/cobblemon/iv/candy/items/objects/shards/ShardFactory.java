@@ -11,11 +11,27 @@ import io.github.psbds.cobblemon.iv.candy.items.mappers.ElementalTypeMap;
 import io.github.psbds.cobblemon.iv.candy.items.model.CustomModelDataMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomModelData;
 
 public class ShardFactory {
     private static final String BASE_SHARD_NAME = "IV Shard";
+
+    public static Shard createDefault() {
+        var props = new Item.Properties();
+
+        var elementalType = ElementalTypes.INSTANCE.getNORMAL();
+        var shardDataElementalType = ElementalTypeMap.getElementalTypeId(elementalType);
+        var shardName = String.format("%s %s", elementalType.getName(), BASE_SHARD_NAME);
+        var shardModelNumber = CustomModelDataMap.getElementalTypeCustomModelData(shardDataElementalType);
+
+        props.component(DataShard.COMPONENT, DataShard.of(ShardType.ELEMENTAL_TYPE, 0, shardDataElementalType));
+        props.component(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(shardModelNumber));
+        props.component(DataComponents.CUSTOM_NAME, Component.literal(shardName));
+
+        return new Shard(props);
+    }
 
     /// Create species Sample Shard
     public static ItemStack createForSpeciesSample() {

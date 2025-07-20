@@ -31,19 +31,19 @@ public class Candy extends BaseCandy {
     public static ItemStack create(ItemStack baseShard, Stats targetIVStat) {
         ItemStack itemStack = new ItemStack(ModItems.CANDY);
         var shardData = baseShard.get(DataShard.COMPONENT);
-        if (shardData.shardType() == ShardType.SPECIES) {
+        if (shardData.shardType().equals(ShardType.SPECIES)) {
             var species = CobblemonSpeciesHelper.getSpeciesByPokedexNumber(shardData.baseSpeciesPokedexNumber());
             return CandyFactory.createForSpecies(species, targetIVStat);
-        } else if (shardData.shardType() == ShardType.ELEMENTAL_TYPE) {
+        } else if (shardData.shardType().equals(ShardType.ELEMENTAL_TYPE)) {
             var elementalType = ElementalTypeMap.getElementalType(shardData.elementalType());
             return CandyFactory.createForElement(elementalType, targetIVStat);
-        } else if (shardData.shardType() == ShardType.LEGENDARY) {
+        } else if (shardData.shardType().equals(ShardType.LEGENDARY)) {
             return CandyFactory.createLegendaryCandy(targetIVStat);
-        } else if (shardData.shardType() == ShardType.MYTHICAL) {
+        } else if (shardData.shardType().equals(ShardType.MYTHICAL)) {
             return CandyFactory.createMythicalCandy(targetIVStat);
-        } else if (shardData.shardType() == ShardType.ULTRA_BEAST) {
+        } else if (shardData.shardType().equals(ShardType.ULTRA_BEAST)) {
             return CandyFactory.createUltraBeastCandy(targetIVStat);
-        } else if (shardData.shardType() == ShardType.PARADOX) {
+        } else if (shardData.shardType().equals(ShardType.PARADOX)) {
             return CandyFactory.createParadoxCandy(targetIVStat);
         }
 
