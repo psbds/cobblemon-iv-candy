@@ -143,42 +143,50 @@ jobs:
 
       - name: Create Pull Request
         if: steps.semantic-release.outputs.has-changes == 'true'
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: release/v${{ steps.semantic-release.outputs.new-release-version }}
-          base: master
-          title: "Release v${{ steps.semantic-release.outputs.new-release-version }}"
-          body: |
-            ## Release v${{ steps.semantic-release.outputs.new-release-version }}
+        run: |
+          # Configure git user for the workflow
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          
+          # Ensure we have the latest master
+          git fetch origin master:master --force
+          
+          # Create release branch from develop (current branch) and push it
+          git checkout -b release/v${{ steps.semantic-release.outputs.new-release-version }}
+          git push origin release/v${{ steps.semantic-release.outputs.new-release-version }}
+          
+          # Create the pull request using GitHub CLI
+          gh pr create \
+            --title "Release v${{ steps.semantic-release.outputs.new-release-version }}" \
+            --body "## Release v${{ steps.semantic-release.outputs.new-release-version }}
             
-            This PR contains changes from the `develop` branch ready for release.
+            This PR contains changes from the \`develop\` branch ready for release.
             
             ### 🚀 What's Next
             1. **Review** the changes in this PR
             2. **Merge** this PR to trigger the automated release process
             3. The release workflow will automatically:
-               - ✅ Create a new release with tag `v${{ steps.semantic-release.outputs.new-release-version }}`
+               - ✅ Create a new release with tag \`v${{ steps.semantic-release.outputs.new-release-version }}\`
                - ✅ Generate release notes based on conventional commits
                - ✅ Build the mod with Gradle
                - ✅ Upload the JAR file as a release asset
             
             ### 📋 Branch Information
-            - **Source**: `develop`
-            - **Target**: `master`
-            - **Version**: `v${{ steps.semantic-release.outputs.new-release-version }}`
+            - **Source**: \`develop\`
+            - **Target**: \`master\`
+            - **Version**: \`v${{ steps.semantic-release.outputs.new-release-version }}\`
             
             ### 🤖 Automation Details
-            This PR was automatically created when changes were pushed to the `develop` branch.
+            This PR was automatically created when changes were pushed to the \`develop\` branch.
             The version number was calculated by semantic-release based on conventional commit messages.
             
             ---
-            **⚠️ Important**: Do not modify this PR manually. If changes are needed, make them in the `develop` branch and push again.
-          labels: |
-            release
-            automated
-          draft: false
-          delete-branch: true
+            **⚠️ Important**: Do not modify this PR manually. If changes are needed, make them in the \`develop\` branch and push again." \
+            --base master \
+            --head release/v${{ steps.semantic-release.outputs.new-release-version }} \
+            --label "release,automated"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: No release needed
         if: steps.semantic-release.outputs.has-changes == 'false'

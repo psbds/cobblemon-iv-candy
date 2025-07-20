@@ -51,3 +51,5 @@ yarn-error.log*
 
 #
 docs/_site
+
+semantic-release-output.txt
