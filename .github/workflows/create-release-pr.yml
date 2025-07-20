@@ -78,8 +78,16 @@ jobs:
           # Complete the merge by committing it (we're on a temporary branch anyway)
           git commit -m "temp: merge develop for version analysis"
           
+          # Temporarily modify the semantic-release config to include our temp branch
+          cp .releaserc.json .releaserc.json.backup
+          cat .releaserc.json | sed 's/"main", "master"/"main", "master", "temp-release-analysis"/' > .releaserc.temp.json
+          mv .releaserc.temp.json .releaserc.json
+          
           # Now run semantic-release from this merged state
           npx semantic-release --dry-run --no-ci 2>&1 | tee semantic-release-output.txt || true
+          
+          # Restore original configuration
+          mv .releaserc.json.backup .releaserc.json
           
           # Clean up temporary branch
           git checkout develop
