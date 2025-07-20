@@ -84,6 +84,12 @@ jobs:
           mv .releaserc.temp.json .releaserc.json
           
           # Now run semantic-release from this merged state
+          # Override the branch detection by setting environment variables
+          export GITHUB_REF="refs/heads/master"
+          export GITHUB_REF_NAME="master"
+          export GITHUB_HEAD_REF=""
+          export GITHUB_BASE_REF=""
+          
           npx semantic-release --dry-run --no-ci 2>&1 | tee semantic-release-output.txt || true
           
           # Restore original configuration
