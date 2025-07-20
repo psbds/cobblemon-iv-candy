@@ -5,17 +5,35 @@ import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
 import com.cobblemon.mod.common.pokemon.Species;
 
+import io.github.psbds.cobblemon.iv.candy.Boot;
 import io.github.psbds.cobblemon.iv.candy.items.ModItems;
 import io.github.psbds.cobblemon.iv.candy.items.components.DataCandy;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.ElementalTypeMap;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.IVStatMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.CustomModelData;
 
 public class CandyFactory {
     private static final String BASE_CANDY_NAME = "IV Candy";
+
+    public static Candy createDefault() {
+        var props = new Item.Properties();
+
+        var elementalType = ElementalTypes.INSTANCE.getNORMAL();
+        var shardDataElementalType = ElementalTypeMap.getElementalTypeId(elementalType);
+        var statName = Candy.IDENTIFIER_RANDOM_IV;
+        var shardName = String.format("%s %s [%s]", elementalType.getName(), BASE_CANDY_NAME, statName);
+        var shardModelNumber = CandyModel.getElemental(shardDataElementalType, null);
+
+        props.component(DataCandy.COMPONENT, DataCandy.of(CandyType.ELEMENTAL_TYPE, 0, shardDataElementalType, statName));
+        props.component(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(shardModelNumber));
+        props.component(DataComponents.CUSTOM_NAME, Component.literal(shardName));
+
+        return new Candy(props);
+    }
 
     /// Create species Sample Candy
     public static ItemStack createForSpeciesSample(Stats targetIVStat) {
