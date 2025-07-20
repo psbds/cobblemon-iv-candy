@@ -15,6 +15,7 @@ import io.github.psbds.cobblemon.iv.candy.items.mappers.IVStatMap;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.Candy;
 import io.github.psbds.cobblemon.iv.candy.items.objects.iv_extractor.DataIVExtractor;
 import io.github.psbds.cobblemon.iv.candy.items.objects.iv_extractor.IVExtractorType;
+import io.github.psbds.cobblemon.iv.candy.player.PlayerInventoryHelper;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -166,7 +167,7 @@ public class IVExtractorInteractLivingEntity {
 
         for (var fullIV : fullIVs) {
             var candy = Candy.createByExtractor(ivExtractor, fullIV);
-            player.getInventory().add(candy);
+            PlayerInventoryHelper.addOrDrop((net.minecraft.server.level.ServerPlayer) player, candy);
             pokemon.getIvs().set(fullIV, 1);
             player.sendSystemMessage(Component.literal(
                     String.format("Extracted %s IV from %s and created a Candy.", IVStatMap.getIVStat(fullIV),

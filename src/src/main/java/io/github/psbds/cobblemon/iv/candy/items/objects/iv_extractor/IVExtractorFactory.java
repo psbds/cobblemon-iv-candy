@@ -30,6 +30,22 @@ public class IVExtractorFactory {
         return new IVExtractor(props);
     }
 
+    public static ItemStack createSample() {
+        ItemStack itemStack = new ItemStack(ModItems.IV_EXTRACTOR);
+        var elementalType = ElementalTypes.INSTANCE.getNORMAL();
+
+        var ivExtractorDataElementalType = ElementalTypeMap.getElementalTypeId(elementalType);
+        var ivExtractorName = String.format("<Base Species> %s", BASE_IV_EXTRACTOR_NAME);
+
+        var ivExtractorModelNumber = IVExtractorModel.getElemental(ElementalTypes.INSTANCE.getNORMAL());
+
+        itemStack.set(DataIVExtractor.COMPONENT, DataIVExtractor.of(IVExtractorType.ELEMENTAL_TYPE, 0, ivExtractorDataElementalType));
+        itemStack.set(DataComponents.CUSTOM_MODEL_DATA, new CustomModelData(ivExtractorModelNumber));
+        itemStack.set(DataComponents.CUSTOM_NAME, Component.literal(ivExtractorName));
+
+        return itemStack;
+    }
+
     /// Create the Legendary ivExtractor with specific properties
     public static ItemStack createLegendary() {
         ItemStack itemStack = new ItemStack(ModItems.IV_EXTRACTOR);

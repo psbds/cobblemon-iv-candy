@@ -6,6 +6,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardFactory;
+import io.github.psbds.cobblemon.iv.candy.player.PlayerInventoryHelper;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.Component;
@@ -30,7 +31,7 @@ public class ShardGiveParadoxCommand {
 
         for (ServerPlayer targetPlayer : targetPlayers) {
             var shard = ShardFactory.createParadoxShard();
-            targetPlayer.getInventory().add(shard);
+            PlayerInventoryHelper.addOrDrop(targetPlayer, shard);
             commandSender.sendSystemMessage(Component.literal("Gave Paradox IV Shard to " + targetPlayer.getDisplayName().getString()));
         }
 

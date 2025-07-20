@@ -13,6 +13,7 @@ import com.mojang.brigadier.suggestion.SuggestionProvider;
 
 import io.github.psbds.cobblemon.iv.candy.items.mappers.ElementalTypeMap;
 import io.github.psbds.cobblemon.iv.candy.items.objects.iv_extractor.IVExtractorFactory;
+import io.github.psbds.cobblemon.iv.candy.player.PlayerInventoryHelper;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -52,7 +53,7 @@ public class IVExtractorGiveElementalCommand {
         if (elementalType != null) {
             for (ServerPlayer targetPlayer : targetPlayers) {
                 var ivExtractor = IVExtractorFactory.createElement(elementalType);
-                targetPlayer.getInventory().add(ivExtractor);
+                PlayerInventoryHelper.addOrDrop(targetPlayer, ivExtractor);
                 commandSender.sendSystemMessage(Component.literal("Gave " + elementalType.getName() + " IV Extractor to " + targetPlayer.getDisplayName().getString()));
             }
         } else {

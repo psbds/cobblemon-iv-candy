@@ -17,6 +17,7 @@ import io.github.psbds.cobblemon.iv.candy.helpers.CobblemonSpeciesHelper;
 import io.github.psbds.cobblemon.iv.candy.items.ModItems;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.IVStatMap;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyFactory;
+import io.github.psbds.cobblemon.iv.candy.player.PlayerInventoryHelper;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -60,7 +61,7 @@ public class CandyGiveSpeciesCommand {
                 var baseSpecies = CobblemonSpeciesHelper.getFirstEvolution(species);
                 var targetIvStat = iv.equals("random") ? null : IVStatMap.getStats(iv); // Handle random or specific IV stat
                 var candy = CandyFactory.createForSpecies(baseSpecies, targetIvStat);
-                targetPlayer.getInventory().add(candy);
+                PlayerInventoryHelper.addOrDrop(targetPlayer, candy);
                 commandSender.sendSystemMessage(Component.literal("Gave " + baseSpecies.getName() + " IV Candy to " + targetPlayer.getDisplayName().getString()));
             }
         } else {

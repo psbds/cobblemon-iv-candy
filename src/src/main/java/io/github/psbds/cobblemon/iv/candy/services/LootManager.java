@@ -3,6 +3,7 @@ package io.github.psbds.cobblemon.iv.candy.services;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 
 import io.github.psbds.cobblemon.iv.candy.items.objects.shards.Shard;
+import io.github.psbds.cobblemon.iv.candy.player.PlayerInventoryHelper;
 import net.minecraft.server.level.ServerPlayer;
 
 public class LootManager {
@@ -15,7 +16,7 @@ public class LootManager {
         if (Math.random() * 100 < lootTable.speciesShardChance()) {
             int amount = (int) Math.round(lootTable.speciesShardAmount());
             for (int i = 0; i < amount; i++) {
-                killer.getInventory().add(Shard.createForSpecies(killedPokemon.getSpecies()));
+                PlayerInventoryHelper.addOrDrop(killer, Shard.createForSpecies(killedPokemon.getSpecies()));
             }
         }
 
@@ -23,11 +24,11 @@ public class LootManager {
         if (Math.random() * 100 < lootTable.elementalShardChance()) {
             int amount = (int) Math.round(lootTable.elementalShardAmount());
             for (int i = 0; i < amount; i++) {
-                killer.getInventory().add(Shard.createForElement(killedPokemon.getSpecies().getPrimaryType()));
+                PlayerInventoryHelper.addOrDrop(killer, Shard.createForElement(killedPokemon.getSpecies().getPrimaryType()));
             }
             if (killedPokemon.getSpecies().getSecondaryType() != null) {
                 for (int i = 0; i < amount; i++) {
-                    killer.getInventory().add(Shard.createForElement(killedPokemon.getSpecies().getSecondaryType()));
+                    PlayerInventoryHelper.addOrDrop(killer, Shard.createForElement(killedPokemon.getSpecies().getSecondaryType()));
                 }
             }
         }
