@@ -1,3 +1,17 @@
+# [1.4.0](https://github.com/psbds/cobblemon-iv-candy/compare/v1.3.0...v1.4.0) (2025-07-20)
+
+
+### Bug Fixes
+
+* fix issue with iv extractor recipe ([222b69a](https://github.com/psbds/cobblemon-iv-candy/commit/222b69ae7c1f4dc40685ae473ebcb80a6aa19026))
+* fix release pipeline ([75b6255](https://github.com/psbds/cobblemon-iv-candy/commit/75b6255e6a82b840d76b86db948579b166943724))
+* fix release pipeline ([c3d371a](https://github.com/psbds/cobblemon-iv-candy/commit/c3d371a4f6718fc3f1dc89d778550d5ee1b7fe1a))
+
+
+### Features
+
+* IV Extractor ([9bf5ffe](https://github.com/psbds/cobblemon-iv-candy/commit/9bf5ffec23ee5462033cad7a2b9044681dc1aec2))
+
 # [1.3.0](https://github.com/psbds/cobblemon-iv-candy/compare/v1.2.0...v1.3.0) (2025-07-20)
 
 
