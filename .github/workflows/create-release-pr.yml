@@ -99,7 +99,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: release/v${{ steps.semantic-release.outputs.new-release-version }}
-          base: main
+          base: master
           title: "Release v${{ steps.semantic-release.outputs.new-release-version }}"
           body: |
             ## Release v${{ steps.semantic-release.outputs.new-release-version }}
@@ -117,7 +117,7 @@ jobs:
             
             ### 📋 Branch Information
             - **Source**: `develop`
-            - **Target**: `main`
+            - **Target**: `master`
             - **Version**: `v${{ steps.semantic-release.outputs.new-release-version }}`
             
             ### 🤖 Automation Details
