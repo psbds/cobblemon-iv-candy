@@ -1,0 +1,219 @@
+[9:27:16 AM] [semantic-release] › ℹ  Running semantic-release version 24.2.7
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/changelog"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/github"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/git"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "analyzeCommits" from "@semantic-release/commit-analyzer"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "analyzeCommits" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "analyzeCommits" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "verifyRelease" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "verifyRelease" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "generateNotes" from "@semantic-release/release-notes-generator"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "generateNotes" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "generateNotes" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "prepare" from "@semantic-release/changelog"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "prepare" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "prepare" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "prepare" from "@semantic-release/git"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "publish" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "publish" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "publish" from "@semantic-release/github"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "addChannel" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "addChannel" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "addChannel" from "@semantic-release/github"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "success" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "success" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "success" from "@semantic-release/github"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "fail" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "fail" from "@semantic-release/exec"
+[9:27:16 AM] [semantic-release] › ✔  Loaded plugin "fail" from "@semantic-release/github"
+[9:27:17 AM] [semantic-release] › ⚠  Run automated release from branch develop on repository https://github.com/psbds/cobblemon-iv-candy.git in dry-run mode
+[9:27:18 AM] [semantic-release] › ✔  Allowed to push to the Git repository
+[9:27:18 AM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/changelog"
+[9:27:18 AM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/changelog"
+[9:27:18 AM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/exec"
+[9:27:18 AM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/exec"
+[9:27:18 AM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/exec"
+[9:27:18 AM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/exec"
+[9:27:18 AM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/github"
+[9:27:18 AM] [semantic-release] [@semantic-release/github] › ℹ  Verify GitHub authentication (https://api.github.com)
+[9:27:18 AM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/github"
+[9:27:18 AM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/git"
+[9:27:18 AM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/git"
+[9:27:18 AM] [semantic-release] › ℹ  Found git tag v1.0.0 associated with version 1.0.0 on branch develop
+[9:27:18 AM] [semantic-release] › ℹ  Found 30 commits since last release
+[9:27:18 AM] [semantic-release] › ℹ  Start step "analyzeCommits" of plugin "@semantic-release/commit-analyzer"
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #11 from psbds/feature/implement-release-flow
+
+Feature/implement release flow
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: implement release to main flow
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: implement release to main flow
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #10 from psbds/feature/implement-release-flow
+
+ci: implement release to main flow
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: implement release to main flow
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #9 from psbds/feature/implement-release-flow
+
+ci: implement release to main flow
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: implement release to main flow
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #8 from psbds/feature/iv-extractor
+
+feat: IV Extractor
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: chore: fix github review
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: chore: fix github review
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: chore: fix github review
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: chore: fix github review
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: feat: IV Extractor
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is minor
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #7 from psbds/feature/docs
+
+docs:atualizei denovo
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: docs:atualizei denovo
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #6 from psbds/feature/docs
+
+docs:atualizando imagens
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: docs:atualizando imagens
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: fix: fix default shard and candy for creative tab and /give commands
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is patch
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: docs: update docs
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: feat: enable shard drop through capturing
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is minor
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: docs: update docs
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: fix: fix JEI recipe category icon
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is patch
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: fix: fix JEI recipe category icon
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is patch
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: fix: fix pages CI
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is patch
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: feat: change candy give confirmation message
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is minor
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: fix ci flow
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: fix ci flow
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: feat: add give commands
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is minor
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #1 from psbds/develop
+
+ci: setup release workflow
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: setup release workflow
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[9:27:18 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analysis of 30 commits complete: minor release
+[9:27:18 AM] [semantic-release] › ✔  Completed step "analyzeCommits" of plugin "@semantic-release/commit-analyzer"
+[9:27:18 AM] [semantic-release] › ℹ  Start step "analyzeCommits" of plugin "@semantic-release/exec"
+[9:27:18 AM] [semantic-release] › ✔  Completed step "analyzeCommits" of plugin "@semantic-release/exec"
+[9:27:18 AM] [semantic-release] › ℹ  Start step "analyzeCommits" of plugin "@semantic-release/exec"
+[9:27:18 AM] [semantic-release] › ✔  Completed step "analyzeCommits" of plugin "@semantic-release/exec"
+[9:27:18 AM] [semantic-release] › ℹ  The next release version is 1.1.0
+[9:27:18 AM] [semantic-release] › ⚠  Skip step "fail" of plugin "@semantic-release/exec" in dry-run mode
+[9:27:18 AM] [semantic-release] › ⚠  Skip step "fail" of plugin "@semantic-release/exec" in dry-run mode
+[9:27:18 AM] [semantic-release] › ⚠  Skip step "fail" of plugin "@semantic-release/github" in dry-run mode
+[9:27:18 AM] [semantic-release] › ✘  EINVALIDNEXTVERSION The release `1.1.0` on branch `develop` cannot be published as it is out of range.
+Based on the releases published on other branches, only versions within the range >=1.3.0 can be published from branch develop.
+
+The following commits are responsible for the invalid release:
+
+    * Merge pull request #11 from psbds/feature/implement-release-flow (20c2021)
+    * ci: implement release to main flow (01350ff)
+    * ci: implement release to main flow (4a54c3f)
+    * Merge pull request #10 from psbds/feature/implement-release-flow (6571d8f)
+    * ci: implement release to main flow (0ae5148)
+    * Merge pull request #9 from psbds/feature/implement-release-flow (2800bb8)
+    * ci: implement release to main flow (e4a5202)
+    * Merge pull request #8 from psbds/feature/iv-extractor (da835e3)
+    * chore: fix github review (85b20a0)
+    * chore: fix github review (f9f3dd1)
+    * chore: fix github review (b091e6b)
+    * chore: fix github review (0cabfac)
+    * feat: IV Extractor (9bf5ffe)
+    * Merge pull request #7 from psbds/feature/docs (d977db6)
+    * docs:atualizei denovo (3ef914d)
+    * Merge pull request #6 from psbds/feature/docs (eb2167d)
+    * docs:atualizando imagens (b49a16e)
+    * fix: fix default shard and candy for creative tab and /give commands (499b660)
+    * docs: update docs (6da97d8)
+    * feat: enable shard drop through capturing (73909f3)
+    * docs: update docs (b98876d)
+    * fix: fix JEI recipe category icon (4457fdf)
+    * fix: fix JEI recipe category icon (30281f1)
+    * fix: fix pages CI (67b3642)
+    * feat: change candy give confirmation message (62f5dc1)
+    * ci: fix ci flow (cf234b3)
+    * ci: fix ci flow (32b475b)
+    * feat: add give commands (597a05e)
+    * Merge pull request #1 from psbds/develop (9a375b8)
+    * ci: setup release workflow (7430857)
+
+Those commits should be moved to a valid branch with git merge (https://git-scm.com/docs/git-merge) or git cherry-pick (https://git-scm.com/docs/git-cherry-pick) and removed from branch develop with git revert (https://git-scm.com/docs/git-revert) or git reset (https://git-scm.com/docs/git-reset).
+
+A valid branch could be master or develop.
+
+See the workflow configuration documentation (https://github.com/semantic-release/semantic-release/blob/master/docs/usage/workflow-configuration.md) for more details.
+
+SemanticReleaseError: The release `1.1.0` on branch `develop` cannot be published as it is out of range.
+    at default [90m(file:///home/runner/work/cobblemon-iv-candy/cobblemon-iv-candy/[39mnode_modules/[4msemantic-release[24m/lib/get-error.js:6:10[90m)[39m
+    at run [90m(file:///home/runner/work/cobblemon-iv-candy/cobblemon-iv-candy/[39mnode_modules/[4msemantic-release[24m/index.js:190:11[90m)[39m
+    at async Module.default [90m(file:///home/runner/work/cobblemon-iv-candy/cobblemon-iv-candy/[39mnode_modules/[4msemantic-release[24m/index.js:278:22[90m)[39m
+    at async default [90m(file:///home/runner/work/cobblemon-iv-candy/cobblemon-iv-candy/[39mnode_modules/[4msemantic-release[24m/cli.js:55:5[90m)[39m {
+  code: [32m'EINVALIDNEXTVERSION'[39m,
+  details: [32m'Based on the releases published on other branches, only versions within the range `>=1.3.0` can be published from branch `develop`.\n'[39m +
+    [32m'\n'[39m +
+    [32m'The following commits are responsible for the invalid release:\n'[39m +
+    [32m'- Merge pull request #11 from psbds/feature/implement-release-flow (20c2021)\n'[39m +
+    [32m'- ci: implement release to main flow (01350ff)\n'[39m +
+    [32m'- ci: implement release to main flow (4a54c3f)\n'[39m +
+    [32m'- Merge pull request #10 from psbds/feature/implement-release-flow (6571d8f)\n'[39m +
+    [32m'- ci: implement release to main flow (0ae5148)\n'[39m +
+    [32m'- Merge pull request #9 from psbds/feature/implement-release-flow (2800bb8)\n'[39m +
+    [32m'- ci: implement release to main flow (e4a5202)\n'[39m +
+    [32m'- Merge pull request #8 from psbds/feature/iv-extractor (da835e3)\n'[39m +
+    [32m'- chore: fix github review (85b20a0)\n'[39m +
+    [32m'- chore: fix github review (f9f3dd1)\n'[39m +
+    [32m'- chore: fix github review (b091e6b)\n'[39m +
+    [32m'- chore: fix github review (0cabfac)\n'[39m +
+    [32m'- feat: IV Extractor (9bf5ffe)\n'[39m +
+    [32m'- Merge pull request #7 from psbds/feature/docs (d977db6)\n'[39m +
+    [32m'- docs:atualizei denovo (3ef914d)\n'[39m +
+    [32m'- Merge pull request #6 from psbds/feature/docs (eb2167d)\n'[39m +
+    [32m'- docs:atualizando imagens (b49a16e)\n'[39m +
+    [32m'- fix: fix default shard and candy for creative tab and /give commands (499b660)\n'[39m +
+    [32m'- docs: update docs (6da97d8)\n'[39m +
+    [32m'- feat: enable shard drop through capturing (73909f3)\n'[39m +
+    [32m'- docs: update docs (b98876d)\n'[39m +
+    [32m'- fix: fix JEI recipe category icon (4457fdf)\n'[39m +
+    [32m'- fix: fix JEI recipe category icon (30281f1)\n'[39m +
+    [32m'- fix: fix pages CI (67b3642)\n'[39m +
+    [32m'- feat: change candy give confirmation message (62f5dc1)\n'[39m +
+    [32m'- ci: fix ci flow (cf234b3)\n'[39m +
+    [32m'- ci: fix ci flow (32b475b)\n'[39m +
+    [32m'- feat: add give commands (597a05e)\n'[39m +
+    [32m'- Merge pull request #1 from psbds/develop (9a375b8)\n'[39m +
+    [32m'- ci: setup release workflow (7430857)\n'[39m +
+    [32m'\n'[39m +
+    [32m'Those commits should be moved to a valid branch with [git merge](https://git-scm.com/docs/git-merge) or [git cherry-pick](https://git-scm.com/docs/git-cherry-pick) and removed from branch `develop` with [git revert](https://git-scm.com/docs/git-revert) or [git reset](https://git-scm.com/docs/git-reset).\n'[39m +
+    [32m'\n'[39m +
+    [32m'A valid branch could be `master` or `develop`.\n'[39m +
+    [32m'\n'[39m +
+    [32m'See the [workflow configuration documentation](https://github.com/semantic-release/semantic-release/blob/master/docs/usage/workflow-configuration.md) for more details.'[39m,
+  semanticRelease: [33mtrue[39m
+}
