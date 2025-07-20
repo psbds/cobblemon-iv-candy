@@ -11,7 +11,6 @@ import com.cobblemon.mod.common.api.pokemon.stats.Stats;
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 
-import io.github.psbds.cobblemon.iv.candy.Boot;
 import io.github.psbds.cobblemon.iv.candy.helpers.CobblemonSpeciesHelper;
 import io.github.psbds.cobblemon.iv.candy.items.components.DataCandy;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.ElementalTypeMap;
@@ -62,12 +61,16 @@ public class CandyInteractLivingEntity {
             return InteractionResult.FAIL;
         }
 
-        if (dataCandy.targetIVStat() == Candy.IDENTIFIER_RANDOM_IV
-                && !handleRandomIV(pokemonEntity.getPokemon(), dataCandy, player)) {
-            return InteractionResult.FAIL;
-        } else if (dataCandy.targetIVStat() != Candy.IDENTIFIER_RANDOM_IV
-                && !handleTargetIv(pokemonEntity.getPokemon(), dataCandy, player, IVStatMap.getStats(dataCandy.targetIVStat()))) {
-            return InteractionResult.FAIL;
+        if (dataCandy.targetIVStat().equals(Candy.IDENTIFIER_RANDOM_IV)) {
+            if (!handleRandomIV(pokemonEntity.getPokemon(), dataCandy, player)) {
+                return InteractionResult.FAIL;
+            }
+        }
+
+        if (!dataCandy.targetIVStat().equals(Candy.IDENTIFIER_RANDOM_IV)) {
+            if (!handleTargetIv(pokemonEntity.getPokemon(), dataCandy, player, IVStatMap.getStats(dataCandy.targetIVStat()))) {
+                return InteractionResult.FAIL;
+            }
         }
 
         if (!player.getAbilities().instabuild) {

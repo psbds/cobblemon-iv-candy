@@ -34,7 +34,7 @@ public record DataCandy(
                                                         Codec.INT.fieldOf("elementalType")
                                                                         .forGetter(DataCandy::elementalType),
                                                         Codec.STRING.fieldOf("targetIVStat")
-                                                                        .forGetter(DataCandy::candyType))
+                                                                        .forGetter(DataCandy::targetIVStat))
                                                         .apply(instance, DataCandy::new)))
                         .networkSynchronized(StreamCodec.composite(
                                         ByteBufCodecs.STRING_UTF8, DataCandy::candyType,

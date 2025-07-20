@@ -3,6 +3,8 @@ package io.github.psbds.cobblemon.iv.candy.compat.jei;
 import io.github.psbds.cobblemon.iv.candy.Boot;
 import io.github.psbds.cobblemon.iv.candy.compat.jei.items.candy.JEICandyRecipe;
 import io.github.psbds.cobblemon.iv.candy.compat.jei.items.candy.JEICandyRecipeCategory;
+import io.github.psbds.cobblemon.iv.candy.compat.jei.items.iv_extractor.JEIIVExtractorRecipe;
+import io.github.psbds.cobblemon.iv.candy.compat.jei.items.iv_extractor.JEIIVExtractorRecipeCategory;
 import io.github.psbds.cobblemon.iv.candy.compat.jei.items.super_candy.JEISuperCandyRecipe;
 import io.github.psbds.cobblemon.iv.candy.compat.jei.items.super_candy.JEISuperCandyRecipeCategory;
 import io.github.psbds.cobblemon.iv.candy.items.ModItems;
@@ -40,17 +42,20 @@ public class JEIPlugin implements IModPlugin {
             // Use the shard's unique identifier as its subtype
             return stack.get(DataComponents.CUSTOM_NAME).getString();
         });
+
+        registration.registerSubtypeInterpreter(VanillaTypes.ITEM_STACK, ModItems.IV_EXTRACTOR, (stack, context) -> {
+            // Use the shard's unique identifier as its subtype
+            return stack.get(DataComponents.CUSTOM_NAME).getString();
+        });
     }
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         Boot.LOGGER.info("Registering JEI categories for " + Boot.MOD_ID);
 
-        // Register JEI-specific Candy recipe category
         registration.addRecipeCategories(new JEICandyRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
-
-        // Register JEI-specific Super Candy recipe category
         registration.addRecipeCategories(new JEISuperCandyRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new JEIIVExtractorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
         Boot.LOGGER.info("Successfully registered JEI categories");
     }
@@ -62,6 +67,7 @@ public class JEIPlugin implements IModPlugin {
         // Add Recipes
         registration.addRecipes(JEICandyRecipeCategory.RECIPE_TYPE, JEICandyRecipe.getRecipes());
         registration.addRecipes(JEISuperCandyRecipeCategory.RECIPE_TYPE, JEISuperCandyRecipe.getRecipes());
+        registration.addRecipes(JEIIVExtractorRecipeCategory.RECIPE_TYPE, JEIIVExtractorRecipe.getRecipes());
 
         // Add Ingredients
         for (var shard : ShardCatalog.getCatalogShards()) {
@@ -79,6 +85,7 @@ public class JEIPlugin implements IModPlugin {
         // Register crafting table as a catalyst for our custom recipe types
         registration.addRecipeCatalyst(new ItemStack(Items.CRAFTING_TABLE), JEICandyRecipeCategory.RECIPE_TYPE);
         registration.addRecipeCatalyst(new ItemStack(Items.CRAFTING_TABLE), JEISuperCandyRecipeCategory.RECIPE_TYPE);
+        registration.addRecipeCatalyst(new ItemStack(Items.CRAFTING_TABLE), JEIIVExtractorRecipeCategory.RECIPE_TYPE);
 
         Boot.LOGGER.info("Successfully registered JEI recipe catalysts");
     }

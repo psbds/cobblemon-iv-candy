@@ -3,6 +3,7 @@ package io.github.psbds.cobblemon.iv.candy.items;
 import io.github.psbds.cobblemon.iv.candy.Boot;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyCatalog;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyFactory;
+import io.github.psbds.cobblemon.iv.candy.items.objects.iv_extractor.IVExtractorCatalog;
 import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardCatalog;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -20,6 +21,10 @@ public class ModCreativeTabs {
 
                 for (var candy : CandyCatalog.getCatalogCandys()) {
                     entries.accept(candy);
+                }
+
+                for (var extractor : IVExtractorCatalog.getCatalogExtractors()) {
+                    entries.accept(extractor);
                 }
             })
             .build();

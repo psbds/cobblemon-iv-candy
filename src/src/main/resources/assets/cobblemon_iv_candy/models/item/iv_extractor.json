@@ -1,0 +1,31 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "cobblemon_iv_candy:item/iv_extractor/iv_extractor_normal"
+  },
+  "overrides": [
+    { "predicate": { "custom_model_data": 1000 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_fire" },
+    { "predicate": { "custom_model_data": 1001 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_water" },
+    { "predicate": { "custom_model_data": 1002 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_grass" },
+    { "predicate": { "custom_model_data": 1003 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_electric" },
+    { "predicate": { "custom_model_data": 1004 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_ice" },
+    { "predicate": { "custom_model_data": 1005 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_rock" },
+    { "predicate": { "custom_model_data": 1006 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_ground" },
+    { "predicate": { "custom_model_data": 1007 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_flying" },
+    { "predicate": { "custom_model_data": 1008 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_psychic" },
+    { "predicate": { "custom_model_data": 1009 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_bug" },
+    { "predicate": { "custom_model_data": 1010 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_poison" },
+    { "predicate": { "custom_model_data": 1011 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_fighting" },
+    { "predicate": { "custom_model_data": 1012 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_ghost" },
+    { "predicate": { "custom_model_data": 1013 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_dragon" },
+    { "predicate": { "custom_model_data": 1014 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_dark" },
+    { "predicate": { "custom_model_data": 1015 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_steel" },
+    { "predicate": { "custom_model_data": 1016 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_fairy" },
+    { "predicate": { "custom_model_data": 1017 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_normal" },
+
+    { "predicate": { "custom_model_data": 2000 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_legendary" },
+    { "predicate": { "custom_model_data": 3000 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_mythical" },
+    { "predicate": { "custom_model_data": 4000 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_ultrabeast" },
+    { "predicate": { "custom_model_data": 5000 }, "model": "cobblemon_iv_candy:item/texture_model/iv_extractor/iv_extractor_paradox" }
+  ]
+}

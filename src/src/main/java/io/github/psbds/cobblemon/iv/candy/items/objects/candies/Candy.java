@@ -11,6 +11,7 @@ import io.github.psbds.cobblemon.iv.candy.items.components.DataShard;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.ElementalTypeMap;
 import io.github.psbds.cobblemon.iv.candy.items.objects.BaseCandy;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.actions.CandyInteractLivingEntity;
+import io.github.psbds.cobblemon.iv.candy.items.objects.iv_extractor.DataIVExtractor;
 import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardType;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -50,6 +51,25 @@ public class Candy extends BaseCandy {
         return itemStack;
     }
 
+    public static ItemStack createByExtractor(ItemStack ivExtractor, Stats targetIVStat) {
+        ItemStack itemStack = new ItemStack(ModItems.CANDY);
+        var shardData = ivExtractor.get(DataIVExtractor.COMPONENT);
+        if (shardData.ivExtractorType().equals(ShardType.ELEMENTAL_TYPE)) {
+            var elementalType = ElementalTypeMap.getElementalType(shardData.elementalType());
+            return CandyFactory.createForElement(elementalType, targetIVStat);
+        } else if (shardData.ivExtractorType().equals(ShardType.LEGENDARY)) {
+            return CandyFactory.createLegendaryCandy(targetIVStat);
+        } else if (shardData.ivExtractorType().equals(ShardType.MYTHICAL)) {
+            return CandyFactory.createMythicalCandy(targetIVStat);
+        } else if (shardData.ivExtractorType().equals(ShardType.ULTRA_BEAST)) {
+            return CandyFactory.createUltraBeastCandy(targetIVStat);
+        } else if (shardData.ivExtractorType().equals(ShardType.PARADOX)) {
+            return CandyFactory.createParadoxCandy(targetIVStat);
+        }
+
+        return itemStack;
+    }
+
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity,
             InteractionHand hand) {
@@ -60,7 +80,7 @@ public class Candy extends BaseCandy {
 
     public static void Print(ItemStack stack, Player player) {
         for (var comp : stack.getComponents()) {
-            LOGGER.debug(String.format("%s = %s", comp.type(), comp.value()));
+            LOGGER.info(String.format("%s = %s", comp.type(), comp.value()));
         }
     }
 }
