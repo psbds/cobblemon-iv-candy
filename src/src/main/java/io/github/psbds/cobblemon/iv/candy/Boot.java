@@ -11,9 +11,8 @@ import io.github.psbds.cobblemon.iv.candy.commands.CommandRouter;
 import io.github.psbds.cobblemon.iv.candy.config.ConfigManager;
 import io.github.psbds.cobblemon.iv.candy.items.ModItems;
 import io.github.psbds.cobblemon.iv.candy.items.ModCreativeTabs;
-import io.github.psbds.cobblemon.iv.candy.items.components.BootComponents;
+import io.github.psbds.cobblemon.iv.candy.items.ModItemComponents;
 import io.github.psbds.cobblemon.iv.candy.listeners.BootListeners;
-import io.github.psbds.cobblemon.iv.candy.listeners.OnPokemonFainted;
 import io.github.psbds.cobblemon.iv.candy.recipes.ModRecipes;
 
 public class Boot implements ModInitializer {
@@ -32,7 +31,7 @@ public class Boot implements ModInitializer {
             ServerLifecycleEvents.SERVER_STARTING.register(minecraftServer -> {
                 Boot.MinecraftServer = minecraftServer;
             });
-            BootComponents.initialize();
+            ModItemComponents.initialize();
             ModItems.initialize();
             ModCreativeTabs.registerCreativeTabs();
             ModRecipes.registerRecipes();

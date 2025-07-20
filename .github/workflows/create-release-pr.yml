@@ -1,0 +1,205 @@
+name: Create Release PR
+
+on:
+  push:
+    branches:
+      - develop
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  create-release-pr:
+    name: Create Release PR
+    runs-on: ubuntu-latest
+    outputs:
+      next-version: ${{ steps.semantic-release.outputs.new-release-version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get next version from semantic-release
+        id: semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Configure git user for the workflow
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          
+          # Fetch all branches and tags to ensure we have the complete history
+          git fetch origin master:master --force
+          git fetch --tags
+          
+          # Get the latest tag from master branch to understand current version
+          CURRENT_VERSION=$(git describe --tags --abbrev=0 master 2>/dev/null || echo "v0.0.0")
+          echo "Current version on master: $CURRENT_VERSION"
+          
+          # Get commits from master to develop to analyze what's new
+          COMMITS_TO_ANALYZE=$(git rev-list master..develop --count)
+          echo "Commits from master to develop: $COMMITS_TO_ANALYZE"
+          
+          if [ "$COMMITS_TO_ANALYZE" -eq 0 ]; then
+            echo "No new commits to release"
+            echo "new-release-version=" >> $GITHUB_OUTPUT
+            echo "has-changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Create a temporary branch that simulates what master would look like after merge
+          git checkout -b temp-release-analysis master
+          
+          # Try to merge develop into our temporary branch
+          if ! git merge --no-commit --no-ff develop; then
+            echo "Merge conflict detected - manual intervention needed"
+            # Clean up and exit gracefully
+            git merge --abort 2>/dev/null || true
+            git checkout develop 2>/dev/null || true
+            git branch -D temp-release-analysis 2>/dev/null || true
+            echo "new-release-version=" >> $GITHUB_OUTPUT
+            echo "has-changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Complete the merge by committing it (we're on a temporary branch anyway)
+          git commit -m "temp: merge develop for version analysis"
+          
+          # Temporarily modify the semantic-release config to include our temp branch
+          cp .releaserc.json .releaserc.json.backup
+          cat .releaserc.json | sed 's/"main", "master"/"main", "master", "temp-release-analysis"/' > .releaserc.temp.json
+          mv .releaserc.temp.json .releaserc.json
+          
+          # Now run semantic-release from this merged state
+          # Override the branch detection by setting environment variables
+          export GITHUB_REF="refs/heads/master"
+          export GITHUB_REF_NAME="master"
+          export GITHUB_HEAD_REF=""
+          export GITHUB_BASE_REF=""
+          
+          npx semantic-release --dry-run --no-ci 2>&1 | tee semantic-release-output.txt || true
+          
+          # Restore original configuration
+          mv .releaserc.json.backup .releaserc.json
+          
+          # Clean up temporary branch
+          git checkout develop
+          git branch -D temp-release-analysis
+          
+          # Look for the version in various output patterns
+          NEXT_VERSION=""
+          
+          # Pattern 1: "The next release version is X.X.X"
+          NEXT_VERSION=$(grep -oP 'The next release version is \K[0-9]+\.[0-9]+\.[0-9]+' semantic-release-output.txt 2>/dev/null || true)
+          
+          # Pattern 2: Look for "Release note for version X.X.X"
+          if [ -z "$NEXT_VERSION" ]; then
+            NEXT_VERSION=$(grep -oP 'Release note for version \K[0-9]+\.[0-9]+\.[0-9]+' semantic-release-output.txt 2>/dev/null || true)
+          fi
+          
+          # Pattern 3: Look for version in nextRelease object (JSON format)
+          if [ -z "$NEXT_VERSION" ]; then
+            NEXT_VERSION=$(grep -oP '"version":\s*"\K[0-9]+\.[0-9]+\.[0-9]+' semantic-release-output.txt 2>/dev/null || true)
+          fi
+          
+          # Pattern 4: Look in the logs for "Published release X.X.X"
+          if [ -z "$NEXT_VERSION" ]; then
+            NEXT_VERSION=$(grep -oP 'Published release \K[0-9]+\.[0-9]+\.[0-9]+' semantic-release-output.txt 2>/dev/null || true)
+          fi
+          
+          # Skip semantic-release version numbers (anything >= 20.0.0 is likely the tool version)
+          if [[ "$NEXT_VERSION" =~ ^[2-9][0-9]\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Skipping semantic-release tool version: $NEXT_VERSION"
+            NEXT_VERSION=""
+          fi
+          
+          if [ -z "$NEXT_VERSION" ] || [ "$NEXT_VERSION" = "0.0.0" ]; then
+            echo "No new version to release"
+            echo "new-release-version=" >> $GITHUB_OUTPUT
+            echo "has-changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "Next version calculated: $NEXT_VERSION"
+            echo "new-release-version=$NEXT_VERSION" >> $GITHUB_OUTPUT
+            echo "has-changes=true" >> $GITHUB_OUTPUT
+          fi
+          
+          # Show the semantic-release output for debugging
+          echo "=== Semantic Release Output ==="
+          cat semantic-release-output.txt
+          echo "==============================="
+
+      - name: Create Pull Request
+        if: steps.semantic-release.outputs.has-changes == 'true'
+        run: |
+          # Configure git user for the workflow
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          
+          # Ensure we have the latest master
+          git fetch origin master:master --force
+          
+          # Create release branch from develop (current branch) and push it
+          git checkout -b release/v${{ steps.semantic-release.outputs.new-release-version }}
+          git push origin release/v${{ steps.semantic-release.outputs.new-release-version }}
+          
+          # Create the pull request using GitHub CLI
+          gh pr create \
+            --title "Release v${{ steps.semantic-release.outputs.new-release-version }}" \
+            --body "## Release v${{ steps.semantic-release.outputs.new-release-version }}
+            
+            This PR contains changes from the \`develop\` branch ready for release.
+            
+            ### 🚀 What's Next
+            1. **Review** the changes in this PR
+            2. **Merge** this PR to trigger the automated release process
+            3. The release workflow will automatically:
+               - ✅ Create a new release with tag \`v${{ steps.semantic-release.outputs.new-release-version }}\`
+               - ✅ Generate release notes based on conventional commits
+               - ✅ Build the mod with Gradle
+               - ✅ Upload the JAR file as a release asset
+            
+            ### 📋 Branch Information
+            - **Source**: \`develop\`
+            - **Target**: \`master\`
+            - **Version**: \`v${{ steps.semantic-release.outputs.new-release-version }}\`
+            
+            ### 🤖 Automation Details
+            This PR was automatically created when changes were pushed to the \`develop\` branch.
+            The version number was calculated by semantic-release based on conventional commit messages.
+            
+            ---
+            **⚠️ Important**: Do not modify this PR manually. If changes are needed, make them in the \`develop\` branch and push again." \
+            --base master \
+            --head release/v${{ steps.semantic-release.outputs.new-release-version }} \
+            --label "release,automated"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: No release needed
+        if: steps.semantic-release.outputs.has-changes == 'false'
+        run: |
+          echo "✅ No new release version determined by semantic-release"
+          echo "This usually means there are no releasable changes in the develop branch."
+          echo ""
+          echo "Reasons this might happen:"
+          echo "- Only non-releasable commits (chore:, ci:, test:, docs: without README scope)"
+          echo "- No commits since last release"
+          echo "- All changes were already released"
+          echo ""
+          echo "To create a release, make sure your commits follow conventional commit format:"
+          echo "- feat: for new features (minor version bump)"
+          echo "- fix: for bug fixes (patch version bump)"  
+          echo "- BREAKING CHANGE: for breaking changes (major version bump)"
