@@ -12,6 +12,7 @@ import io.github.psbds.cobblemon.iv.candy.Boot;
 import io.github.psbds.cobblemon.iv.candy.items.components.DataShard;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyFactory;
 import io.github.psbds.cobblemon.iv.candy.items.objects.iv_extractor.IVExtractor;
+import io.github.psbds.cobblemon.iv.candy.items.objects.iv_extractor.IVExtractorFactory;
 
 public class IVExtractorRecipe implements CraftingRecipe {
 
@@ -43,7 +44,7 @@ public class IVExtractorRecipe implements CraftingRecipe {
 
     @Override
     public ItemStack getResultItem(Provider provider) {
-        return CandyFactory.createForSpeciesSample(null);
+        return new ItemStack(IVExtractorFactory.createDefault());
     }
 
     @Override

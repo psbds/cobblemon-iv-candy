@@ -3,7 +3,6 @@ package io.github.psbds.cobblemon.iv.candy.items.objects.iv_extractor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import io.github.psbds.cobblemon.iv.candy.items.ModItems;
 import io.github.psbds.cobblemon.iv.candy.items.components.DataShard;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.ElementalTypeMap;
 import io.github.psbds.cobblemon.iv.candy.items.objects.iv_extractor.actions.IVExtractorInteractLivingEntity;
@@ -38,14 +37,6 @@ public class IVExtractor extends Item {
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity,
             InteractionHand hand) {
-        Print(stack, player);
         return IVExtractorInteractLivingEntity.interactLivingEntity(stack, player, entity, hand);
     }
-
-    public static void Print(ItemStack stack, Player player) {
-        for (var comp : stack.getComponents()) {
-            LOGGER.debug(String.format("%s = %s", comp.type(), comp.value()));
-        }
-    }
-
 }

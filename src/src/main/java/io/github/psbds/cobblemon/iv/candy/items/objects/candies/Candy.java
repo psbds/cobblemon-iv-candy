@@ -73,14 +73,6 @@ public class Candy extends BaseCandy {
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity,
             InteractionHand hand) {
-        Print(stack, player);
         return CandyInteractLivingEntity.interactLivingEntity(stack, player, entity, hand);
-
-    }
-
-    public static void Print(ItemStack stack, Player player) {
-        for (var comp : stack.getComponents()) {
-            LOGGER.info(String.format("%s = %s", comp.type(), comp.value()));
-        }
     }
 }
