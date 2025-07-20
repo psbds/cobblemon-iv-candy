@@ -1,0 +1,250 @@
+---
+layout: default
+title: IV Candies
+nav_order: 5
+description: "Learn about IV candies - consumable items that enhance Pokémon IVs"
+permalink: /candies/
+---
+
+# IV Candies
+{: .no_toc }
+
+IV Candies are consumable items that enhance a Pokémon's Individual Values when used. They are crafted from IV Shards using specific recipes and provide targeted or random IV improvements.
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
+## How to Use Candies
+
+1. **Right-click on a Pokémon**: While holding an IV Candy in your hand
+2. **Compatibility Check**: The candy will verify it can be used on the target Pokémon
+3. **Stat Enhancement**: If compatible, the candy will improve the Pokémon's IVs
+4. **Consumption**: The candy is consumed after successful use
+5. **Feedback**: You'll receive a message confirming the IV improvement
+
+### Usage Requirements
+- **Held Item**: Must be holding the candy in your main hand
+- **Target Pokémon**: Must be a valid Pokémon entity (wild or owned)
+- **Compatibility**: Candy type must match Pokémon requirements
+- **IV Limit**: Target IV stat must be below maximum (31)
+
+---
+
+## Candy Types
+
+### 🎯 Targeted IV Candies
+- **Description**: Enhance a specific IV stat (HP, Attack, Defense, etc.)
+- **Creation**: Crafted using Super Candy recipes with stat-specific items
+- **Effect**: Increases the specified IV by 1 point (up to maximum of 31)
+- **Naming**: Shows the target stat in brackets (e.g., "Pikachu IV Candy [Attack]")
+- **Advantage**: Precise control over which stat to improve
+
+#### Available Target Stats
+| Stat | Recipe Component | Effect |
+|------|------------------|--------|
+| ![HP](assets/images/stats/stat_hp.png) **HP** | Heart of the Sea | Increases HP IV by 1 |
+| ![Attack](assets/images/stats/stat_attack.png) **Attack** | Diamond Sword | Increases Attack IV by 1 |
+| ![Defense](assets/images/stats/stat_defense.png) **Defense** | Diamond Chestplate | Increases Defense IV by 1 |
+| ![Special Attack](assets/images/stats/stat_special_attack.png) **Special Attack** | Enchanted Book | Increases Special Attack IV by 1 |
+| ![Special Defense](assets/images/stats/stat_special_defense.png) **Special Defense** | Shield | Increases Special Defense IV by 1 |
+| ![Speed](assets/images/stats/stat_speed.png) **Speed** | Diamond Boots | Increases Speed IV by 1 |
+
+### 🎲 Random IV Candies
+- **Description**: Enhance a random IV stat that isn't maxed out
+- **Creation**: Crafted using basic Candy recipes (no stat-specific components)
+- **Effect**: Randomly selects and improves a non-maxed IV stat
+- **Naming**: Shows "[Random IV]" in the name
+- **Advantage**: Simpler crafting, good for general improvements
+
+#### Random Selection Logic
+- **Smart Selection**: Only considers IVs below maximum (31)
+- **Equal Probability**: All eligible stats have equal chance of selection
+- **Automatic Fallback**: If all IVs are maxed, the candy cannot be used
+- **Feedback**: Shows which stat was randomly improved
+
+---
+
+## Candy Compatibility
+
+### Species-Specific Candies
+- **Source**: Created from Species Shards
+- **Compatibility**: Only work on the specific Pokémon species and its evolution line
+- **Example**: A Bulbasaur candy works on Bulbasaur, Ivysaur, and Venusaur
+- **Advantage**: More targeted approach, species-specific optimization
+- **Usage**: Ideal for training specific Pokémon or building competitive teams
+
+### Type-Specific Candies
+- **Source**: Created from Elemental Type Shards
+- **Compatibility**: Work on any Pokémon that has the matching type
+- **Example**: A Fire candy works on any Fire-type Pokémon (including dual-types)
+- **Advantage**: More versatile usage across multiple Pokémon
+- **Usage**: Great for training teams with similar type compositions
+
+### Category-Specific Candies
+- **Source**: Created from Legendary/Mythical/Ultra Beast/Paradox Shards
+- **Compatibility**: Work on any Pokémon in the respective category
+- **Examples**: 
+  - **Legendary candies**: Work on any Legendary Pokémon
+  - **Mythical candies**: Work on any Mythical Pokémon
+  - **Ultra Beast candies**: Work on any Ultra Beast Pokémon
+  - **Paradox candies**: Work on any Paradox Pokémon
+- **Advantage**: Extremely rare but highly valuable for special Pokémon
+
+---
+
+## Crafting Requirements
+
+### Basic Candy Recipe (Random IV)
+```
+[Shard] + [Sugar] + [Redstone Dust]
+    ↓
+[Random IV Candy]
+```
+
+### Super Candy Recipe (Targeted IV)
+```
+[Shard] + [Sugar] + [Redstone Dust] + [Stat Item]
+    ↓
+[Targeted IV Candy]
+```
+
+### Recipe Components
+- **IV Shard**: Determines candy compatibility (species/type/category)
+- **Sugar**: Base sweetening component (required for all candies)
+- **Redstone Dust**: Magical enhancement component (required for all candies)
+- **Stat Item**: Specific item that determines target stat (Super Candies only)
+
+For detailed crafting instructions, see the [Recipes Guide](recipes/).
+
+---
+
+## Candy Properties
+
+Each candy contains the following data:
+- **Candy Type**: Matches the source shard type (species/elemental/category)
+- **Species Data**: For species candies, stores compatibility information
+- **Target IV Stat**: For targeted candies, specifies which stat to enhance
+- **Visual Model**: Custom textures based on the candy type and target stat
+- **Compatibility Rules**: Encoded logic for determining valid targets
+
+---
+
+## Visual Identification
+
+### Custom Textures
+- **Base Color**: Matches the source shard type
+- **Stat Indicators**: Targeted candies show stat-specific visual elements
+- **Category Markers**: Special category candies have unique visual identifiers
+- **Quality Indicators**: Different visual quality for random vs targeted candies
+
+### Naming Convention
+- **Species Candies**: `[Species Name] IV Candy [Target Stat/Random IV]`
+- **Type Candies**: `[Type] IV Candy [Target Stat/Random IV]`
+- **Category Candies**: `[Category] IV Candy [Target Stat/Random IV]`
+
+### Tooltip Information
+Candies display helpful tooltips showing:
+- **Compatibility**: Which Pokémon can use this candy
+- **Effect**: What the candy will do when used
+- **Target Stat**: For targeted candies, which stat will be improved
+- **Current Stack**: How many candies are in the stack
+
+---
+
+## Usage Strategies
+
+### Competitive Training
+- **Targeted Candies**: Use for precise competitive builds
+- **Species Candies**: Focus on specific team members
+- **Stat Priority**: Prioritize stats that matter most for each Pokémon's role
+
+### General Enhancement
+- **Random Candies**: Good for overall improvement without specific goals
+- **Type Candies**: Efficient for training multiple Pokémon of similar types
+- **Balanced Approach**: Mix random and targeted based on available resources
+
+### Resource Management
+- **Rare Candies**: Save category-specific candies for truly special Pokémon
+- **Common Types**: Use type candies for frequently used Pokémon types
+- **Efficiency**: Consider cost-benefit of targeted vs random improvements
+
+---
+
+## Storage and Organization
+
+### Inventory Management
+- **Stackable**: Identical candies stack together up to 64
+- **Unique Items**: Different types/stats create separate item stacks
+- **Storage**: Compatible with any standard Minecraft container
+- **Organization**: Sort by type, target stat, or rarity
+
+### Sorting Tips
+- **By Function**: Separate random and targeted candies
+- **By Compatibility**: Group by species, type, or category
+- **By Stat**: Organize targeted candies by target stat
+- **By Priority**: Keep most-used candies easily accessible
+
+---
+
+## Debug and Testing
+
+### Debug Information
+Candies support debug interactions for testing and development:
+- **Right-click on any entity**: While holding a candy to see its properties
+- **Console Output**: Technical information about compatibility and effects
+- **Useful for**: Testing compatibility, debugging enhancement mechanics
+
+### Testing Features
+- **Compatibility Testing**: Verify which Pokémon can use specific candies
+- **Effect Verification**: Confirm IV improvements are applied correctly
+- **Recipe Testing**: Validate crafting recipes produce expected results
+
+---
+
+## Error Handling
+
+### Common Issues and Solutions
+
+#### "This candy cannot be used on this Pokémon"
+- **Cause**: Compatibility mismatch between candy and target Pokémon
+- **Solution**: Check candy type matches Pokémon species/type/category
+
+#### "This Pokémon's IVs are already maximized"
+- **Cause**: All target Pokémon's IVs are at maximum (31)
+- **Solution**: Use candy on a different Pokémon or for different stats
+
+#### "No eligible stats to improve"
+- **Cause**: For random candies, all IVs are at maximum
+- **Solution**: The Pokémon is fully optimized for this candy type
+
+#### Candy disappears without effect
+- **Cause**: Invalid target or server lag
+- **Solution**: Ensure valid Pokémon target and stable server connection
+
+---
+
+## Technical Details
+
+For developers and advanced users:
+
+### Data Components
+- **DataCandy**: Stores candy type, species ID, elemental type, and target stat
+- **CustomModelData**: Handles visual appearance and textures
+- **NBT Data**: Preserved for mod compatibility and data persistence
+
+### Registry Information
+- **Mod ID**: `cobblemon_iv_candy`
+- **Item ID**: `candy`
+- **Namespace**: `cobblemon_iv_candy:candy`
+- **Max Stack Size**: 64
+
+### Compatibility
+- **Cobblemon Integration**: Full compatibility with Cobblemon's IV system
+- **Data Persistence**: Candy data survives world saves and loads
+- **Mod Compatibility**: Designed to work alongside other Cobblemon addons
+- **Server Compatibility**: Fully functional in multiplayer environments

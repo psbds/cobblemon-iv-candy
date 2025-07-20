@@ -1,0 +1,51 @@
+/* Minecraft-style crafting recipe styles */
+.crafting-recipe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.crafting-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(3, 40px);
+    gap: 0;
+    border: 2px solid #8B4513;
+}
+
+.crafting-slot {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #8B4513;
+    background-color: #F5DEB3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.crafting-arrow {
+    margin: 0 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.crafting-result {
+    border: 2px solid #8B4513;
+    width: 44px;
+    height: 44px;
+    background-color: #F5DEB3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.item-icon-large {
+    width: 32px;
+    height: 32px;
+}

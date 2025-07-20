@@ -110,6 +110,10 @@ Check  **[Crafting Recipes](https://psbds.github.io/cobblemon-iv-candy/recipes/)
    - Craft IV Candies using the recipes
    - Use candies on your Pokémon to enhance their IVs
 
+4. **Configure (Optional):**
+   - Edit `config/cobblemon_iv_candy.json` to customize drop rates
+   - See [Configuration Guide](https://psbds.github.io/cobblemon-iv-candy/configuration/) for details
+
 ## 📋 Requirements
 
 | Component | Version | Status |

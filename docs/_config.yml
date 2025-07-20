@@ -72,4 +72,7 @@ back_to_top_text: "Back to top"
 # Footer content
 footer_content: "Copyright &copy; 2025 psbds. Distributed under the <a href=\"https://github.com/psbds/cobblemon-iv-candy/blob/master/LICENSE\">MIT License</a>."
 
+# Custom head includes for jQuery
+head_custom_include_path: "_includes/head_custom.html"
+
 # Navigation structure - remove nav_exclude_titles as it's not used in just-the-docs
