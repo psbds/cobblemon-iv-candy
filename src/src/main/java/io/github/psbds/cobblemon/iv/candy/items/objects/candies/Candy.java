@@ -11,6 +11,8 @@ import io.github.psbds.cobblemon.iv.candy.items.components.DataShard;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.ElementalTypeMap;
 import io.github.psbds.cobblemon.iv.candy.items.objects.BaseCandy;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.actions.CandyInteractLivingEntity;
+import io.github.psbds.cobblemon.iv.candy.items.objects.iv_extractor.DataIVExtractor;
+import io.github.psbds.cobblemon.iv.candy.items.objects.iv_extractor.IVExtractorType;
 import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardType;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -31,36 +33,35 @@ public class Candy extends BaseCandy {
     public static ItemStack create(ItemStack baseShard, Stats targetIVStat) {
         ItemStack itemStack = new ItemStack(ModItems.CANDY);
         var shardData = baseShard.get(DataShard.COMPONENT);
-        if (shardData.shardType().equals(ShardType.SPECIES)) {
-            var species = CobblemonSpeciesHelper.getSpeciesByPokedexNumber(shardData.baseSpeciesPokedexNumber());
-            return CandyFactory.createForSpecies(species, targetIVStat);
-        } else if (shardData.shardType().equals(ShardType.ELEMENTAL_TYPE)) {
-            var elementalType = ElementalTypeMap.getElementalType(shardData.elementalType());
-            return CandyFactory.createForElement(elementalType, targetIVStat);
-        } else if (shardData.shardType().equals(ShardType.LEGENDARY)) {
-            return CandyFactory.createLegendaryCandy(targetIVStat);
-        } else if (shardData.shardType().equals(ShardType.MYTHICAL)) {
-            return CandyFactory.createMythicalCandy(targetIVStat);
-        } else if (shardData.shardType().equals(ShardType.ULTRA_BEAST)) {
-            return CandyFactory.createUltraBeastCandy(targetIVStat);
-        } else if (shardData.shardType().equals(ShardType.PARADOX)) {
-            return CandyFactory.createParadoxCandy(targetIVStat);
-        }
+        
+        return switch (shardData.shardType()) {
+            case ShardType.SPECIES -> CandyFactory.createForSpecies(CobblemonSpeciesHelper.getSpeciesByPokedexNumber(shardData.baseSpeciesPokedexNumber()), targetIVStat);
+            case ShardType.ELEMENTAL_TYPE -> CandyFactory.createForElement(ElementalTypeMap.getElementalType(shardData.elementalType()), targetIVStat);
+            case ShardType.LEGENDARY -> CandyFactory.createLegendaryCandy(targetIVStat);
+            case ShardType.MYTHICAL -> CandyFactory.createMythicalCandy(targetIVStat);
+            case ShardType.ULTRA_BEAST -> CandyFactory.createUltraBeastCandy(targetIVStat);
+            case ShardType.PARADOX -> CandyFactory.createParadoxCandy(targetIVStat);
+            default -> itemStack;
+        };
+    }
 
-        return itemStack;
+    public static ItemStack createByExtractor(ItemStack ivExtractor, Stats targetIVStat) {
+        ItemStack itemStack = new ItemStack(ModItems.CANDY);
+        var ivExtractorData = ivExtractor.get(DataIVExtractor.COMPONENT);
+        
+        return switch (ivExtractorData.ivExtractorType()) {
+            case IVExtractorType.ELEMENTAL_TYPE -> CandyFactory.createForElement(ElementalTypeMap.getElementalType(ivExtractorData.elementalType()), targetIVStat);
+            case IVExtractorType.LEGENDARY -> CandyFactory.createLegendaryCandy(targetIVStat);
+            case IVExtractorType.MYTHICAL -> CandyFactory.createMythicalCandy(targetIVStat);
+            case IVExtractorType.ULTRA_BEAST -> CandyFactory.createUltraBeastCandy(targetIVStat);
+            case IVExtractorType.PARADOX -> CandyFactory.createParadoxCandy(targetIVStat);
+            default -> itemStack;
+        };
     }
 
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity,
             InteractionHand hand) {
-        Print(stack, player);
         return CandyInteractLivingEntity.interactLivingEntity(stack, player, entity, hand);
-
-    }
-
-    public static void Print(ItemStack stack, Player player) {
-        for (var comp : stack.getComponents()) {
-            LOGGER.debug(String.format("%s = %s", comp.type(), comp.value()));
-        }
     }
 }

@@ -45,13 +45,6 @@ public class Shard extends BaseShard {
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity,
             InteractionHand hand) {
-        Print(stack, player);
         return InteractionResult.SUCCESS;
-    }
-
-    public static void Print(ItemStack stack, Player player) {
-        for (var comp : stack.getComponents()) {
-            player.sendSystemMessage(Component.literal(String.format("%s = %s", comp.type(), comp.value())));
-        }
     }
 }

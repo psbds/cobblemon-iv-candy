@@ -1,7 +1,6 @@
 package io.github.psbds.cobblemon.iv.candy.compat.jei.items.super_candy;
 
 import io.github.psbds.cobblemon.iv.candy.Boot;
-import io.github.psbds.cobblemon.iv.candy.items.ModItems;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyFactory;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;

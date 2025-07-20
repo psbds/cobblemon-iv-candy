@@ -66,7 +66,6 @@ public class CandyRecipeMatcher {
     }
 
     public static Object TryMatchLegendary(String lastShardType, Object lastObject, ItemStack itemStack) {
-        var dataShard = itemStack.get(DataShard.COMPONENT);
 
         if (lastShardType != ShardType.LEGENDARY) {
             return null;
@@ -75,15 +74,10 @@ public class CandyRecipeMatcher {
             return ShardType.LEGENDARY;
         }
 
-        if (lastObject.equals(dataShard.elementalType())) {
-            return dataShard.elementalType();
-        }
-
         return true;
     }
 
     public static Object TryMatchMythical(String lastShardType, Object lastObject, ItemStack itemStack) {
-        var dataShard = itemStack.get(DataShard.COMPONENT);
 
         if (lastShardType != ShardType.MYTHICAL) {
             return null;
@@ -91,16 +85,10 @@ public class CandyRecipeMatcher {
         if (lastObject == null) {
             return ShardType.MYTHICAL;
         }
-
-        if (lastObject.equals(dataShard.elementalType())) {
-            return dataShard.elementalType();
-        }
-
         return true;
     }
 
     public static Object TryMatchUltrabeast(String lastShardType, Object lastObject, ItemStack itemStack) {
-        var dataShard = itemStack.get(DataShard.COMPONENT);
 
         if (lastShardType != ShardType.ULTRA_BEAST) {
             return null;
@@ -109,25 +97,16 @@ public class CandyRecipeMatcher {
             return ShardType.ULTRA_BEAST;
         }
 
-        if (lastObject.equals(dataShard.elementalType())) {
-            return dataShard.elementalType();
-        }
-
         return true;
     }
 
     public static Object TryMatchParadox(String lastShardType, Object lastObject, ItemStack itemStack) {
-        var dataShard = itemStack.get(DataShard.COMPONENT);
 
         if (lastShardType != ShardType.PARADOX) {
             return null;
         }
         if (lastObject == null) {
             return ShardType.PARADOX;
-        }
-
-        if (lastObject.equals(dataShard.elementalType())) {
-            return dataShard.elementalType();
         }
 
         return true;
