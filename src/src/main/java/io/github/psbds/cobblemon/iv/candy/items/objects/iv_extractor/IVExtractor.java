@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import io.github.psbds.cobblemon.iv.candy.items.components.DataShard;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.ElementalTypeMap;
 import io.github.psbds.cobblemon.iv.candy.items.objects.iv_extractor.actions.IVExtractorInteractLivingEntity;
+import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardType;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
@@ -25,11 +26,11 @@ public class IVExtractor extends Item {
         var shardData = baseShard.get(DataShard.COMPONENT);
 
         return switch (shardData.shardType()) {
-            case IVExtractorType.ELEMENTAL_TYPE -> IVExtractorFactory.createElement(ElementalTypeMap.getElementalType(shardData.elementalType()));
-            case IVExtractorType.LEGENDARY -> IVExtractorFactory.createLegendary();
-            case IVExtractorType.MYTHICAL -> IVExtractorFactory.createMythical();
-            case IVExtractorType.ULTRA_BEAST -> IVExtractorFactory.createUltrabeast();
-            case IVExtractorType.PARADOX -> IVExtractorFactory.createParadox();
+            case ShardType.ELEMENTAL_TYPE -> IVExtractorFactory.createElement(ElementalTypeMap.getElementalType(shardData.elementalType()));
+            case ShardType.LEGENDARY -> IVExtractorFactory.createLegendary();
+            case ShardType.MYTHICAL -> IVExtractorFactory.createMythical();
+            case ShardType.ULTRA_BEAST -> IVExtractorFactory.createUltrabeast();
+            case ShardType.PARADOX -> IVExtractorFactory.createParadox();
             default -> throw new IllegalArgumentException("Unknown IVExtractorType: " + shardData.shardType());
         };
     }

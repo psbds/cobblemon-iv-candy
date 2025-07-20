@@ -65,9 +65,7 @@ public class CandyInteractLivingEntity {
             if (!handleRandomIV(pokemonEntity.getPokemon(), dataCandy, player)) {
                 return InteractionResult.FAIL;
             }
-        }
-
-        if (!dataCandy.targetIVStat().equals(Candy.IDENTIFIER_RANDOM_IV)) {
+        } else {
             if (!handleTargetIv(pokemonEntity.getPokemon(), dataCandy, player, IVStatMap.getStats(dataCandy.targetIVStat()))) {
                 return InteractionResult.FAIL;
             }
