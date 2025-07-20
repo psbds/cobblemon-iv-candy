@@ -1,7 +1,7 @@
 package io.github.psbds.cobblemon.iv.candy.items.objects.iv_extractor;
 
 import io.github.psbds.cobblemon.iv.candy.items.components.DataShard;
-import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyType;
+import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardType;
 import net.minecraft.world.item.ItemStack;
 
 public class IVExtractorType {
@@ -14,15 +14,15 @@ public class IVExtractorType {
     public static String getIVExtractorType(ItemStack shard) {
         var shardData = shard.get(DataShard.COMPONENT);
         var shardType = shardData.shardType();
-        if (shardType.equals(CandyType.ELEMENTAL_TYPE)) {
+        if (shardType.equals(ShardType.ELEMENTAL_TYPE)) {
             return ELEMENTAL_TYPE;
-        } else if (shardType.equals(CandyType.LEGENDARY)) {
+        } else if (shardType.equals(ShardType.LEGENDARY)) {
             return LEGENDARY;
-        } else if (shardType.equals(CandyType.MYTHICAL)) {
+        } else if (shardType.equals(ShardType.MYTHICAL)) {
             return MYTHICAL;
-        } else if (shardType.equals(CandyType.ULTRA_BEAST)) {
+        } else if (shardType.equals(ShardType.ULTRA_BEAST)) {
             return ULTRA_BEAST;
-        } else if (shardType.equals(CandyType.PARADOX)) {
+        } else if (shardType.equals(ShardType.PARADOX)) {
             return PARADOX;
         }
         return null;

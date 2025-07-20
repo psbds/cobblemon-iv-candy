@@ -46,7 +46,7 @@ public class IVExtractorRecipeMatcher {
     }
 
     public static Boolean analyzeMiddleItem(CraftingInput recipeInput) {
-        LOGGER.info("Analyzing Middle Item for SuperCandySpeciesRecipe");
+        LOGGER.info("Analyzing Middle Item for IVExtractorRecipe");
         ItemStack centerItem = recipeInput.getItem(4); // Index 4 is position 5 (center)
         if (centerItem.isEmpty()) {
             LOGGER.info("Center item is empty, returning false");
@@ -61,7 +61,7 @@ public class IVExtractorRecipeMatcher {
     }
 
     public static Boolean analyzeBottomItem(CraftingInput recipeInput) {
-        LOGGER.info("Analyzing Bottom Item for SuperCandySpeciesRecipe");
+        LOGGER.info("Analyzing Bottom Item for IVExtractorRecipe");
         ItemStack centerItem = recipeInput.getItem(6); // Index 6 is position 7
         if (centerItem.isEmpty()) {
             LOGGER.info("Center item is empty, returning false");
