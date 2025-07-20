@@ -44,7 +44,7 @@ public class IVExtractorRecipe implements CraftingRecipe {
 
     @Override
     public ItemStack getResultItem(Provider provider) {
-        return new ItemStack(IVExtractorFactory.createDefault());
+        return IVExtractorFactory.createSample();
     }
 
     @Override

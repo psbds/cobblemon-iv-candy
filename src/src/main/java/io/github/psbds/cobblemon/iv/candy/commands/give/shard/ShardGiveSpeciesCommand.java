@@ -13,6 +13,7 @@ import com.mojang.brigadier.suggestion.SuggestionProvider;
 
 import io.github.psbds.cobblemon.iv.candy.helpers.CobblemonSpeciesHelper;
 import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardFactory;
+import io.github.psbds.cobblemon.iv.candy.player.PlayerInventoryHelper;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -53,7 +54,7 @@ public class ShardGiveSpeciesCommand {
             for (ServerPlayer targetPlayer : targetPlayers) {
                 var baseSpecies = CobblemonSpeciesHelper.getFirstEvolution(species);
                 var shard = ShardFactory.createForSpecies(baseSpecies);
-                targetPlayer.getInventory().add(shard);
+                PlayerInventoryHelper.addOrDrop(targetPlayer, shard);
                 commandSender.sendSystemMessage(Component.literal("Gave " + baseSpecies.getName() + " IV Shard to " + targetPlayer.getDisplayName().getString()));
             }
         } else {

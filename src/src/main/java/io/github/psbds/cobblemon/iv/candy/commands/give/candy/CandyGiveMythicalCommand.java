@@ -8,6 +8,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import io.github.psbds.cobblemon.iv.candy.items.mappers.IVStatMap;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyFactory;
+import io.github.psbds.cobblemon.iv.candy.player.PlayerInventoryHelper;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.Component;
@@ -34,7 +35,7 @@ public class CandyGiveMythicalCommand {
         for (ServerPlayer targetPlayer : targetPlayers) {
             var targetIvStat = iv.equals("random") ? null : IVStatMap.getStats(iv); // Handle random or specific IV stat
             var candy = CandyFactory.createMythicalCandy(targetIvStat);
-            targetPlayer.getInventory().add(candy);
+            PlayerInventoryHelper.addOrDrop(targetPlayer, candy);
             commandSender.sendSystemMessage(Component.literal("Gave Mythical IV Candy to " + targetPlayer.getDisplayName().getString()));
         }
 

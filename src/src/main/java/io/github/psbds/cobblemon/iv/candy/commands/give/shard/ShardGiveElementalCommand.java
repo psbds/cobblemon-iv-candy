@@ -13,6 +13,7 @@ import com.mojang.brigadier.suggestion.SuggestionProvider;
 
 import io.github.psbds.cobblemon.iv.candy.items.mappers.ElementalTypeMap;
 import io.github.psbds.cobblemon.iv.candy.items.objects.shards.ShardFactory;
+import io.github.psbds.cobblemon.iv.candy.player.PlayerInventoryHelper;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -52,7 +53,7 @@ public class ShardGiveElementalCommand {
         if (elementalType != null) {
             for (ServerPlayer targetPlayer : targetPlayers) {
                 var shard = ShardFactory.createForElement(elementalType);
-                targetPlayer.getInventory().add(shard);
+                PlayerInventoryHelper.addOrDrop(targetPlayer, shard);
                 commandSender.sendSystemMessage(Component.literal("Gave " + elementalType.getName() + " IV Shard to " + targetPlayer.getDisplayName().getString()));
             }
         } else {
