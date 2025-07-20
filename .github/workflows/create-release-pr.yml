@@ -37,6 +37,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          # Configure git user for the workflow
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          
           # Fetch all branches and tags to ensure we have the complete history
           git fetch origin master:master --force
           git fetch --tags
@@ -58,13 +62,18 @@ jobs:
           
           # Create a temporary branch that simulates what master would look like after merge
           git checkout -b temp-release-analysis master
-          git merge --no-commit --no-ff develop || {
+          
+          # Try to merge develop into our temporary branch
+          if ! git merge --no-commit --no-ff develop; then
             echo "Merge conflict detected - manual intervention needed"
-            git merge --abort
+            # Clean up and exit gracefully
+            git merge --abort 2>/dev/null || true
+            git checkout develop 2>/dev/null || true
+            git branch -D temp-release-analysis 2>/dev/null || true
             echo "new-release-version=" >> $GITHUB_OUTPUT
             echo "has-changes=false" >> $GITHUB_OUTPUT
             exit 0
-          }
+          fi
           
           # Reset to keep the merge state but don't commit
           git reset --soft HEAD
