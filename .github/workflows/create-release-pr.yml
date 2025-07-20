@@ -30,29 +30,27 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+          sudo apt-get update && sudo apt-get install -y jq
 
       - name: Get next version from semantic-release
         id: semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Create a temporary package.json for standalone semantic-release run
-          cat > temp-package.json << 'EOF'
-          {
-            "name": "temp-semantic-release",
-            "version": "0.0.0",
-            "private": true,
-            "devDependencies": {
-              "semantic-release": "^24.0.0",
-              "@semantic-release/commit-analyzer": "^13.0.0",
-              "@semantic-release/release-notes-generator": "^14.0.1"
-            }
-          }
-          EOF
+          # Create a temporary .releaserc.json that allows running from develop branch
+          cp .releaserc.json .releaserc.json.backup
+          
+          # Modify the configuration to include develop branch temporarily
+          cat .releaserc.json | jq '.branches += ["develop"]' > .releaserc.temp.json
+          mv .releaserc.temp.json .releaserc.json
           
           # Run semantic-release in dry-run mode and capture output
           npx semantic-release --dry-run --no-ci 2>&1 | tee semantic-release-output.txt || true
+          
+          # Restore original configuration
+          mv .releaserc.json.backup .releaserc.json
           
           # Look for the version in various output patterns
           NEXT_VERSION=""
@@ -65,18 +63,21 @@ jobs:
             NEXT_VERSION=$(grep -oP 'Release note for version \K[0-9]+\.[0-9]+\.[0-9]+' semantic-release-output.txt 2>/dev/null || true)
           fi
           
-          # Pattern 3: Look for version in nextRelease object
+          # Pattern 3: Look for version in nextRelease object (JSON format)
           if [ -z "$NEXT_VERSION" ]; then
             NEXT_VERSION=$(grep -oP '"version":\s*"\K[0-9]+\.[0-9]+\.[0-9]+' semantic-release-output.txt 2>/dev/null || true)
           fi
           
-          # Pattern 4: Look for any semantic version in the output
+          # Pattern 4: Look in the logs for "Published release X.X.X"
           if [ -z "$NEXT_VERSION" ]; then
-            NEXT_VERSION=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+' semantic-release-output.txt | head -1 || true)
+            NEXT_VERSION=$(grep -oP 'Published release \K[0-9]+\.[0-9]+\.[0-9]+' semantic-release-output.txt 2>/dev/null || true)
           fi
           
-          # Clean up
-          rm -f temp-package.json
+          # Skip semantic-release version numbers (anything >= 20.0.0 is likely the tool version)
+          if [[ "$NEXT_VERSION" =~ ^[2-9][0-9]\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Skipping semantic-release tool version: $NEXT_VERSION"
+            NEXT_VERSION=""
+          fi
           
           if [ -z "$NEXT_VERSION" ] || [ "$NEXT_VERSION" = "0.0.0" ]; then
             echo "No new version to release"
