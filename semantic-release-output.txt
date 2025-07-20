@@ -1,0 +1,173 @@
+[11:37:51 AM] [semantic-release] › ℹ  Running semantic-release version 24.2.7
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/changelog"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/github"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "verifyConditions" from "@semantic-release/git"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "analyzeCommits" from "@semantic-release/commit-analyzer"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "analyzeCommits" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "analyzeCommits" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "verifyRelease" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "verifyRelease" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "generateNotes" from "@semantic-release/release-notes-generator"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "generateNotes" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "generateNotes" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "prepare" from "@semantic-release/changelog"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "prepare" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "prepare" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "prepare" from "@semantic-release/git"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "publish" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "publish" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "publish" from "@semantic-release/github"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "addChannel" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "addChannel" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "addChannel" from "@semantic-release/github"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "success" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "success" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "success" from "@semantic-release/github"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "fail" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "fail" from "@semantic-release/exec"
+[11:37:52 AM] [semantic-release] › ✔  Loaded plugin "fail" from "@semantic-release/github"
+[11:37:53 AM] [semantic-release] › ⚠  Run automated release from branch master on repository https://github.com/psbds/cobblemon-iv-candy.git in dry-run mode
+[11:37:53 AM] [semantic-release] › ✔  Allowed to push to the Git repository
+[11:37:53 AM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/changelog"
+[11:37:53 AM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/changelog"
+[11:37:53 AM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/github"
+[11:37:53 AM] [semantic-release] [@semantic-release/github] › ℹ  Verify GitHub authentication (https://api.github.com)
+[11:37:53 AM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/github"
+[11:37:53 AM] [semantic-release] › ℹ  Start step "verifyConditions" of plugin "@semantic-release/git"
+[11:37:53 AM] [semantic-release] › ✔  Completed step "verifyConditions" of plugin "@semantic-release/git"
+[11:37:53 AM] [semantic-release] › ℹ  Found git tag v1.3.0 associated with version 1.3.0 on branch master
+[11:37:53 AM] [semantic-release] › ℹ  Found 31 commits since last release
+[11:37:53 AM] [semantic-release] › ℹ  Start step "analyzeCommits" of plugin "@semantic-release/commit-analyzer"
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: temp: merge develop for version analysis
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #19 from psbds/fix/iv-extractor-fix
+
+Fix/iv extractor fix
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: fix: fix issue with iv extractor recipe
+fix: fix issue when the player has full inventory
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is patch
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: docs: update iv extractor docs
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #16 from psbds/feature/implement-release-flow
+
+ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #15 from psbds/feature/implement-release-flow
+
+ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #14 from psbds/feature/implement-release-flow
+
+ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #13 from psbds/feature/implement-release-flow
+
+ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #12 from psbds/feature/implement-release-flow
+
+ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #11 from psbds/feature/implement-release-flow
+
+Feature/implement release flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #10 from psbds/feature/implement-release-flow
+
+ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #9 from psbds/feature/implement-release-flow
+
+ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: ci: implement release to main flow
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #8 from psbds/feature/iv-extractor
+
+feat: IV Extractor
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: chore: fix github review
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: chore: fix github review
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: chore: fix github review
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: chore: fix github review
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: feat: IV Extractor
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The release type for the commit is minor
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #7 from psbds/feature/docs
+
+docs:atualizei denovo
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: docs:atualizei denovo
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: Merge pull request #6 from psbds/feature/docs
+
+docs:atualizando imagens
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analyzing commit: docs:atualizando imagens
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  The commit should not trigger a release
+[11:37:53 AM] [semantic-release] [@semantic-release/commit-analyzer] › ℹ  Analysis of 31 commits complete: minor release
+[11:37:53 AM] [semantic-release] › ✔  Completed step "analyzeCommits" of plugin "@semantic-release/commit-analyzer"
+[11:37:53 AM] [semantic-release] › ℹ  Start step "analyzeCommits" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ✔  Completed step "analyzeCommits" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ℹ  Start step "analyzeCommits" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ✔  Completed step "analyzeCommits" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ℹ  The next release version is 1.4.0
+[11:37:53 AM] [semantic-release] › ℹ  Start step "verifyRelease" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ✔  Completed step "verifyRelease" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ℹ  Start step "verifyRelease" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ✔  Completed step "verifyRelease" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ℹ  Start step "generateNotes" of plugin "@semantic-release/release-notes-generator"
+[11:37:53 AM] [semantic-release] › ✔  Completed step "generateNotes" of plugin "@semantic-release/release-notes-generator"
+[11:37:53 AM] [semantic-release] › ℹ  Start step "generateNotes" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ✔  Completed step "generateNotes" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ℹ  Start step "generateNotes" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ✔  Completed step "generateNotes" of plugin "@semantic-release/exec"
+[11:37:53 AM] [semantic-release] › ⚠  Skip step "prepare" of plugin "@semantic-release/changelog" in dry-run mode
+[11:37:53 AM] [semantic-release] › ⚠  Skip step "prepare" of plugin "@semantic-release/exec" in dry-run mode
+[11:37:53 AM] [semantic-release] › ⚠  Skip step "prepare" of plugin "@semantic-release/exec" in dry-run mode
+[11:37:53 AM] [semantic-release] › ⚠  Skip step "prepare" of plugin "@semantic-release/git" in dry-run mode
+[11:37:53 AM] [semantic-release] › ⚠  Skip v1.4.0 tag creation in dry-run mode
+[11:37:53 AM] [semantic-release] › ⚠  Skip step "publish" of plugin "@semantic-release/exec" in dry-run mode
+[11:37:53 AM] [semantic-release] › ⚠  Skip step "publish" of plugin "@semantic-release/exec" in dry-run mode
+[11:37:53 AM] [semantic-release] › ⚠  Skip step "publish" of plugin "@semantic-release/github" in dry-run mode
+[11:37:53 AM] [semantic-release] › ⚠  Skip step "success" of plugin "@semantic-release/exec" in dry-run mode
+[11:37:53 AM] [semantic-release] › ⚠  Skip step "success" of plugin "@semantic-release/exec" in dry-run mode
+[11:37:53 AM] [semantic-release] › ⚠  Skip step "success" of plugin "@semantic-release/github" in dry-run mode
+[11:37:53 AM] [semantic-release] › ✔  Published release 1.4.0 on default channel
+[11:37:53 AM] [semantic-release] › ℹ  Release note for version 1.4.0:
+# 1.4.0 (https://github.com/psbds/cobblemon-iv-candy/compare/v1.3.0...v1.4.0) (2025-07-20)
+
+### Bug Fixes
+
+    * fix issue with iv extractor recipe ([222b69a](https://github.com/psbds/cobblemon-iv-candy/commit/222b69ae7c1f4dc40685ae473ebcb80a6aa19026))
+
+### Features
+
+    * IV Extractor ([9bf5ffe](https://github.com/psbds/cobblemon-iv-candy/commit/9bf5ffec23ee5462033cad7a2b9044681dc1aec2))
+
