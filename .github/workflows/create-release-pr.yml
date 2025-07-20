@@ -30,27 +30,51 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: |
-          npm ci
-          sudo apt-get update && sudo apt-get install -y jq
+        run: npm ci
 
       - name: Get next version from semantic-release
         id: semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Create a temporary .releaserc.json that allows running from develop branch
-          cp .releaserc.json .releaserc.json.backup
+          # Fetch all branches and tags to ensure we have the complete history
+          git fetch origin master:master --force
+          git fetch --tags
           
-          # Modify the configuration to include develop branch temporarily
-          cat .releaserc.json | jq '.branches += ["develop"]' > .releaserc.temp.json
-          mv .releaserc.temp.json .releaserc.json
+          # Get the latest tag from master branch to understand current version
+          CURRENT_VERSION=$(git describe --tags --abbrev=0 master 2>/dev/null || echo "v0.0.0")
+          echo "Current version on master: $CURRENT_VERSION"
           
-          # Run semantic-release in dry-run mode and capture output
+          # Get commits from master to develop to analyze what's new
+          COMMITS_TO_ANALYZE=$(git rev-list master..develop --count)
+          echo "Commits from master to develop: $COMMITS_TO_ANALYZE"
+          
+          if [ "$COMMITS_TO_ANALYZE" -eq 0 ]; then
+            echo "No new commits to release"
+            echo "new-release-version=" >> $GITHUB_OUTPUT
+            echo "has-changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Create a temporary branch that simulates what master would look like after merge
+          git checkout -b temp-release-analysis master
+          git merge --no-commit --no-ff develop || {
+            echo "Merge conflict detected - manual intervention needed"
+            git merge --abort
+            echo "new-release-version=" >> $GITHUB_OUTPUT
+            echo "has-changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          }
+          
+          # Reset to keep the merge state but don't commit
+          git reset --soft HEAD
+          
+          # Now run semantic-release from this simulated merged state
           npx semantic-release --dry-run --no-ci 2>&1 | tee semantic-release-output.txt || true
           
-          # Restore original configuration
-          mv .releaserc.json.backup .releaserc.json
+          # Clean up temporary branch
+          git checkout develop
+          git branch -D temp-release-analysis
           
           # Look for the version in various output patterns
           NEXT_VERSION=""
@@ -84,7 +108,7 @@ jobs:
             echo "new-release-version=" >> $GITHUB_OUTPUT
             echo "has-changes=false" >> $GITHUB_OUTPUT
           else
-            echo "Next version: $NEXT_VERSION"
+            echo "Next version calculated: $NEXT_VERSION"
             echo "new-release-version=$NEXT_VERSION" >> $GITHUB_OUTPUT
             echo "has-changes=true" >> $GITHUB_OUTPUT
           fi
