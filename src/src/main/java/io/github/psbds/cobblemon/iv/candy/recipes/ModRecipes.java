@@ -15,20 +15,25 @@ import net.minecraft.world.item.crafting.RecipeType;
 
 public class ModRecipes {
 
-    public static final RecipeType<SuperCandyRecipe> SUPER_CANDY_RECIPE_TYPE = registerTypeAndSerializer(
-            SuperCandyRecipeSerializer.ID,
-            SuperCandyRecipeSerializer.INSTANCE);
-
-    public static final RecipeType<CandyRecipe> CANDY_RECIPE_TYPE = registerTypeAndSerializer(
-            CandyRecipeSerializer.ID,
-            CandyRecipeSerializer.INSTANCE);
-
-    public static final RecipeType<IVExtractorRecipe> IV_EXTRACTOR_RECIPE_TYPE = registerTypeAndSerializer(
-            IVExtractorRecipeSerializer.ID,
-            IVExtractorRecipeSerializer.INSTANCE);
+    public static RecipeType<SuperCandyRecipe> SUPER_CANDY_RECIPE_TYPE;
+    public static RecipeType<CandyRecipe> CANDY_RECIPE_TYPE;
+    public static RecipeType<IVExtractorRecipe> IV_EXTRACTOR_RECIPE_TYPE;
 
     public static void registerRecipes() {
         Boot.LOGGER.info("Registering Custom Recipes for " + Boot.MOD_ID);
+        
+        SUPER_CANDY_RECIPE_TYPE = registerTypeAndSerializer(
+                SuperCandyRecipeSerializer.ID,
+                SuperCandyRecipeSerializer.INSTANCE);
+                
+        CANDY_RECIPE_TYPE = registerTypeAndSerializer(
+                CandyRecipeSerializer.ID,
+                CandyRecipeSerializer.INSTANCE);
+                
+        IV_EXTRACTOR_RECIPE_TYPE = registerTypeAndSerializer(
+                IVExtractorRecipeSerializer.ID,
+                IVExtractorRecipeSerializer.INSTANCE);
+        
         Boot.LOGGER.info("Registered recipe serializer: " + SuperCandyRecipeSerializer.ID);
         Boot.LOGGER.info("Registered recipe serializer: " + CandyRecipeSerializer.ID);
         Boot.LOGGER.info("Registered recipe serializer: " + IVExtractorRecipeSerializer.ID);

@@ -24,30 +24,36 @@ public record DataCandy(
         return new DataCandy(candyType, baseSpeciesPokedexNumber, elementalType, targetIVStat);
     }
 
-    public static final DataComponentType<DataCandy> COMPONENT = DataComponentType.<DataCandy>builder()
-            .persistent(RecordCodecBuilder.create(
-                    instance -> instance.group(
-                            Codec.STRING.fieldOf("candyType")
-                                    .forGetter(DataCandy::candyType),
-                            Codec.INT.fieldOf("baseSpeciesPokedexNumber")
-                                    .forGetter(DataCandy::baseSpeciesPokedexNumber),
-                            Codec.INT.fieldOf("elementalType")
-                                    .forGetter(DataCandy::elementalType),
-                            Codec.STRING.fieldOf("targetIVStat")
-                                    .forGetter(DataCandy::targetIVStat))
-                            .apply(instance, DataCandy::new)))
-            .networkSynchronized(StreamCodec.composite(
-                    ByteBufCodecs.STRING_UTF8, DataCandy::candyType,
-                    ByteBufCodecs.INT, DataCandy::baseSpeciesPokedexNumber,
-                    ByteBufCodecs.INT, DataCandy::elementalType,
-                    ByteBufCodecs.STRING_UTF8, DataCandy::targetIVStat,
-                    DataCandy::new))
-            .build();
+    public static DataComponentType<DataCandy> COMPONENT;
 
     public static void initialize() {
+        Boot.LOGGER.info("Registering DataCandy component");
+        
+        COMPONENT = DataComponentType.<DataCandy>builder()
+                .persistent(RecordCodecBuilder.create(
+                        instance -> instance.group(
+                                Codec.STRING.fieldOf("candyType")
+                                        .forGetter(DataCandy::candyType),
+                                Codec.INT.fieldOf("baseSpeciesPokedexNumber")
+                                        .forGetter(DataCandy::baseSpeciesPokedexNumber),
+                                Codec.INT.fieldOf("elementalType")
+                                        .forGetter(DataCandy::elementalType),
+                                Codec.STRING.fieldOf("targetIVStat")
+                                        .forGetter(DataCandy::targetIVStat))
+                                .apply(instance, DataCandy::new)))
+                .networkSynchronized(StreamCodec.composite(
+                        ByteBufCodecs.STRING_UTF8, DataCandy::candyType,
+                        ByteBufCodecs.INT, DataCandy::baseSpeciesPokedexNumber,
+                        ByteBufCodecs.INT, DataCandy::elementalType,
+                        ByteBufCodecs.STRING_UTF8, DataCandy::targetIVStat,
+                        DataCandy::new))
+                .build();
+                
         Registry.register(
                 BuiltInRegistries.DATA_COMPONENT_TYPE,
                 ResourceLocation.fromNamespaceAndPath(Boot.MOD_ID, NAME),
                 COMPONENT);
+                
+        Boot.LOGGER.info("Successfully registered DataCandy component");
     }
 }

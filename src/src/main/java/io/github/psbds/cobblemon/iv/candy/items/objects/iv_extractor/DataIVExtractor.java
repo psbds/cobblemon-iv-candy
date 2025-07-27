@@ -23,27 +23,33 @@ public record DataIVExtractor(
                 return new DataIVExtractor(ivExtractorType, baseSpeciesPokedexNumber, elementalType);
         }
 
-        public static final DataComponentType<DataIVExtractor> COMPONENT = DataComponentType.<DataIVExtractor>builder()
-                        .persistent(RecordCodecBuilder.create(
-                                        instance -> instance.group(
-                                                        Codec.STRING.fieldOf("ivExtractorType")
-                                                                        .forGetter(DataIVExtractor::ivExtractorType),
-                                                        Codec.INT.fieldOf("baseSpeciesPokedexNumber")
-                                                                        .forGetter(DataIVExtractor::baseSpeciesPokedexNumber),
-                                                        Codec.INT.fieldOf("elementalType")
-                                                                        .forGetter(DataIVExtractor::elementalType))
-                                                        .apply(instance, DataIVExtractor::new)))
-                        .networkSynchronized(StreamCodec.composite(
-                                        ByteBufCodecs.STRING_UTF8, DataIVExtractor::ivExtractorType,
-                                        ByteBufCodecs.INT, DataIVExtractor::baseSpeciesPokedexNumber,
-                                        ByteBufCodecs.INT, DataIVExtractor::elementalType,
-                                        DataIVExtractor::new))
-                        .build();
+        public static DataComponentType<DataIVExtractor> COMPONENT;
 
         public static void initialize() {
+                Boot.LOGGER.info("Registering DataIVExtractor component");
+                
+                COMPONENT = DataComponentType.<DataIVExtractor>builder()
+                                .persistent(RecordCodecBuilder.create(
+                                                instance -> instance.group(
+                                                                Codec.STRING.fieldOf("ivExtractorType")
+                                                                                .forGetter(DataIVExtractor::ivExtractorType),
+                                                                Codec.INT.fieldOf("baseSpeciesPokedexNumber")
+                                                                                .forGetter(DataIVExtractor::baseSpeciesPokedexNumber),
+                                                                Codec.INT.fieldOf("elementalType")
+                                                                                .forGetter(DataIVExtractor::elementalType))
+                                                                .apply(instance, DataIVExtractor::new)))
+                                .networkSynchronized(StreamCodec.composite(
+                                                ByteBufCodecs.STRING_UTF8, DataIVExtractor::ivExtractorType,
+                                                ByteBufCodecs.INT, DataIVExtractor::baseSpeciesPokedexNumber,
+                                                ByteBufCodecs.INT, DataIVExtractor::elementalType,
+                                                DataIVExtractor::new))
+                                .build();
+                                
                 Registry.register(
                                 BuiltInRegistries.DATA_COMPONENT_TYPE,
                                 ResourceLocation.fromNamespaceAndPath(Boot.MOD_ID, NAME),
                                 COMPONENT);
+                                
+                Boot.LOGGER.info("Successfully registered DataIVExtractor component");
         }
 }
