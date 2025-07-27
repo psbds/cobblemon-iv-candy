@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/psbds/cobblemon-iv-candy/compare/v1.4.0...v1.4.1) (2025-07-27)
+
+
+### Bug Fixes
+
+* removing item registration from static contexts ([aeca4f5](https://github.com/psbds/cobblemon-iv-candy/commit/aeca4f564c6d306c155085799f98a63b654abcce))
+
 # [1.4.0](https://github.com/psbds/cobblemon-iv-candy/compare/v1.3.0...v1.4.0) (2025-07-20)
 
 
