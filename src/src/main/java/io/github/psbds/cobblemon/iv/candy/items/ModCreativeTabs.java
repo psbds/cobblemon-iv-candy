@@ -11,28 +11,30 @@ import net.minecraft.world.item.CreativeModeTab;
 
 public class ModCreativeTabs {
 
-    public static final CreativeModeTab COBBLEMON_IV_CANDY_TAB = CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
-            .title(Component.translatable("itemGroup.cobblemon_iv_candy"))
-            .icon(() -> CandyFactory.createForSpeciesSample(null))
-            .displayItems((context, entries) -> {
-                for (var shard : ShardCatalog.getCatalogShards()) {
-                    entries.accept(shard);
-                }
-
-                for (var candy : CandyCatalog.getCatalogCandys()) {
-                    entries.accept(candy);
-                }
-
-                for (var extractor : IVExtractorCatalog.getCatalogExtractors()) {
-                    entries.accept(extractor);
-                }
-            })
-            .build();
+    public static CreativeModeTab COBBLEMON_IV_CANDY_TAB;
 
     public static void registerCreativeTabs() {
         Boot.LOGGER.info("Registering Creative Mode Tabs for " + Boot.MOD_ID);
 
-        // Register the creative tab
+        // Create and register the creative tab
+        COBBLEMON_IV_CANDY_TAB = CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
+                .title(Component.translatable("itemGroup.cobblemon_iv_candy"))
+                .icon(() -> CandyFactory.createForSpeciesSample(null))
+                .displayItems((context, entries) -> {
+                    for (var shard : ShardCatalog.getCatalogShards()) {
+                        entries.accept(shard);
+                    }
+
+                    for (var candy : CandyCatalog.getCatalogCandys()) {
+                        entries.accept(candy);
+                    }
+
+                    for (var extractor : IVExtractorCatalog.getCatalogExtractors()) {
+                        entries.accept(extractor);
+                    }
+                })
+                .build();
+
         net.minecraft.core.Registry.register(
                 net.minecraft.core.registries.BuiltInRegistries.CREATIVE_MODE_TAB,
                 ResourceLocation.fromNamespaceAndPath(Boot.MOD_ID, "cobblemon_iv_candy"),

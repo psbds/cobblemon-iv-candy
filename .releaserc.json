@@ -64,7 +64,7 @@
     [
       "@semantic-release/exec",
       {
-        "publishCmd": "cd src && RELEASE_VERSION=${nextRelease.version} ./gradlew build"
+        "publishCmd": "cd src && RELEASE_VERSION=${nextRelease.version} ./gradlew clean build"
       }
     ],
     [
@@ -73,7 +73,7 @@
         "assets": [
           {
             "path": "src/build/libs/*.jar",
-            "label": "Mod JAR (${nextRelease.version})"
+            "label": "Cobblemon_IV_Candy-${nextRelease.version}.jar"
           }
         ]
       }

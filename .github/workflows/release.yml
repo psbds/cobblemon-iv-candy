@@ -50,9 +50,6 @@ jobs:
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
 
-      - name: Build with Gradle
-        run: cd src && ./gradlew build
-
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
