@@ -21,7 +21,6 @@ public class CandyRecipe implements CraftingRecipe {
 
     @Override
     public ItemStack assemble(CraftingInput recipeInput, Provider provider) {
-        Boot.LOGGER.info("CALLING ASSEMBLE METHOD FOR CANDYHPRECIPE");
         var shard = recipeInput.getItem(0);
         if (shard.isEmpty()) {
             return ItemStack.EMPTY;

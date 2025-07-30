@@ -17,14 +17,14 @@ public class CandyRecipeMatcher {
     public static Boolean matches(CraftingInput recipeInput, Level level) {
         // 1. Analyze Crafting Grid Size
         if (recipeInput.width() != 3 || recipeInput.height() != 1) {
-            LOGGER.info("Grid size is not 3x1, returning false");
+            LOGGER.debug("Grid size is not 3x1, returning false");
             return false;
         }
 
         // 2. Analyze Shards
         var lastShardType = analyzeShard(recipeInput);
         if (lastShardType == null) {
-            LOGGER.info("Shards do not match, returning false");
+            LOGGER.debug("Shards do not match, returning false");
             return false;
         }
 
@@ -123,17 +123,17 @@ public class CandyRecipeMatcher {
         DataShard lastDataShard = null;
         for (int index : candyPositions) {
             ItemStack item = recipeInput.getItem(index);
-            Boot.LOGGER.info("Position {} item: {}", index, item.getItem().toString());
+            Boot.LOGGER.debug("Position {} item: {}", index, item.getItem().toString());
 
             // Check if item is empty first
             if (item.isEmpty()) {
-                Boot.LOGGER.info("Position {} is empty, returning false", index);
+                Boot.LOGGER.debug("Position {} is empty, returning false", index);
                 return null;
             }
 
             // Check if it's the IV candy from this mod
             if (!item.is(ModItems.SHARD)) {
-                Boot.LOGGER.info("Position {} is not candy_species_random, returning false", index);
+                Boot.LOGGER.debug("Position {} is not candy_species_random, returning false", index);
                 return null;
             }
 
@@ -142,45 +142,50 @@ public class CandyRecipeMatcher {
                 lastDataShard = dataShard;
             }
 
+            if(lastDataShard.shardType() != dataShard.shardType()) {
+                Boot.LOGGER.debug("Position {} has different shard type, returning false", index);
+                return null;
+            }
+
             if (dataShard.shardType() == ShardType.SPECIES) {
                 lastObjectId = TryMatchSpecies(dataShard.shardType(), lastObjectId, item);
                 if (lastObjectId == null) {
-                    Boot.LOGGER.info("Position {} has different species, returning false", index);
+                    Boot.LOGGER.debug("Position {} has different species, returning false", index);
                     return null;
                 }
             }
             if (dataShard.shardType() == ShardType.LEGENDARY) {
                 lastObjectId = TryMatchLegendary(dataShard.shardType(), lastObjectId, item);
                 if (lastObjectId == null) {
-                    Boot.LOGGER.info("Position {} has different species, returning false", index);
+                    Boot.LOGGER.debug("Position {} has different species, returning false", index);
                     return null;
                 }
             }
             if (dataShard.shardType() == ShardType.ELEMENTAL_TYPE) {
                 lastObjectId = TryMatchElemental(dataShard.shardType(), lastObjectId, item);
                 if (lastObjectId == null) {
-                    Boot.LOGGER.info("Position {} has different elemental type, returning false", index);
+                    Boot.LOGGER.debug("Position {} has different elemental type, returning false", index);
                     return null;
                 }
             }
             if (dataShard.shardType() == ShardType.MYTHICAL) {
                 lastObjectId = TryMatchMythical(dataShard.shardType(), lastObjectId, item);
                 if (lastObjectId == null) {
-                    Boot.LOGGER.info("Position {} has different mythical type, returning false", index);
+                    Boot.LOGGER.debug("Position {} has different mythical type, returning false", index);
                     return null;
                 }
             }
             if (dataShard.shardType() == ShardType.ULTRA_BEAST) {
                 lastObjectId = TryMatchUltrabeast(dataShard.shardType(), lastObjectId, item);
                 if (lastObjectId == null) {
-                    Boot.LOGGER.info("Position {} has different ultra beast type, returning false", index);
+                    Boot.LOGGER.debug("Position {} has different ultra beast type, returning false", index);
                     return null;
                 }
             }
             if (dataShard.shardType() == ShardType.PARADOX) {
                 lastObjectId = TryMatchParadox(dataShard.shardType(), lastObjectId, item);
                 if (lastObjectId == null) {
-                    Boot.LOGGER.info("Position {} has different paradox type, returning false", index);
+                    Boot.LOGGER.debug("Position {} has different paradox type, returning false", index);
                     return null;
                 }
             }

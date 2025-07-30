@@ -17,6 +17,7 @@ public class ConfigCommand {
 
     public static LiteralArgumentBuilder<CommandSourceStack> initialize() {
         return literal("config")
+                .requires(source -> source.hasPermission(2)) // Requires operator level
                 .then(literal("reload")
                         .executes(context -> reloadConfig(context.getSource())))
                 .then(literal("info")

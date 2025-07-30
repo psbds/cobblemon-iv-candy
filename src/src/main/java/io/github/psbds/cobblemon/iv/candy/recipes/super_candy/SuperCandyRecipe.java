@@ -8,7 +8,6 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.level.Level;
 
-import io.github.psbds.cobblemon.iv.candy.Boot;
 import io.github.psbds.cobblemon.iv.candy.items.components.DataShard;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.Candy;
 import io.github.psbds.cobblemon.iv.candy.items.objects.candies.CandyFactory;
@@ -20,7 +19,6 @@ public class SuperCandyRecipe implements CraftingRecipe {
 
     @Override
     public ItemStack assemble(CraftingInput recipeInput, Provider provider) {
-        Boot.LOGGER.info("CALLING ASSEMBLE METHOD FOR CANDY RECIPE");
         var shard = recipeInput.getItem(0);
         if (shard.isEmpty()) {
             return ItemStack.EMPTY;

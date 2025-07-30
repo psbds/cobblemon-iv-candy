@@ -20,25 +20,25 @@ public class IVExtractorRecipeMatcher {
     public static Boolean matches(CraftingInput recipeInput, Level level) {
         // 1. Analyze Crafting Grid Size
         if (recipeInput.width() != 3 || recipeInput.height() != 3) {
-            LOGGER.info("Grid size is not 3x3, returning false");
+            LOGGER.debug("Grid size is not 3x3, returning false");
             return false;
         }
         // 2. Analyze Middle Item
         if (!analyzeMiddleItem(recipeInput)) {
-            LOGGER.info("Middle item is not a valid apricorn, returning false");
+            LOGGER.debug("Middle item is not a valid apricorn, returning false");
             return false;
         }
 
         // 3. Analyze Bottom Item
         if (!analyzeBottomItem(recipeInput)) {
-            LOGGER.info("Bottom item is not a valid rare candy, returning false");
+            LOGGER.debug("Bottom item is not a valid rare candy, returning false");
             return false;
         }
 
         // 4. Analyze Shards
         var lastShardType = analyzeShard(recipeInput);
         if (lastShardType == null) {
-            LOGGER.info("Shards do not match, returning false");
+            LOGGER.debug("Shards do not match, returning false");
             return false;
         }
 
@@ -46,32 +46,32 @@ public class IVExtractorRecipeMatcher {
     }
 
     public static Boolean analyzeMiddleItem(CraftingInput recipeInput) {
-        LOGGER.info("Analyzing Middle Item for IVExtractorRecipe");
+        LOGGER.debug("Analyzing Middle Item for IVExtractorRecipe");
         ItemStack centerItem = recipeInput.getItem(4); // Index 4 is position 5 (center)
         if (centerItem.isEmpty()) {
-            LOGGER.info("Center item is empty, returning false");
+            LOGGER.debug("Center item is empty, returning false");
             return false;
         }
         if (centerItem.is(Items.BLAZE_ROD)) {
             return true;
         }
 
-        LOGGER.info("Center item is not a blaze rod, returning false");
+        LOGGER.debug("Center item is not a blaze rod, returning false");
         return false;
     }
 
     public static Boolean analyzeBottomItem(CraftingInput recipeInput) {
-        LOGGER.info("Analyzing Bottom Item for IVExtractorRecipe");
+        LOGGER.debug("Analyzing Bottom Item for IVExtractorRecipe");
         ItemStack centerItem = recipeInput.getItem(6); // Index 6 is position 7
         if (centerItem.isEmpty()) {
-            LOGGER.info("Center item is empty, returning false");
+            LOGGER.debug("Center item is empty, returning false");
             return false;
         }
         if (centerItem.is(CobblemonItems.RARE_CANDY)) {
             return true;
         }
 
-        LOGGER.info("Center item is not a rare candy, returning false");
+        LOGGER.debug("Center item is not a rare candy, returning false");
         return false;
     }
 
@@ -80,13 +80,13 @@ public class IVExtractorRecipeMatcher {
 
         // Check if item is empty first
         if (item.isEmpty()) {
-            Boot.LOGGER.info("Position {} is empty, returning false", 2);
+            Boot.LOGGER.debug("Position {} is empty, returning false", 2);
             return null;
         }
 
         // Check if it's the IV candy from this mod
         if (!item.is(ModItems.SHARD)) {
-            Boot.LOGGER.info("Position {} is not candy_species_random, returning false", 2);
+            Boot.LOGGER.debug("Position {} is not candy_species_random, returning false", 2);
             return null;
         }
 
