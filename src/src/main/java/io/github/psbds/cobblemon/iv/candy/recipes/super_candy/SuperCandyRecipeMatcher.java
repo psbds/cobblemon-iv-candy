@@ -20,20 +20,20 @@ public class SuperCandyRecipeMatcher {
     public static Boolean matches(CraftingInput recipeInput, Level level) {
         // 1. Analyze Crafting Grid Size
         if (recipeInput.width() != 3 || recipeInput.height() != 3) {
-            LOGGER.info("Grid size is not 3x3, returning false");
+            LOGGER.debug("Grid size is not 3x3, returning false");
             return false;
         }
         // 2. Analyze Middle Item
         var stat = analyzeMiddleItem(recipeInput);
         if (stat == null) {
-            LOGGER.info("Middle item is not a valid apricorn, returning false");
+            LOGGER.debug("Middle item is not a valid apricorn, returning false");
             return false;
         }
 
         // 3. Analyze Shards
         var lastShardType = analyzeShard(recipeInput);
         if (lastShardType == null) {
-            LOGGER.info("Shards do not match, returning false");
+            LOGGER.debug("Shards do not match, returning false");
             return false;
         }
 
@@ -41,10 +41,10 @@ public class SuperCandyRecipeMatcher {
     }
 
     public static Stats analyzeMiddleItem(CraftingInput recipeInput) {
-        LOGGER.info("Analyzing Middle Item for SuperCandySpeciesRecipe");
+        LOGGER.debug("Analyzing Middle Item for SuperCandySpeciesRecipe");
         ItemStack centerItem = recipeInput.getItem(4); // Index 4 is position 5 (center)
         if (centerItem.isEmpty()) {
-            LOGGER.info("Center item is empty, returning false");
+            LOGGER.debug("Center item is empty, returning false");
             return null;
         }
         if (centerItem.getItem() == CobblemonItems.BLACK_APRICORN) {
@@ -61,7 +61,7 @@ public class SuperCandyRecipeMatcher {
             return Stats.SPEED;
         }
 
-        LOGGER.info("Center item is not an apricorn, returning null");
+        LOGGER.debug("Center item is not an apricorn, returning null");
         return null;
     }
 
@@ -157,17 +157,17 @@ public class SuperCandyRecipeMatcher {
         DataShard lastDataShard = null;
         for (int index : candyPositions) {
             ItemStack item = recipeInput.getItem(index);
-            Boot.LOGGER.info("Position {} item: {}", index, item.getItem().toString());
+            Boot.LOGGER.debug("Position {} item: {}", index, item.getItem().toString());
 
             // Check if item is empty first
             if (item.isEmpty()) {
-                Boot.LOGGER.info("Position {} is empty, returning false", index);
+                Boot.LOGGER.debug("Position {} is empty, returning false", index);
                 return null;
             }
 
             // Check if it's the IV candy from this mod
             if (!item.is(ModItems.SHARD)) {
-                Boot.LOGGER.info("Position {} is not candy_species_random, returning false", index);
+                Boot.LOGGER.debug("Position {} is not candy_species_random, returning false", index);
                 return null;
             }
 
@@ -176,45 +176,50 @@ public class SuperCandyRecipeMatcher {
                 lastDataShard = dataShard;
             }
 
+            if (lastDataShard.shardType() != dataShard.shardType()) {
+                Boot.LOGGER.debug("Position {} has different shard type, returning false", index);
+                return null;
+            }
+
             if (dataShard.shardType() == ShardType.SPECIES) {
                 lastObjectId = TryMatchSpecies(dataShard.shardType(), lastObjectId, item);
                 if (lastObjectId == null) {
-                    Boot.LOGGER.info("Position {} has different species, returning false", index);
+                    Boot.LOGGER.debug("Position {} has different species, returning false", index);
                     return null;
                 }
             }
             if (dataShard.shardType() == ShardType.LEGENDARY) {
                 lastObjectId = TryMatchLegendary(dataShard.shardType(), lastObjectId, item);
                 if (lastObjectId == null) {
-                    Boot.LOGGER.info("Position {} has different species, returning false", index);
+                    Boot.LOGGER.debug("Position {} has different species, returning false", index);
                     return null;
                 }
             }
             if (dataShard.shardType() == ShardType.ELEMENTAL_TYPE) {
                 lastObjectId = TryMatchElemental(dataShard.shardType(), lastObjectId, item);
                 if (lastObjectId == null) {
-                    Boot.LOGGER.info("Position {} has different elemental type, returning false", index);
+                    Boot.LOGGER.debug("Position {} has different elemental type, returning false", index);
                     return null;
                 }
             }
             if (dataShard.shardType() == ShardType.MYTHICAL) {
                 lastObjectId = TryMatchMythical(dataShard.shardType(), lastObjectId, item);
                 if (lastObjectId == null) {
-                    Boot.LOGGER.info("Position {} has different mythical type, returning false", index);
+                    Boot.LOGGER.debug("Position {} has different mythical type, returning false", index);
                     return null;
                 }
             }
             if (dataShard.shardType() == ShardType.ULTRA_BEAST) {
                 lastObjectId = TryMatchUltrabeast(dataShard.shardType(), lastObjectId, item);
                 if (lastObjectId == null) {
-                    Boot.LOGGER.info("Position {} has different ultra beast type, returning false", index);
+                    Boot.LOGGER.debug("Position {} has different ultra beast type, returning false", index);
                     return null;
                 }
             }
             if (dataShard.shardType() == ShardType.PARADOX) {
                 lastObjectId = TryMatchParadox(dataShard.shardType(), lastObjectId, item);
                 if (lastObjectId == null) {
-                    Boot.LOGGER.info("Position {} has different paradox type, returning false", index);
+                    Boot.LOGGER.debug("Position {} has different paradox type, returning false", index);
                     return null;
                 }
             }
