@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/psbds/cobblemon-iv-candy/compare/v1.4.1...v1.4.2) (2025-07-30)
+
+
+### Bug Fixes
+
+* fix config commands permissions ([2c76cb1](https://github.com/psbds/cobblemon-iv-candy/commit/2c76cb10c503878810edd3b3135b1e533c3380d1))
+
 ## [1.4.1](https://github.com/psbds/cobblemon-iv-candy/compare/v1.4.0...v1.4.1) (2025-07-27)
 
 
